@@ -45,6 +45,11 @@ jobs:
           MAIL_MAILER: array
         run: php artisan test
 
+      - name: Verify production dependencies
+        run: |
+          composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+          php -r "require 'vendor/autoload.php'; exit(function_exists('app_name') ? 0 : 1);"
+
       - name: Configure and validate SSH key
         shell: bash
         env:
