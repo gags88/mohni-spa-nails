@@ -1,0 +1,198 @@
+/*==========================================================================================
+								Primery Theme Colors
+==========================================================================================*/
+/*=============================================
+			Theme Text Color
+=============================================*/
+/* a,
+.clr,
+p a,
+p a:hover,
+a:hover,
+a:focus,
+a:active,
+.mh-info li a:hover,
+.mh-navigation ul li:hover a,
+.v2 .mh-info li span a:hover,
+.mh-navigation ul li .sub-menu li a:hover,
+.v3 .mh-cartarea a:hover,
+.v3 .mh-searcharea a:hover,
+.v4 .mh-searcharea a:hover,
+.v4 .mh-cartarea a:hover,
+.mh-homeslider.v4 .mh-slidercontent a:hover,
+.mh-whychooseus-list li:after,
+.mh-counter h3,
+.pricingcontent h3 span,
+.mh-pricingbox:hover .mh-btn,
+.mh-pricingbox.active .mh-btn,
+.mh-uthername h3,
+.mh-filterbale-nav li a:hover,
+.mh-filterbale-nav li a.active,
+.mh-testimonialsthumbslider .mh-prev:hover,
+.mh-testimonialsthumbslider .mh-next:hover,
+.mh-productscontent h3 span,
+.mh-pricinglistbox li span,
+.mh-aboutusvideo .mh-video-btn:hover,
+.mh-gift-price span,
+.mh-categories ul li:after,
+.mh-postmeta-area .mh-postmeta em,
+.mh-posttage li a:hover,
+.mh-bloggrid.blogfullwidth .mh-posttitle h3 a:hover,
+.mh-pagination ul li a:hover,
+.mh-postdetails .mh-treatmentlist li:before,
+.mh-postdetails .mh-uthername,
+.mh-socialshare ul li a:hover,
+.mh-comment-date,
+.mh-panel h4 a:hover,
+.cart-table .price,
+.cart-list .price,
+.mh-cart-widget .price,
+.mh-content-block .mh-btn,
+.mh-shoparea-detail .price,
+.mh-categories.mh-categories2 ul a span,
+.mh-categories.mh-categories2 ul a:hover,
+.mh-shoparea-detail .social-network a:hover,
+.mh-pricingplan .tab-content .price  */
+.mh-postdetails .mh-treatmentlist li:before {
+    color: #2596be;
+}
+
+.v2 .mh-info li i {
+    background: linear-gradient(to right, #2596be 0%, #44a3c5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.v5 .mh-searcharea a:hover,
+.v5 .mh-cartarea a:hover,
+.v5 .mh-navigation ul li:hover a,
+.v5 .mh-navigation ul li:active a,
+.v5 .mh-navigation ul li:focus a,
+.v5 .mh-withoutbackground li a:hover i,
+.v5 .mh-navigation ul li .sub-menu li a:hover,
+.mh-footer.v3 .mh-socialicons li a:hover i,
+.mh-footer.v3 .mh-socialicons li a:focus i,
+.mh-footer.v3 .mh-socialicons li a:active i,
+.mh-footer.v3 .mh-footernav li a:hover,
+.mh-footer.v3 .mh-footernav li a:active,
+.mh-footer.v3 .mh-footernav li a:focus,
+.mh-homeslider.v5 .mh-btn:hover {
+    color: #7ac284;
+}
+/*=============================================
+			Theme Background Color
+=============================================*/
+.mh-dropdowarrow,
+.navbar-toggle,
+.mh-panel h4:after,
+.mh-tags ul li .mh-tagbtn:hover,
+.mh-tags ul li .mh-tagbtn:hover,
+.search-popup .close-btn {
+    background: #2596be;
+}
+
+.mh-btn,
+.mh-socialicons li a,
+.mh-socialicons.mh-socialicons-sm li a:hover,
+.mh-cart li .mh-btn.changehover:hover,
+.v2 .mh-navigationarea,
+.mh-prev:hover,
+.mh-next:hover,
+.mh-homeslider.v4 .mh-slidercontent:after,
+.mh-paradiseiconbox,
+.mh-btn.bdr:hover:after,
+.mh-roundicon li .mh-g-icon.change-bg,
+.mh-giftcertificates-box:hover .mh-giftbtn,
+.mh-content-block,
+.tab-holder .tab-list .active a,
+.tab-holder .tab-list a:hover,
+#back-top,
+.mh-shoparea-detail .img-holder .mh-zoom-btn {
+    background-image: linear-gradient(
+        to right,
+        #2596be 0%,
+        #44a3c5 51%,
+        #aaaaff 100%
+    );
+}
+
+.mh-topbar,
+.mh-footer.v2 .mh-info li:before,
+.mh-footer.v2 .mh-info li a:hover,
+.mh-pricingbox:hover,
+.mh-pricingbox.active,
+.countdownHolder:after,
+.mh-comingsooncounter:after,
+.mh-testimonialbox:hover .mh-testimonialcontentbox,
+.mh-testimonialbox .mh-testimonialcontentbox.active {
+    background: rgba(37, 150, 190, 1);
+    background: linear-gradient(
+        to right,
+        rgb(37, 150, 190) 0%,
+        rgba(37, 150, 190, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaaaff', endColorstr='#fbbaf8', GradientType=1 );
+}
+/*=====================Color with opacity========================*/
+.mh-postimage:before,
+.mh-gallerycontent {
+    background: rgba(37, 150, 190, 0.8);
+    background: -moz-linear-gradient(
+        left,
+        rgba(37, 150, 190, 0.8) 0%,
+        rgba(37, 150, 190, 0.8) 100%
+    );
+    background: -webkit-gradient(
+        left top,
+        right top,
+        color-stop(0%, rgba(37, 150, 190, 0.8)),
+        color-stop(100%, rgba(37, 150, 190, 0.8))
+    );
+    background: -webkit-linear-gradient(
+        left,
+        rgba(37, 150, 190, 0.8) 0%,
+        rgba(37, 150, 190, 0.8) 100%
+    );
+    background: -o-linear-gradient(
+        left,
+        rgba(37, 150, 190, 0.8) 0%,
+        rgba(37, 150, 190, 0.8) 100%
+    );
+    background: -ms-linear-gradient(
+        left,
+        rgba(37, 150, 190, 0.8) 0%,
+        rgba(37, 150, 190, 0.8) 100%
+    );
+    background: linear-gradient(
+        to right,
+        rgba(37, 150, 190, 0.8) 0%,
+        rgba(37, 150, 190, 0.8) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaaaff', endColorstr='#fbbaf8', GradientType=1 );
+}
+.mh-footer.v3 .mh-socialicons li a,
+.mh-homeslider.v5 .mh-btn,
+.mh-homeslider.v5 .mh-prev:hover,
+.mh-homeslider.v5 .mh-next:hover,
+.mh-sectiontitle.v3:before {
+    background: #7ac284;
+}
+/*=============================================
+			Theme Border Color
+=============================================*/
+input:focus,
+.select select:focus,
+.form-control:focus,
+.mh-thumb figure img,
+.mh-tags ul li .mh-tagbtn:hover,
+.mh-tags ul li .mh-tagbtn:hover {
+    border-color: #2596be;
+}
+.mh-servicebox:hover .mh-serviceimg:after,
+.mh-teambox:hover .mh-teamimg:after {
+    border-color: rgba(252, 186, 248, 0.5);
+}
+
+.mh-footer.v3 .mh-socialicons li a,
+.mh-homeslider.v5 .mh-btn {
+    border-color: #7ac284;
+}
