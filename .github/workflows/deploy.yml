@@ -1,0 +1,181 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mohni-production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_mysql, pdo_sqlite
+          tools: composer:v2
+          coverage: none
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Prepare test environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Run automated tests
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ':memory:'
+          MAIL_MAILER: array
+        run: php artisan test
+
+      - name: Configure and validate SSH key
+        shell: bash
+        env:
+          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+        run: |
+          SSH_DIR="$RUNNER_TEMP/hostinger"
+          install -m 700 -d "$SSH_DIR"
+          printf '%s\n' "$HOSTINGER_SSH_KEY" | tr -d '\r' > "$SSH_DIR/key"
+          chmod 600 "$SSH_DIR/key"
+
+          if ! grep -Eq '^-----BEGIN (OPENSSH|RSA|EC|DSA) PRIVATE KEY-----$' "$SSH_DIR/key"; then
+            echo '::error::HOSTINGER_SSH_KEY is missing or is not a complete private key.'
+            exit 1
+          fi
+
+          if ! ssh-keygen -y -f "$SSH_DIR/key" > /dev/null; then
+            echo '::error::HOSTINGER_SSH_KEY cannot be parsed. Store an unencrypted private key with its original line breaks.'
+            exit 1
+          fi
+
+          ssh-keyscan -p 65002 147.93.23.145 > "$SSH_DIR/known_hosts"
+          chmod 600 "$SSH_DIR/known_hosts"
+
+          echo "HOSTINGER_KEY=$SSH_DIR/key" >> "$GITHUB_ENV"
+          echo "HOSTINGER_KNOWN_HOSTS=$SSH_DIR/known_hosts" >> "$GITHUB_ENV"
+
+      - name: Verify SSH authentication
+        run: |
+          ssh \
+            -i "$HOSTINGER_KEY" \
+            -p 65002 \
+            -o BatchMode=yes \
+            -o UserKnownHostsFile="$HOSTINGER_KNOWN_HOSTS" \
+            u464987102@147.93.23.145 \
+            'echo "SSH authentication successful"'
+
+      - name: Sync application to Hostinger
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i $HOSTINGER_KEY -p 65002 -o BatchMode=yes -o UserKnownHostsFile=$HOSTINGER_KNOWN_HOSTS" \
+            --exclude='.env' \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='database/*.sqlite' \
+            --exclude='node_modules/' \
+            --exclude='vendor/' \
+            --exclude='tests/' \
+            --exclude='storage/app/' \
+            --exclude='storage/framework/' \
+            --exclude='storage/logs/' \
+            --exclude='public/image/' \
+            --exclude='public/storage' \
+            ./ u464987102@147.93.23.145:/home/u464987102/domains/mohnispanails.com/mohnispanails/
+
+      - name: Run post-deploy commands
+        run: |
+          ssh \
+            -i "$HOSTINGER_KEY" \
+            -p 65002 \
+            -o BatchMode=yes \
+            -o UserKnownHostsFile="$HOSTINGER_KNOWN_HOSTS" \
+            u464987102@147.93.23.145 'bash -se' <<'REMOTE_SCRIPT'
+          set -euo pipefail
+
+          PHP=/opt/alt/php83/usr/bin/php
+          APP_ROOT=/home/u464987102/domains/mohnispanails.com/mohnispanails
+          WEB_ROOT=/home/u464987102/domains/mohnispanails.com/public_html
+
+          cd "$APP_ROOT"
+
+          if [ ! -f "$APP_ROOT/.env" ]; then
+            echo 'Production .env is missing; deployment cannot continue.' >&2
+            exit 1
+          fi
+
+          mkdir -p \
+            "$APP_ROOT/bootstrap/cache" \
+            "$APP_ROOT/storage/app/public" \
+            "$APP_ROOT/storage/framework/cache/data" \
+            "$APP_ROOT/storage/framework/sessions" \
+            "$APP_ROOT/storage/framework/views" \
+            "$APP_ROOT/storage/logs"
+
+          chmod -R ug+rwX "$APP_ROOT/storage" "$APP_ROOT/bootstrap/cache"
+
+          "$PHP" "$(command -v composer)" install \
+            --no-dev \
+            --no-interaction \
+            --prefer-dist \
+            --optimize-autoloader
+
+          "$PHP" artisan optimize:clear
+          "$PHP" artisan migrate --force
+          "$PHP" artisan config:cache
+          "$PHP" artisan view:cache
+
+          STORAGE_LINK="$APP_ROOT/public/storage"
+          if [ -L "$STORAGE_LINK" ]; then
+            ln -sfn "$APP_ROOT/storage/app/public" "$STORAGE_LINK"
+          elif [ -e "$STORAGE_LINK" ]; then
+            mv "$STORAGE_LINK" "${STORAGE_LINK}_backup_$(date +%Y%m%d_%H%M%S)"
+            ln -s "$APP_ROOT/storage/app/public" "$STORAGE_LINK"
+          else
+            ln -s "$APP_ROOT/storage/app/public" "$STORAGE_LINK"
+          fi
+
+          # Preserve images uploaded by the legacy banner manager before the
+          # first conversion of public_html into a symlink.
+          if [ -d "$WEB_ROOT/image" ] && [ ! -L "$WEB_ROOT" ]; then
+            mkdir -p "$APP_ROOT/public/image"
+            cp -a "$WEB_ROOT/image/." "$APP_ROOT/public/image/"
+          fi
+
+          if [ -L "$WEB_ROOT" ]; then
+            ln -sfn "$APP_ROOT/public" "$WEB_ROOT"
+          elif [ -d "$WEB_ROOT" ]; then
+            BACKUP_PATH="${WEB_ROOT}_backup_$(date +%Y%m%d_%H%M%S)"
+            mv "$WEB_ROOT" "$BACKUP_PATH"
+            ln -s "$APP_ROOT/public" "$WEB_ROOT"
+            echo "Existing public_html moved to: $BACKUP_PATH"
+          elif [ -e "$WEB_ROOT" ]; then
+            BACKUP_PATH="${WEB_ROOT}_backup_$(date +%Y%m%d_%H%M%S)"
+            mv "$WEB_ROOT" "$BACKUP_PATH"
+            ln -s "$APP_ROOT/public" "$WEB_ROOT"
+            echo "Existing public_html file moved to: $BACKUP_PATH"
+          else
+            ln -s "$APP_ROOT/public" "$WEB_ROOT"
+          fi
+
+          echo 'Deployment complete.'
+          REMOTE_SCRIPT
+
+      - name: Verify production website
+        run: curl --fail --silent --show-error --max-time 30 https://mohnispanails.com/ > /dev/null

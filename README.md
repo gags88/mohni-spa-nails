@@ -95,3 +95,11 @@ npm run production
 ## Local files
 
 The `.env` file, SQLite database, dependencies, runtime caches, and backup archives are intentionally excluded from Git. Never commit production credentials or customer data.
+
+## Deployment
+
+Pushes to `main` deploy automatically to Hostinger through [the GitHub Actions workflow](.github/workflows/deploy.yml). The workflow runs the test suite first, synchronizes the application while preserving production data, installs optimized Composer dependencies, runs migrations, refreshes Laravel caches, and verifies the live website.
+
+The GitHub repository requires a `HOSTINGER_SSH_KEY` Actions secret containing an unencrypted private key authorized for the Hostinger account. Production configuration remains in the server-side `.env` and is never copied from GitHub.
+
+Frontend assets are committed in `public/css` and `public/js`; this legacy Laravel Mix project does not rebuild them during deployment.
