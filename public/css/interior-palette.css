@@ -1,0 +1,190 @@
+/*
+ * Mohni interior-inspired palette
+ * Warm plaster, light oak, charcoal fixtures, and eucalyptus accents.
+ */
+:root {
+    --mohni-ivory: #f8f5f0;
+    --mohni-white: #fffdf9;
+    --mohni-stone: #ded7cd;
+    --mohni-taupe: #b8aa99;
+    --mohni-sage: #788a7d;
+    --mohni-sage-dark: #59695f;
+    --mohni-charcoal: #303230;
+    --mohni-copy: #555a56;
+}
+
+body {
+    color: var(--mohni-copy);
+    background: var(--mohni-white);
+}
+
+a,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+strong,
+.mh-logo h1,
+.mh-servicecontent h3 em,
+.mh-postdetails .mh-treatmentlist li:before {
+    color: var(--mohni-sage-dark);
+}
+
+a:hover,
+a:focus,
+a:active,
+.mh-navigation ul li:hover > a,
+.mh-navigation ul li:focus > a,
+.mh-navigation ul li .sub-menu li a:hover {
+    color: var(--mohni-sage);
+}
+
+.mh-topbar {
+    background: var(--mohni-charcoal);
+}
+
+.mh-navigationarea,
+.sticky,
+.sub-menu {
+    background: var(--mohni-white);
+}
+
+.mh-navigation ul li a,
+.mh-navigation ul li .sub-menu li a,
+.mh-headingtree,
+.mh-headingtree a,
+.mh-twoheading,
+.mh-headcontent h2,
+.mh-servicecontent h3,
+.mh-sectiontitle h2,
+.mh-col h3,
+.mh-col .mh-info li,
+.mh-col .mh-info li span {
+    color: var(--mohni-charcoal);
+}
+
+.sub-menu {
+    border-top: 3px solid var(--mohni-sage);
+    box-shadow: 0 14px 30px rgba(48, 50, 48, 0.13);
+}
+
+.mh-sliderbar {
+    color: var(--mohni-charcoal);
+    background: var(--mohni-stone);
+}
+
+.mh-btn,
+.mh-socialicons li a,
+.mh-paradiseiconbox,
+.mh-dropdowarrow,
+#back-top,
+.mh-prev:hover,
+.mh-next:hover {
+    color: #fff;
+    background: linear-gradient(
+        135deg,
+        var(--mohni-sage) 0%,
+        var(--mohni-sage-dark) 100%
+    );
+}
+
+.mh-btn:hover,
+.mh-btn:focus,
+.mh-socialicons li a:hover,
+#back-top:hover {
+    color: #fff;
+    background: var(--mohni-charcoal);
+}
+
+.mh-sectiontitle:before {
+    background: var(--mohni-taupe);
+}
+
+.mh-sectiontitle h2 span,
+.mh-headcontent .mh-description,
+.mh-col .mh-timeandday,
+.mh-col .mh-info li span em,
+.mh-col .mh-info li span a,
+.mh-col .mh-description,
+.mh-copyright,
+.mh-footernav li a {
+    color: #716d66;
+}
+
+.mh-bg,
+.bg-grey,
+.mh-footer {
+    background: var(--mohni-ivory);
+}
+
+.mh-bg .mh-sectiontitle:after {
+    background-color: var(--mohni-ivory);
+}
+
+.mh-services.v2 .mh-servicecontent,
+.mh-teamcontent,
+.mh-productsbox {
+    background: var(--mohni-white);
+    box-shadow: 0 12px 32px rgba(48, 50, 48, 0.08);
+}
+
+.mh-serviceimg:after,
+.mh-teamimg:after,
+.mh-servicebox:hover .mh-serviceimg:after,
+.mh-teambox:hover .mh-teamimg:after {
+    border-color: rgba(184, 170, 153, 0.7);
+}
+
+.mh-innerbanner-area {
+    background-color: rgba(89, 105, 95, 0.86);
+}
+
+.mh-footerbar {
+    background: var(--mohni-stone);
+}
+
+.mh-footernav li {
+    border-color: var(--mohni-taupe);
+}
+
+.mh-pricelist {
+    background-color: rgba(120, 138, 125, 0.9);
+}
+
+.promotion-color {
+    color: #7d5f50;
+}
+
+img.mh-border {
+    --color: var(--mohni-sage);
+}
+
+input:focus,
+select:focus,
+.select select:focus,
+.form-control:focus {
+    border-color: var(--mohni-sage);
+}
+
+@media (max-width: 991px) {
+    .navbar-toggle {
+        background: var(--mohni-stone);
+    }
+
+    .navbar-collapse {
+        background: var(--mohni-white);
+    }
+
+    .navbar-collapse ul li a {
+        border-color: var(--mohni-stone);
+    }
+
+    .navbar-collapse ul li.mh-open > a,
+    .navbar-collapse ul li > a:hover,
+    .navbar-collapse ul li.mh-open .sub-menu li a:hover {
+        color: #fff;
+        background: var(--mohni-sage-dark);
+    }
+}
