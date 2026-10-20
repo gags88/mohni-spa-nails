@@ -15,7 +15,9 @@ class ContactFormTest extends TestCase
         $response
             ->assertOk()
             ->assertSee('Contact Us By Email!')
-            ->assertSee(route('contact.store'), false);
+            ->assertSee(route('contact.store'), false)
+            ->assertSee('https://www.google.com/maps?q=', false)
+            ->assertDontSee('key=', false);
     }
 
     public function test_contact_form_shows_validation_errors()

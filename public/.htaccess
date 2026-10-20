@@ -34,7 +34,7 @@
     Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
 
     # Content Security Policy
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'; frame-ancestors 'none'"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'none'"
 
     # Referrer Policy
     Header always set Referrer-Policy "strict-origin-when-cross-origin"

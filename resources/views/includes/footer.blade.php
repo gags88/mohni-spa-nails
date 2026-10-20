@@ -11,9 +11,7 @@
                             <li class="mh-googleplus"><a href="javascript:void(0);"><i class="fab fa-google-plus-g"></i></a></li>
                             <li><a href="javascript:void(0);"><i class="fab fa-instagram"></i></a></li>
                         </ul>
-                        <!--<iframe width="100%" height="200" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxtGVFhdFDRAHPD84LOaudba20FGzn6nU&q=Unit 3, 2536, Main Street, Winnipeg&zoom=17">-->
-                        <!--</iframe>-->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d641.7029328194336!2d-97.09429287120261!3d49.95863406654574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea71af35b9e75d%3A0xe1a1cc4614feac38!2sMohni%20Spa%20%26%20Nails!5e0!3m2!1sen!2sca!4v1680577520562!5m2!1sen!2sca" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        @include('includes.location-map', ['height' => 200])
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
