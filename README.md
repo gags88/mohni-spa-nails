@@ -1,61 +1,97 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Mohni Spa & Nails
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Website for [Mohni Spa & Nails](https://mohnispanails.com), a spa and beauty salon in Winnipeg, Manitoba. The site presents the salon, services, contact information, promotions, and online booking, with a small admin area for managing homepage banners.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Responsive public website
+- Individual pages for spa, nail, skin, hair-removal, and beauty services
+- Homepage banner management
+- Admin authentication
+- Square appointment-booking integration
+- Interior-inspired ivory, charcoal, taupe, and eucalyptus color palette
+- SQLite support for local development
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technology
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 7.3 or newer
+- Laravel 8
+- Blade templates
+- SQLite for local development
+- Laravel Mix, Sass, and JavaScript
 
-## Learning Laravel
+## Local setup
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Clone the repository and install the PHP and JavaScript dependencies:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+git clone https://github.com/gags88/mohni-spa-nails.git
+cd mohni-spa-nails
+composer install
+npm install
+```
 
-## Laravel Sponsors
+Create the local environment file and application key:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-### Premium Partners
+Create the SQLite database:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```bash
+touch database/database.sqlite
+```
 
-## Contributing
+Configure these values in `.env`, using the absolute path to your local database file:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```dotenv
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/mohni-spa-nails/database/database.sqlite
+DB_FOREIGN_KEYS=true
+```
 
-## Code of Conduct
+Run the migrations and build the frontend assets:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+php artisan migrate
+npm run development
+```
 
-## Security Vulnerabilities
+Start the local development server:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan serve
+```
 
-## License
+The website will be available at `http://127.0.0.1:8000`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Useful commands
+
+```bash
+# Run automated tests
+php artisan test
+
+# Check migration status
+php artisan migrate:status
+
+# Clear application caches
+php artisan optimize:clear
+
+# Build production assets
+npm run production
+```
+
+## Project structure
+
+- `app/Http/Controllers` — public and admin request handling
+- `database/migrations` — database schema
+- `public/css/interior-palette.css` — interior-inspired website palette
+- `public/images` — production website imagery
+- `resources/views` — Blade page templates and shared layouts
+- `routes/web.php` — public, service, and admin routes
+
+## Local files
+
+The `.env` file, SQLite database, dependencies, runtime caches, and backup archives are intentionally excluded from Git. Never commit production credentials or customer data.
