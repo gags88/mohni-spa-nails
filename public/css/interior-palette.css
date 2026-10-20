@@ -1,16 +1,18 @@
 /*
- * Mohni interior-inspired palette
- * Warm plaster, light oak, charcoal fixtures, and eucalyptus accents.
+ * Mohni luxury interior palette
+ * Warm plaster, champagne brass, espresso fixtures, and eucalyptus accents.
  */
 :root {
-    --mohni-ivory: #f8f5f0;
-    --mohni-white: #fffdf9;
-    --mohni-stone: #ded7cd;
-    --mohni-taupe: #b8aa99;
-    --mohni-sage: #788a7d;
-    --mohni-sage-dark: #59695f;
-    --mohni-charcoal: #303230;
-    --mohni-copy: #555a56;
+    --mohni-ivory: #f7f2e9;
+    --mohni-white: #fffdf8;
+    --mohni-stone: #ded5c8;
+    --mohni-champagne: #c2a66f;
+    --mohni-champagne-dark: #957844;
+    --mohni-sage: #748278;
+    --mohni-sage-dark: #4f5e54;
+    --mohni-charcoal: #202421;
+    --mohni-espresso: #29241f;
+    --mohni-copy: #595b57;
 }
 
 body {
@@ -26,10 +28,9 @@ h4 a,
 h5 a,
 h6 a,
 strong,
-.mh-logo h1,
 .mh-servicecontent h3 em,
 .mh-postdetails .mh-treatmentlist li:before {
-    color: var(--mohni-sage-dark);
+    color: var(--mohni-champagne-dark);
 }
 
 a:hover,
@@ -38,11 +39,11 @@ a:active,
 .mh-navigation ul li:hover > a,
 .mh-navigation ul li:focus > a,
 .mh-navigation ul li .sub-menu li a:hover {
-    color: var(--mohni-sage);
+    color: var(--mohni-champagne-dark);
 }
 
 .mh-topbar {
-    background: var(--mohni-charcoal);
+    background: var(--mohni-espresso);
 }
 
 .mh-navigationarea,
@@ -66,40 +67,66 @@ a:active,
 }
 
 .sub-menu {
-    border-top: 3px solid var(--mohni-sage);
-    box-shadow: 0 14px 30px rgba(48, 50, 48, 0.13);
+    border-top: 1px solid var(--mohni-champagne);
+    box-shadow: 0 18px 45px rgba(32, 36, 33, 0.14);
+}
+
+.mh-logo h1 {
+    color: var(--mohni-charcoal);
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.035em;
+}
+
+.mh-navigation > ul > li > a {
+    letter-spacing: 0.06em;
 }
 
 .mh-sliderbar {
-    color: var(--mohni-charcoal);
-    background: var(--mohni-stone);
+    color: var(--mohni-espresso);
+    background: #e9dfcf;
+    border-bottom: 1px solid rgba(149, 120, 68, 0.22);
 }
 
-.mh-btn,
+.mh-btn {
+    color: var(--mohni-white);
+    background: var(--mohni-charcoal);
+    border: 1px solid var(--mohni-charcoal);
+    box-shadow: 0 8px 22px rgba(32, 36, 33, 0.15);
+    letter-spacing: 0.09em;
+}
+
 .mh-socialicons li a,
 .mh-paradiseiconbox,
 .mh-dropdowarrow,
 #back-top,
 .mh-prev:hover,
 .mh-next:hover {
-    color: #fff;
-    background: linear-gradient(
-        135deg,
-        var(--mohni-sage) 0%,
-        var(--mohni-sage-dark) 100%
-    );
+    color: var(--mohni-white);
+    background: var(--mohni-sage-dark);
 }
 
 .mh-btn:hover,
-.mh-btn:focus,
+.mh-btn:focus {
+    color: var(--mohni-charcoal);
+    background: var(--mohni-champagne);
+    border-color: var(--mohni-champagne);
+    box-shadow: 0 10px 26px rgba(149, 120, 68, 0.22);
+}
+
 .mh-socialicons li a:hover,
 #back-top:hover {
-    color: #fff;
-    background: var(--mohni-charcoal);
+    color: var(--mohni-charcoal);
+    background: var(--mohni-champagne);
 }
 
 .mh-sectiontitle:before {
-    background: var(--mohni-taupe);
+    background: var(--mohni-champagne);
+}
+
+.mh-sectiontitle h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    letter-spacing: 0.015em;
 }
 
 .mh-sectiontitle h2 span,
@@ -108,9 +135,8 @@ a:active,
 .mh-col .mh-info li span em,
 .mh-col .mh-info li span a,
 .mh-col .mh-description,
-.mh-copyright,
-.mh-footernav li a {
-    color: #716d66;
+.mh-copyright {
+    color: #6e6a63;
 }
 
 .mh-bg,
@@ -127,50 +153,61 @@ a:active,
 .mh-teamcontent,
 .mh-productsbox {
     background: var(--mohni-white);
-    box-shadow: 0 12px 32px rgba(48, 50, 48, 0.08);
+    border: 1px solid rgba(194, 166, 111, 0.22);
+    box-shadow: 0 16px 42px rgba(32, 36, 33, 0.08);
 }
 
 .mh-serviceimg:after,
 .mh-teamimg:after,
 .mh-servicebox:hover .mh-serviceimg:after,
 .mh-teambox:hover .mh-teamimg:after {
-    border-color: rgba(184, 170, 153, 0.7);
+    border-color: rgba(194, 166, 111, 0.72);
 }
 
 .mh-innerbanner-area {
-    background-color: rgba(89, 105, 95, 0.86);
+    background-color: rgba(32, 36, 33, 0.88);
 }
 
 .mh-footerbar {
-    background: var(--mohni-stone);
+    color: rgba(255, 253, 248, 0.78);
+    background: var(--mohni-espresso);
 }
 
 .mh-footernav li {
-    border-color: var(--mohni-taupe);
+    border-color: rgba(194, 166, 111, 0.45);
+}
+
+.mh-footerbar .mh-footernav li,
+.mh-footerbar .mh-footernav li a,
+.mh-footerbar .mh-copyright,
+.mh-footerbar small {
+    color: rgba(255, 253, 248, 0.78);
 }
 
 .mh-pricelist {
-    background-color: rgba(120, 138, 125, 0.9);
+    background-color: rgba(79, 94, 84, 0.94);
+    border: 1px solid rgba(194, 166, 111, 0.5);
 }
 
 .promotion-color {
-    color: #7d5f50;
+    color: var(--mohni-champagne-dark);
 }
 
 img.mh-border {
-    --color: var(--mohni-sage);
+    --color: var(--mohni-champagne);
 }
 
 input:focus,
 select:focus,
 .select select:focus,
 .form-control:focus {
-    border-color: var(--mohni-sage);
+    border-color: var(--mohni-champagne-dark);
+    box-shadow: 0 0 0 3px rgba(194, 166, 111, 0.12) !important;
 }
 
 @media (max-width: 991px) {
     .navbar-toggle {
-        background: var(--mohni-stone);
+        background: var(--mohni-champagne);
     }
 
     .navbar-collapse {
@@ -185,6 +222,6 @@ select:focus,
     .navbar-collapse ul li > a:hover,
     .navbar-collapse ul li.mh-open .sub-menu li a:hover {
         color: #fff;
-        background: var(--mohni-sage-dark);
+        background: var(--mohni-charcoal);
     }
 }

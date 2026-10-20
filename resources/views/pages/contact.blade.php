@@ -60,32 +60,66 @@
                     </div>
                     <div class="col-sm-8">
                         <div class="mh-formtheme mh-contactusform">
-                            <form id="contactForm" data-toggle="validator" novalidate="true">
+                            @if (session('contact_success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('contact_success') }}
+                                </div>
+                            @endif
+
+                            @if (session('contact_error'))
+                                <div class="alert alert-danger" role="alert">
+                                    {{ session('contact_error') }}
+                                </div>
+                            @endif
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger" role="alert">
+                                    Please correct the highlighted fields and try again.
+                                </div>
+                            @endif
+
+                            <form id="contactForm" method="POST" action="{{ route('contact.store') }}">
+                                @csrf
                                 <fieldset>
                                     <div class="col-xs-12 col-sm-12 col-md-4">
-                                        <div class="form-group">
-                                            <input type="text" id="txtname" class="form-control" name="name" placeholder="Name">
+                                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                                            <label for="txtname">Name</label>
+                                            <input type="text" id="txtname" class="form-control" name="name" value="{{ old('name') }}" placeholder="Your name" maxlength="100" autocomplete="name" required aria-describedby="name-error">
+                                            @error('name')
+                                                <span id="name-error" class="help-block" role="alert">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-4">
-                                        <div class="form-group">
-                                            <input type="text" id="txtemail" class="form-control" name="email" placeholder="Email">
+                                        <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                                            <label for="txtemail">Email</label>
+                                            <input type="email" id="txtemail" class="form-control" name="email" value="{{ old('email') }}" placeholder="you@example.com" maxlength="255" autocomplete="email" required aria-describedby="email-error">
+                                            @error('email')
+                                                <span id="email-error" class="help-block" role="alert">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-4">
-                                        <div class="form-group">
-                                            <input type="text" id="txtwebsite" class="form-control" name="website" placeholder="Website">
+                                        <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
+                                            <label for="txtphone">Phone <small>(optional)</small></label>
+                                            <input type="tel" id="txtphone" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="204 555 0123" maxlength="30" autocomplete="tel" aria-describedby="phone-error">
+                                            @error('phone')
+                                                <span id="phone-error" class="help-block" role="alert">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12">
+                                        <div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}">
+                                            <label for="txtmessage">Message</label>
+                                            <textarea class="form-control" rows="6" id="txtmessage" name="message" placeholder="How can we help?" minlength="10" maxlength="5000" required aria-describedby="message-error">{{ old('message') }}</textarea>
+                                            @error('message')
+                                                <span id="message-error" class="help-block" role="alert">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12">
                                         <div class="form-group">
-                                            <textarea class="w-100 h-100" rows="5" id="txtmessage" placeholder="Message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div id="msgSubmit" class="form-message hidden"></div>
-                                    <div class="col-xs-12 col-sm-12">
-                                        <div class="form-group">
-                                            <button type="submit" class="mh-btn" id="form-submit">SEND MESSAGE</button>
+                                            <button type="submit" class="mh-btn" id="form-submit">Send Message</button>
                                         </div>
                                     </div>
                                 </fieldset>

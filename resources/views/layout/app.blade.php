@@ -12,8 +12,8 @@
     <!-- Google Web fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,800,700,600' rel='stylesheet' type='text/css'>
-    <link href="/css/app.css?v=1.0137" rel="stylesheet">
-    <link href="/css/interior-palette.css?v=1.0" rel="stylesheet">
+    <link href="/css/app.css?v=1.0138" rel="stylesheet">
+    <link href="/css/interior-palette.css?v=1.2" rel="stylesheet">
 </head>
 
 <body class="mh-home mh-homeone">

@@ -20,9 +20,10 @@ Route::get('/', 'App\Http\Controllers\HomepageController@index')->name('home.sho
 Route::get('/about', function () {
     return view('pages.about');
 });
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
+Route::get('/contact', 'App\Http\Controllers\ContactController@index')->name('contact.show');
+Route::post('/contact', 'App\Http\Controllers\ContactController@store')
+    ->middleware('throttle:5,1')
+    ->name('contact.store');
 Route::get('/pa', function () {
     dd(bcrypt('password'));
 });
