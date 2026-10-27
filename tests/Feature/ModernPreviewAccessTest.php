@@ -38,8 +38,11 @@ class ModernPreviewAccessTest extends TestCase
 
         $this->get(route('modern-preview.login'))
             ->assertOk()
-            ->assertSee('Private website preview')
+            ->assertSee('A private first look')
             ->assertSee('Mohni Nail and Spa website')
+            ->assertSee('href="/modern/css/modern-preview.css?v=1.0"', false)
+            ->assertDontSee('laser-luxury-hero', false)
+            ->assertDontSee('<style>', false)
             ->assertHeader('X-Robots-Tag', 'noindex, nofollow, noarchive');
     }
 
