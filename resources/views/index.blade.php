@@ -92,7 +92,7 @@
 <section class="mohni-values mohni-section" aria-labelledby="values-title">
     <div class="container">
         <div class="mohni-values__heading">
-            <p class="mohni-eyebrow">The Mohni experience</p>
+            <p class="mohni-eyebrow">Mohni Nail and Spa</p>
             <h2 id="values-title" class="mohni-display">Care you can feel.</h2>
         </div>
         <div class="mohni-values__grid">

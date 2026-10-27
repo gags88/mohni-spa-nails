@@ -211,7 +211,7 @@ jobs:
             https://mohnispanails.com/modern/preview \
             --output "$LOGIN_PAGE"
 
-          if ! grep -q 'Private website preview' "$LOGIN_PAGE"; then
+          if ! grep -q 'Mohni Nail and Spa website' "$LOGIN_PAGE"; then
             echo '::error::The modern preview login page did not render correctly.'
             exit 1
           fi
