@@ -1,284 +1,121 @@
 @extends('layout.app')
 
-@section('title', 'Services - Laser Hair Removal | ' .app_name() . ' in Winnipeg, Manitoba')
+@section('title', 'Laser Hair Removal in Winnipeg | ' . app_name())
 @section('website_meta')
-<meta name="description" content="Mohni Nails Spa">
-<meta name="keywords" content="Nails Spa">
-<meta name="author" content="<?php echo app_name(); ?>">
+<meta name="description" content="Comfort-focused Soprano ICE Platinum laser hair removal in St. Boniface, Winnipeg. Explore treatment details and area-by-area pricing.">
+<meta name="keywords" content="laser hair removal Winnipeg, Soprano ICE Platinum, laser pricing Winnipeg">
+<meta name="author" content="{{ app_name() }}">
 @endsection
+
 @section('content')
-<div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="mh-innerbanner-area">
-                    <div class="mh-bannarheading">
-                        <h1>Services</h1>
-                    </div>
-                    <ul class="list-unstyled mh-breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li>Laser Hair Removal</li>
-                    </ul>
-                </div>
+<section class="mohni-service-hero" aria-labelledby="laser-title">
+    <img src="/images/hero/laser-luxury-hero.webp" alt="Comfortable laser hair removal treatment at Mohni Spa & Nails">
+    <div class="mohni-service-hero__veil" aria-hidden="true"></div>
+    <div class="container mohni-service-hero__container">
+        <div class="mohni-service-hero__content">
+            <p class="mohni-eyebrow">Our signature treatment</p>
+            <h1 id="laser-title">Laser hair removal,<br>beautifully considered.</h1>
+            <p>Advanced Soprano ICE Platinum technology with a calm, personal approach to every consultation and treatment.</p>
+            <div class="mohni-inline-actions">
+                <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book a consultation</a>
+                <a href="#laser-pricing" class="mohni-text-link">View pricing <span aria-hidden="true">&darr;</span></a>
             </div>
         </div>
     </div>
-</div>
-<section id="mh-paradisecenter" class="mh-paradisecenter mh-sectionspace mh-haslayout mb-20 service">
+</section>
+
+<section class="mohni-laser-intro mohni-section">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12">
-                <div class="mh-sectionhead mh-postdetails">
-                    <div class="mh-sectiontitle">
-                        <h2><span>{{ app_name() }}</span>
-                            Laser Hair Removal
-                        </h2>
-                    </div>
-                </div>
+        <div class="mohni-laser-intro__grid">
+            <div>
+                <p class="mohni-eyebrow">Soprano ICE Platinum</p>
+                <h2 class="mohni-display">A smoother routine starts with a more comfortable treatment.</h2>
+            </div>
+            <div class="mohni-laser-intro__copy">
+                <p>Soprano ICE Platinum uses in-motion technology to gradually heat the treatment area while its sapphire tip cools the skin. The approach is designed to make laser hair removal efficient and comfortable across a broad range of skin tones.</p>
+                <p>Your journey begins with a consultation. We will discuss your goals, treatment areas, skin and hair profile, preparation and the timing that makes sense for you.</p>
             </div>
         </div>
-        <div class="row mh-headcontent text-left mb-20">
-            <div class="col-sm-5">
-                <img src="/images/services/laser-hair-removal.png" class="mh-border img-responsive mb-20">
+        <div class="mohni-laser-benefits">
+            <article><span>01</span><h3>Comfort focused</h3><p>Continuous movement and contact cooling help create a gentler experience.</p></article>
+            <article><span>02</span><h3>Personal plan</h3><p>Timing and treatment areas are tailored during your consultation.</p></article>
+            <article><span>03</span><h3>All-season confidence</h3><p>A practical path away from the constant cycle of shaving and waxing.</p></article>
+        </div>
+    </div>
+</section>
+
+@php
+    $laserPricing = [
+        'Face & Neck' => [
+            ['Upper Lip', '$69+'], ['Upper Lip + Chin', '$115+'], ['Cheeks', '$80+'],
+            ['Neck', '$75+'], ['Sideburns', '$75+'], ['Ears', '$50+'],
+            ['Uni-brow', '$50+'], ['Full Face', '$150+'],
+        ],
+        'Upper Body' => [
+            ['Fingers + Toes', '$50+'], ['Underarms', '$99+'], ['Half Arms', '$150+'],
+            ['Shoulders', '$99+'], ['Full Arms', '$199+'], ['Areolas', '$75+'],
+            ['Stomach', '$125+'], ['Chest', '$150+'],
+        ],
+        'Back & Lower Body' => [
+            ['Upper Back', '$125+'], ['Lower Back', '$125+'], ['Full Back', '$199+'],
+            ['Full Chest + Full Back', '$299+'], ['Bikini Line', '$125+'], ['Buttocks', '$125+'],
+            ['Full Brazilian', '$175+'], ['Upper Legs', '$225+'], ['Lower Legs', '$175+'],
+            ['Full Legs', '$299+'],
+        ],
+    ];
+@endphp
+
+<section id="laser-pricing" class="mohni-pricing mohni-section" aria-labelledby="pricing-title">
+    <div class="container">
+        <div class="mohni-heading-row">
+            <div>
+                <p class="mohni-eyebrow">Simple &amp; transparent</p>
+                <h2 id="pricing-title" class="mohni-display">Laser pricing.</h2>
             </div>
-            <div class="col-sm-7 mh-description">
-                <div class="mb-20 txt-holder">
-                    <div class="mb-20">We offer a technologically advanced treatment using <strong>Soprano ICE Platinum.</strong></div>
-                    <div>Tired of constantly shaving, tweezing or waxing? Laser hair removal is the most quick, effective, and pain-free solution to getting rid of unwanted hair! <b>Mohni Spa</b> uses the Soprano Ice Platinum from Alma Lasers. Alma Laser's hair removal technology is of the highest quality equipment and is the worlds most advanced laser hair removal treatment available today!</div>
-                    <div class="mt-20">The Soprano ICE Platinum is used by advanced hair removal clinics and leading physicians world-wide and represents a new era of laser hair removal technologies and treatment methods that is safe, non-invasive, and relatively pain free for permanent hair reduction on all areas of the body and all skin types. This unique SHR motion technology effectively provides a "Pain-Free, Hair-Free" experience.</div>
-                </div>
+            <div class="mohni-pricing__offer">
+                <strong>Package of 6</strong>
+                <span>Receive 25% off</span>
             </div>
         </div>
-        <div class="row mh-headcontent mh-bg text-left mh-postdetails">
-            <div class="col-sm-12 pt-20">
-                <b>How it works?</b>
-                <div class="mh-post txt-holder mh-description">
-                    <div class="mb-20">Laser hair removal works by targeting hair follicles. The laser goes from light energy to heat energy as soon as it finds a root, which quickly destroys the base of the targeted hair follicles. Once the root dies, it loses its ability to produce hair. The leftover hair will then fall from the root base.</div>
-                    <div class="mb-20">It takes a minimum of six treatments in to see long-lasting results, and treatments are spaced out a minimum of four weeks apart. Although you require several treatments for long-lasting results, you will see a difference with just one treatment. The reason for the monthly appointments is to ensure you are targeting all hair follicles in each stage of growth. Your medical esthetician will go through a thorough consultation to ensure you are spacing out your treatments correctly according to several factors, such as health history.</div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-10 mh-headcontent text-left mh-postdetails">
-            <div class="col-sm-12">
-                <b>How to Prepare?</b>
-                <div class="mh-post mh-description">
-                    <div class="txt-holder">When it comes to laser hair removal there's very little needed in terms of preparation, and we will be able to answer your questions during a consultation. That said, there are some things we may recommend to you before you come in for your treatment.</div>
-                    <ul class="txt-holder list-unstyled mh-treatmentlist">
-                        <li>Avoid Waxing</li>
-                        <li>Shave before 24 hours</li>
-                        <li>Clean your skin without lotion or creams</li>
-                        <li>Take extra good care of your skin</li>
+        <div class="mohni-pricing__grid">
+            @foreach ($laserPricing as $group => $items)
+                <section class="mohni-price-card" aria-labelledby="price-{{ Str::slug($group) }}">
+                    <h3 id="price-{{ Str::slug($group) }}">{{ $group }}</h3>
+                    <ul class="list-unstyled">
+                        @foreach ($items as [$name, $price])
+                            <li><span>{{ $name }}</span><strong>{{ $price }}</strong></li>
+                        @endforeach
                     </ul>
-                </div>
-            </div>
+                </section>
+            @endforeach
         </div>
-        <div class="row mt-10 mh-headcontent mh-bg text-left mh-postdetails">
-            <div class="col-sm-12 pt-20">
-                <b>Treatment</b>
-                <div class="mh-post mh-description">
-                    <div class="mb-10 txt-holder">During a consultation, we will make sure this treatment is a good fit for your needs. After that, we can schedule an appointment. Before we start, you'll be able to point out the exact areas you'd like treated. Your comfort is a top priority for us, so we will be happy to answer any questions you have and guide you through each step of the process.</div>
-                    <div class="mb-10 txt-holder">After you put on special provided eyewear, we'll start the laser treatment. How long it takes will depend on what part of the body is being treated.</div>
-                </div>
+        <p class="mohni-pricing__note">Prices shown are starting prices per session and may change without notice. Your consultation will confirm treatment areas, timing and exact pricing.</p>
+    </div>
+</section>
+
+<section class="mohni-process mohni-section" aria-labelledby="process-title">
+    <div class="container">
+        <div class="mohni-process__grid">
+            <div>
+                <p class="mohni-eyebrow">Your treatment journey</p>
+                <h2 id="process-title" class="mohni-display">Know what to expect.</h2>
+                <p>Most treatment plans involve a series of appointments spaced around the hair-growth cycle. We will guide you through the details at every step.</p>
             </div>
+            <ol class="mohni-process__steps">
+                <li><span>01</span><div><h3>Consult</h3><p>We review your goals, health history, skin and hair profile, then create your plan.</p></div></li>
+                <li><span>02</span><div><h3>Prepare</h3><p>Avoid waxing, shave the area about 24 hours before, and arrive with clean, product-free skin.</p></div></li>
+                <li><span>03</span><div><h3>Treat &amp; care</h3><p>We keep you comfortable during treatment and explain the aftercare for your skin.</p></div></li>
+            </ol>
         </div>
-        <div class="row mt-10 mh-headcontent text-left mh-postdetails">
-            <div class="col-sm-12">
-                <b>Benefits</b>
-                <div class="mh-post mh-description">
-                    <ul class="txt-holder list-unstyled mh-treatmentlist">
-                        <li>Reduces hair growth by up to 30% after the first treatment.</li>
-                        <li>Requires less treatments than outdated machines.</li>
-                        <li>Safe and permanent results.</li>
-                        <li>Safe for all skin types, works with thick & thin hair.</li>
-                        <li>3 times faster and more accurate than current IPL laser treatments.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-10 mh-headcontent text-left mh-bg mh-postdetails">
-            <div class="col-sm-12 pt-20">
-                <b>Results</b>
-                <div class="mh-post mh-description">
-                    <div class="mb-10 txt-holder">After your treatment series, you'll be able to enjoy freedom from constantly having to shave, wax, and pluck.</div>
-                    <div class="mb-10 txt-holder">We believe everyone should feel confident in and love their bodies, but for those who have unwanted hair, this treatment can give them a boost of confidence and a long-desired break from the tedious chore that hair grooming so often becomes.</div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-10 mh-headcontent text-left mh-postdetails">
-            <div class="col-sm-12 pt-20">
-                <b>WHY DID MOHNI SPA CHOOSE THE SOPRANO TECHNOLOGY?</b>
-                <div class="mh-post mh-description">
-                    <div class="mb-10 mt-10 txt-holder">Unlike some commonly used laser technologies in the market, the diode laser is an IN-Motion technology meaning its never on one spot for too long. It gradually heats up the hair follicles as its constantly moving over the treatment area.</div>
-                    <div class="mb-10 txt-holder">The great thing about the Soprano lasers is the ICE™ cooling technology, which cools the skin during the treatment. The ICE™ cold sapphire tip minimizes the risk of burns on the skin surface while maintaining heat within the dermis where hair follicles are treated. This increases patient comfort, making treatments more enjoyable than ever before.</div>
-                </div>
-            </div>
-        </div>
-        @include('pages.services.why-soprano-laser')
-        <div class="row">
-            <div class="col-xs-12">
-                <hr />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
-            </div>
-        </div>
-        <div class="col-sm-12 video-container mt-20 hide">
-            <!--<iframe width="560" height="200" src="https://www.youtube.com/embed/MBk0Q670LXE?si=uBpzjsi1oGg4jD93" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <hr />
-            </div>
-        </div>
-        <div class="mh-headcontent mh-postdetails hide">
-            <div class="row mb-20">
-                <div class="col-xs-12">
-                    <h2 class="font-arizonia no-underline">Price List</h2>
-                    <i>When purchased in a package of 6, get extra <span class="font-arizonia f-24">25% off</span></i>
-                </div>
-            </div>
-            <div class="mh-post text-left">
-                <div class="mh-pricelist mb-20">
-                    <ul class="txt-holder list-unstyled mt-10 col-sm-6">
-                        <li class="sub-item-service">
-                            <span class="name">Upper Lips</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$69.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Upper Lips + Chin</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$115.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Cheeks(Male)</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$80.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Neck</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$75.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Side Burns</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$75.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Ears</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$50.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Uni-brow</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$50.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full Face</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$150.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Fingers+Toes</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$50.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Under Arms</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$99.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Half Arms</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$150.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Shoulders</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$99.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full Arms</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$199.00+<sup>*</sup>--}}</span>
-                        </li>
-                    </ul>
-                    <ul class="txt-holder list-unstyled mt-10 col-sm-6">
-                        <li class="sub-item-service">
-                            <span class="name">Areolas</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$75.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Stomach</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$125.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Chest</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$150.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Upper Back</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$125.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Lower Back</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$125.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full Back</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$199.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full Chest+Full Back</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$299.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Bikini Line(Female)</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$125.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Buttocks(Female)</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$125.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full Brazilian(Female)</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$175.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Upper Legs</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$225.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Lower Legs</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$175.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full Legs</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$299.00+<sup>*</sup>--}}</span>
-                        </li>
-                    </ul>
-                </div>
-                {{--<small><sup>*</sup><i>Prices subject to change without notice.</i></small>--}}
-            </div>
-        </div>
+    </div>
+</section>
+
+<section class="mohni-laser-cta">
+    <div class="container">
+        <p class="mohni-eyebrow">Ready when you are</p>
+        <h2>Begin with a complimentary consultation.</h2>
+        <p>Ask questions, explore the right areas and leave with a plan designed for you.</p>
+        <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book your consultation</a>
     </div>
 </section>
 @endsection

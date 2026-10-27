@@ -123,13 +123,16 @@ jQuery(document).on("ready", function () {
 	-------------------------------------- */
     $("#mh-homeslider3").owlCarousel({
         items: 1,
+        startPosition: 0,
         nav: true,
         loop: true,
         dots: false,
         autoplay: true,
         autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        smartSpeed: 850,
         mouseDrag: true,
-        touchDrag: false,
+        touchDrag: true,
         dotsClass: "mh-sliderdots",
         navClass: ["mh-prev", "mh-next"],
         navContainerClass: "mh-slidernav",
@@ -272,17 +275,30 @@ jQuery(document).on("ready", function () {
 			TESTIMONIALS SLIDER
 	-------------------------------------- */
     $("#mh-testimonialslider").owlCarousel({
-        items: 1,
+        items: 2,
         nav: false,
         loop: true,
         dots: true,
         autoplay: true,
-        margin: 20,
-        center: true,
-        mouseDrag: false,
-        smartSpeed: 200,
-        slideSpeed: 500,
+        autoplayTimeout: 4500,
+        autoplayHoverPause: true,
+        margin: 24,
+        center: false,
+        mouseDrag: true,
+        touchDrag: true,
+        smartSpeed: 700,
+        slideSpeed: 700,
         dotsClass: "mh-sliderdots",
+        responsive: {
+            0: {
+                items: 1,
+                slideBy: 1,
+            },
+            768: {
+                items: 2,
+                slideBy: 2,
+            },
+        },
     });
     // function testimonialsSlider() {
     //     var sync1 = $("#mh-testimonialslider");

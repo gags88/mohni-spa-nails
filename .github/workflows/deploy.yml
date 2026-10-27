@@ -1,4 +1,4 @@
-name: Deploy to Hostinger
+name: Deploy Modern Preview to Hostinger
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: mohni-production-deploy
+  group: mohni-modern-preview-deploy
   cancel-in-progress: false
 
 jobs:
@@ -86,7 +86,7 @@ jobs:
             u464987102@147.93.23.145 \
             'echo "SSH authentication successful"'
 
-      - name: Sync application to Hostinger
+      - name: Sync modern preview application to Hostinger
         run: |
           rsync -avz --delete \
             -e "ssh -i $HOSTINGER_KEY -p 65002 -o BatchMode=yes -o UserKnownHostsFile=$HOSTINGER_KNOWN_HOSTS" \
@@ -102,7 +102,9 @@ jobs:
             --exclude='storage/logs/' \
             --exclude='public/image/' \
             --exclude='public/storage' \
-            ./ u464987102@147.93.23.145:/home/u464987102/domains/mohnispanails.com/mohnispanails/
+            --exclude='website-pdf/' \
+            --exclude='website-screenshots/' \
+            ./ u464987102@147.93.23.145:/home/u464987102/domains/mohnispanails.com/mohnispanails-modern/
 
       - name: Run post-deploy commands
         run: |
@@ -115,15 +117,24 @@ jobs:
           set -euo pipefail
 
           PHP=/opt/alt/php83/usr/bin/php
-          APP_ROOT=/home/u464987102/domains/mohnispanails.com/mohnispanails
+          SOURCE_APP_ROOT=/home/u464987102/domains/mohnispanails.com/mohnispanails
+          APP_ROOT=/home/u464987102/domains/mohnispanails.com/mohnispanails-modern
           WEB_ROOT=/home/u464987102/domains/mohnispanails.com/public_html
+          MODERN_PUBLIC="$WEB_ROOT/modern"
 
           cd "$APP_ROOT"
 
           if [ ! -f "$APP_ROOT/.env" ]; then
-            echo 'Production .env is missing; deployment cannot continue.' >&2
-            exit 1
+            if [ ! -f "$SOURCE_APP_ROOT/.env" ]; then
+              echo 'Source production .env is missing; deployment cannot continue.' >&2
+              exit 1
+            fi
+
+            cp "$SOURCE_APP_ROOT/.env" "$APP_ROOT/.env"
           fi
+
+          "$PHP" scripts/configure_modern_preview.php "$APP_ROOT/.env"
+          chmod 600 "$APP_ROOT/.env"
 
           mkdir -p \
             "$APP_ROOT/bootstrap/cache" \
@@ -156,31 +167,37 @@ jobs:
             ln -s "$APP_ROOT/storage/app/public" "$STORAGE_LINK"
           fi
 
-          # Preserve images uploaded by the legacy banner manager before the
-          # first conversion of public_html into a symlink.
-          if [ -d "$WEB_ROOT/image" ] && [ ! -L "$WEB_ROOT" ]; then
-            mkdir -p "$APP_ROOT/public/image"
-            cp -a "$WEB_ROOT/image/." "$APP_ROOT/public/image/"
-          fi
-
-          if [ -L "$WEB_ROOT" ]; then
-            ln -sfn "$APP_ROOT/public" "$WEB_ROOT"
-          elif [ -d "$WEB_ROOT" ]; then
-            BACKUP_PATH="${WEB_ROOT}_backup_$(date +%Y%m%d_%H%M%S)"
-            mv "$WEB_ROOT" "$BACKUP_PATH"
-            ln -s "$APP_ROOT/public" "$WEB_ROOT"
-            echo "Existing public_html moved to: $BACKUP_PATH"
-          elif [ -e "$WEB_ROOT" ]; then
-            BACKUP_PATH="${WEB_ROOT}_backup_$(date +%Y%m%d_%H%M%S)"
-            mv "$WEB_ROOT" "$BACKUP_PATH"
-            ln -s "$APP_ROOT/public" "$WEB_ROOT"
-            echo "Existing public_html file moved to: $BACKUP_PATH"
+          if [ -L "$MODERN_PUBLIC" ]; then
+            ln -sfn "$APP_ROOT/public" "$MODERN_PUBLIC"
+          elif [ -e "$MODERN_PUBLIC" ]; then
+            BACKUP_PATH="${MODERN_PUBLIC}_backup_$(date +%Y%m%d_%H%M%S)"
+            mv "$MODERN_PUBLIC" "$BACKUP_PATH"
+            ln -s "$APP_ROOT/public" "$MODERN_PUBLIC"
+            echo "Existing modern preview moved to: $BACKUP_PATH"
           else
-            ln -s "$APP_ROOT/public" "$WEB_ROOT"
+            ln -s "$APP_ROOT/public" "$MODERN_PUBLIC"
           fi
 
-          echo 'Deployment complete.'
+          echo 'Modern preview deployment complete.'
           REMOTE_SCRIPT
 
-      - name: Verify production website
-        run: curl --fail --silent --show-error --max-time 30 https://mohnispanails.com/ > /dev/null
+      - name: Verify password-protected modern preview
+        run: |
+          LOGIN_PAGE="$RUNNER_TEMP/modern-preview-login.html"
+          PREVIEW_URL="https://mohnispanails.com/modern/?deployment=$GITHUB_SHA"
+
+          STATUS=$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \
+            "$PREVIEW_URL")
+          if [ "$STATUS" != '302' ]; then
+            echo "::error::Expected unauthenticated /modern/ to return 302, received $STATUS."
+            exit 1
+          fi
+
+          curl --fail --silent --show-error \
+            https://mohnispanails.com/modern/preview \
+            --output "$LOGIN_PAGE"
+
+          if ! grep -q 'Private website preview' "$LOGIN_PAGE"; then
+            echo '::error::The modern preview login page did not render correctly.'
+            exit 1
+          fi

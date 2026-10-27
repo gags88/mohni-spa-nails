@@ -225,3 +225,1087 @@ select:focus,
         background: var(--mohni-charcoal);
     }
 }
+
+/* Refined editorial experience */
+:root {
+    --mohni-ivory: #f6f1e9;
+    --mohni-white: #fffdf9;
+    --mohni-stone: #ddd4c7;
+    --mohni-sand: #cbbba5;
+    --mohni-champagne: #b9a17e;
+    --mohni-champagne-dark: #8b7455;
+    --mohni-sage: #8b958a;
+    --mohni-sage-dark: #59645c;
+    --mohni-charcoal: #262722;
+    --mohni-espresso: #554c43;
+    --mohni-copy: #65625d;
+}
+
+body {
+    color: var(--mohni-copy);
+    background: var(--mohni-white);
+    font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mh-topbar {
+    background: #6b6158;
+}
+
+.mh-sliderbar {
+    color: #4d4842;
+    background: #ebe3d7;
+    border-bottom-color: #ddd1c1;
+}
+
+.mh-navigationarea {
+    border-bottom: 1px solid rgba(85, 76, 67, 0.1);
+}
+
+.mh-navigation > ul > li > a {
+    font-size: 12px;
+    letter-spacing: 0.11em;
+}
+
+.mh-navigation > ul > li.mohni-nav-book > a {
+    color: #fffdf9;
+    background: var(--mohni-sage-dark);
+    padding: 12px 20px;
+    margin: -12px 0;
+}
+
+.mh-navigation > ul > li.mohni-nav-book:hover > a {
+    color: #fffdf9;
+    background: #465048;
+}
+
+.mh-btn {
+    min-width: 190px;
+    height: 48px;
+    padding: 0 28px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 46px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    box-shadow: none;
+}
+
+.mh-btn:hover,
+.mh-btn:focus {
+    color: #fffdf9;
+    background: var(--mohni-sage-dark);
+    border-color: var(--mohni-sage-dark);
+    box-shadow: none;
+}
+
+.mohni-section {
+    float: left;
+    width: 100%;
+    padding: 110px 0;
+}
+
+.mohni-eyebrow {
+    margin: 0 0 20px;
+    color: var(--mohni-champagne-dark);
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.mohni-display {
+    margin: 0;
+    color: var(--mohni-charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.04;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+}
+
+.mohni-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 5px;
+    color: var(--mohni-charcoal);
+    border-bottom: 1px solid rgba(38, 39, 34, 0.35);
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.mohni-text-link:hover,
+.mohni-text-link:focus {
+    color: var(--mohni-sage-dark);
+    border-color: var(--mohni-sage-dark);
+}
+
+.mohni-hero-stage {
+    position: relative;
+    float: left;
+    width: 100%;
+    background: #eae0d2;
+}
+
+.mohni-hero-slider {
+    float: left;
+    width: 100%;
+}
+
+.mohni-hero {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 720px;
+    overflow: hidden;
+    background: #eae0d2;
+}
+
+.mohni-hero-slider .owl-stage-outer,
+.mohni-hero-slider .owl-stage,
+.mohni-hero-slider .owl-item {
+    min-height: 720px;
+}
+
+.mohni-hero-slider .owl-item .mohni-hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.mohni-hero-slider .mh-slidernav {
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+    pointer-events: none;
+}
+
+.mohni-hero-slider .mh-prev,
+.mohni-hero-slider .mh-next {
+    top: 43%;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: var(--mohni-charcoal);
+    line-height: 44px;
+    background: rgba(255, 253, 249, 0.82);
+    border: 1px solid rgba(85, 76, 67, 0.16);
+    box-shadow: 0 8px 25px rgba(70, 62, 54, 0.1);
+    backdrop-filter: blur(8px);
+    pointer-events: auto;
+}
+
+.mohni-hero-slider .mh-prev:hover,
+.mohni-hero-slider .mh-next:hover {
+    color: #fff;
+    background: var(--mohni-sage-dark);
+    border-color: var(--mohni-sage-dark);
+}
+
+.mohni-hero__image,
+.mohni-service-hero > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.mohni-hero__veil,
+.mohni-service-hero__veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(249, 246, 240, 0.98) 0%, rgba(249, 246, 240, 0.9) 30%, rgba(249, 246, 240, 0.25) 58%, rgba(249, 246, 240, 0) 75%);
+}
+
+.mohni-hero__container {
+    position: relative;
+    z-index: 2;
+    min-height: 630px;
+    display: flex;
+    align-items: center;
+}
+
+.mohni-hero__content {
+    width: 49%;
+    max-width: 610px;
+    padding: 65px 0 80px;
+}
+
+.mohni-hero__content h1,
+.mohni-service-hero__content h1 {
+    margin: 0 0 26px;
+    color: var(--mohni-charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(54px, 6.5vw, 88px);
+    line-height: 0.98;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+}
+
+.mohni-hero__lead {
+    max-width: 500px;
+    margin-bottom: 34px;
+    color: #55534f;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.mohni-hero__actions,
+.mohni-inline-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.mohni-hero__details {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 253, 249, 0.92);
+    border-top: 1px solid rgba(85, 76, 67, 0.1);
+    backdrop-filter: blur(12px);
+}
+
+.mohni-hero__facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+}
+
+.mohni-hero__facts li {
+    padding: 28px 34px;
+    color: #4f4d48;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    border-left: 1px solid rgba(85, 76, 67, 0.12);
+}
+
+.mohni-hero__facts li:last-child {
+    border-right: 1px solid rgba(85, 76, 67, 0.12);
+}
+
+.mohni-hero__facts span {
+    margin-right: 14px;
+    color: var(--mohni-champagne-dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.mohni-intro {
+    background: var(--mohni-white);
+}
+
+.mohni-intro__grid,
+.mohni-laser-intro__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 10vw;
+    align-items: end;
+}
+
+.mohni-intro__copy,
+.mohni-laser-intro__copy {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.mohni-intro__copy p,
+.mohni-laser-intro__copy p {
+    margin-bottom: 28px;
+}
+
+.mohni-services {
+    background: #eee8df;
+}
+
+.mohni-heading-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 70px;
+    margin-bottom: 60px;
+}
+
+.mohni-heading-row > p {
+    max-width: 420px;
+    margin: 0 0 6px;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.mohni-service-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.mohni-service-card {
+    position: relative;
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 12px 12px 28px;
+    overflow: hidden;
+    color: var(--mohni-charcoal);
+    background: rgba(255, 253, 249, 0.86);
+    border: 1px solid rgba(85, 76, 67, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 18px 45px rgba(70, 62, 54, 0.06);
+    transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.mohni-service-card--featured {
+    grid-column: span 8;
+}
+
+.mohni-service-card img {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 22px;
+    filter: saturate(0.72) contrast(0.97);
+    transform: scale(1);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.mohni-service-card__shade {
+    display: none;
+}
+
+.mohni-service-card__content {
+    position: static;
+    z-index: auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 26px 16px 0;
+}
+
+.mohni-service-card small,
+.mohni-service-card strong,
+.mohni-service-card em {
+    display: block;
+    color: var(--mohni-charcoal);
+}
+
+.mohni-service-card small {
+    margin-bottom: 12px;
+    color: var(--mohni-champagne-dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.mohni-service-card strong {
+    color: var(--mohni-charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 400;
+}
+
+.mohni-service-card em {
+    max-height: none;
+    margin-top: 22px;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.72;
+    transition: color 0.35s ease, opacity 0.35s ease;
+}
+
+.mohni-service-card:hover,
+.mohni-service-card:focus {
+    color: var(--mohni-charcoal);
+    border-color: rgba(139, 116, 85, 0.28);
+    box-shadow: 0 24px 60px rgba(70, 62, 54, 0.12);
+    transform: translateY(-6px);
+}
+
+.mohni-service-card:focus-visible {
+    outline: 2px solid var(--mohni-champagne-dark);
+    outline-offset: 4px;
+}
+
+.mohni-service-card:hover img,
+.mohni-service-card:focus img {
+    filter: saturate(0.88) contrast(1);
+    transform: scale(1.025);
+}
+
+.mohni-service-card:hover em,
+.mohni-service-card:focus em {
+    color: var(--mohni-sage-dark);
+    opacity: 1;
+}
+
+.mohni-laser-feature {
+    background: var(--mohni-white);
+}
+
+.mohni-laser-feature__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 8vw;
+    align-items: center;
+}
+
+.mohni-laser-feature__image {
+    position: relative;
+    min-height: 610px;
+    margin: 0;
+    overflow: hidden;
+    background: var(--mohni-ivory);
+}
+
+.mohni-laser-feature__image:after {
+    position: absolute;
+    content: "";
+    inset: 20px;
+    border: 1px solid rgba(255, 253, 249, 0.72);
+    pointer-events: none;
+}
+
+.mohni-laser-feature__image img {
+    width: 100%;
+    height: 610px;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.72);
+    image-rendering: auto;
+}
+
+.mohni-laser-feature__content > p:not(.mohni-eyebrow) {
+    margin: 28px 0;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.mohni-checklist {
+    margin: 0 0 36px;
+}
+
+.mohni-checklist li {
+    position: relative;
+    padding: 14px 0 14px 28px;
+    color: #4c4b46;
+    border-bottom: 1px solid rgba(85, 76, 67, 0.12);
+}
+
+.mohni-checklist li:before {
+    position: absolute;
+    left: 0;
+    content: "\2014";
+    color: var(--mohni-champagne-dark);
+}
+
+.mohni-values {
+    padding-top: 90px;
+    background: #e5ddd1;
+}
+
+.mohni-values__heading {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.mohni-values__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(85, 76, 67, 0.18);
+    border-bottom: 1px solid rgba(85, 76, 67, 0.18);
+}
+
+.mohni-values__grid article {
+    min-height: 260px;
+    padding: 42px 32px;
+    border-left: 1px solid rgba(85, 76, 67, 0.18);
+}
+
+.mohni-values__grid article:last-child {
+    border-right: 1px solid rgba(85, 76, 67, 0.18);
+}
+
+.mohni-values__grid span,
+.mohni-laser-benefits span,
+.mohni-process__steps > li > span {
+    color: var(--mohni-champagne-dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.mohni-values__grid h3,
+.mohni-laser-benefits h3,
+.mohni-process__steps h3 {
+    margin: 42px 0 14px;
+    color: var(--mohni-charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.mohni-values__grid p,
+.mohni-laser-benefits p,
+.mohni-process__steps p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+#mh-testimonial.mohni-testimonials {
+    background: #f7f3ed !important;
+    background-image: none !important;
+}
+
+.mohni-heading-row--testimonials {
+    margin-bottom: 54px;
+}
+
+.mohni-testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.mohni-testimonial-grid.owl-carousel {
+    display: block;
+    visibility: hidden;
+}
+
+.mohni-testimonial-grid.owl-carousel.owl-loaded {
+    visibility: visible;
+}
+
+.mohni-testimonial-grid .owl-stage {
+    display: flex;
+}
+
+.mohni-testimonial-grid .owl-item {
+    display: flex;
+    height: auto;
+}
+
+.mohni-testimonial-grid .owl-item blockquote {
+    width: 100%;
+}
+
+.mohni-testimonial-grid .mh-sliderdots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin: 36px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mohni-testimonial-grid .mh-sliderdots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    overflow: hidden;
+    color: transparent;
+    background: #cec4b7;
+    border: 0;
+    border-radius: 50%;
+}
+
+.mohni-testimonial-grid .mh-sliderdots .active button {
+    background: var(--mohni-sage-dark);
+}
+
+.mohni-testimonial-grid blockquote {
+    position: relative;
+    min-height: 360px;
+    margin: 0;
+    padding: 50px 38px 38px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e1d8cc;
+    background: var(--mohni-white);
+}
+
+.mohni-quote-mark {
+    color: var(--mohni-champagne);
+    font-family: Georgia, serif;
+    font-size: 70px;
+    line-height: 0.65;
+}
+
+.mohni-testimonial-grid blockquote > p {
+    margin: 32px 0;
+    color: #4e4c47;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+.mohni-testimonial-grid footer {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid #e7dfd4;
+}
+
+.mohni-testimonial-grid footer strong,
+.mohni-testimonial-grid footer span {
+    display: block;
+}
+
+.mohni-testimonial-grid footer strong {
+    color: var(--mohni-charcoal);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mohni-testimonial-grid footer span {
+    margin-top: 6px;
+    color: #89837a;
+    font-size: 12px;
+}
+
+.mohni-service-hero {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 610px;
+    overflow: hidden;
+    background: #eae0d2;
+}
+
+.mohni-service-hero__container {
+    position: relative;
+    z-index: 2;
+    min-height: 610px;
+    display: flex;
+    align-items: center;
+}
+
+.mohni-service-hero__content {
+    width: 52%;
+    max-width: 650px;
+}
+
+.mohni-service-hero__content h1 {
+    font-size: clamp(48px, 5.5vw, 76px);
+}
+
+.mohni-service-hero__content > p:not(.mohni-eyebrow) {
+    max-width: 510px;
+    margin: 0 0 32px;
+    color: #55534f;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.mohni-laser-intro {
+    background: var(--mohni-white);
+}
+
+.mohni-laser-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 75px;
+    border-top: 1px solid #dfd6ca;
+    border-bottom: 1px solid #dfd6ca;
+}
+
+.mohni-laser-benefits article {
+    min-height: 230px;
+    padding: 36px 32px;
+    border-left: 1px solid #dfd6ca;
+}
+
+.mohni-laser-benefits article:last-child {
+    border-right: 1px solid #dfd6ca;
+}
+
+.mohni-laser-benefits h3 {
+    margin-top: 34px;
+}
+
+.mohni-pricing {
+    background: #eae3d9;
+}
+
+.mohni-pricing__offer {
+    min-width: 230px;
+    padding: 22px 26px;
+    color: #fff;
+    background: var(--mohni-sage-dark);
+}
+
+.mohni-pricing__offer strong,
+.mohni-pricing__offer span {
+    display: block;
+    color: #fff;
+}
+
+.mohni-pricing__offer strong {
+    margin-bottom: 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.mohni-pricing__offer span {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.mohni-pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.mohni-price-card {
+    padding: 38px 34px;
+    background: var(--mohni-white);
+    border: 1px solid rgba(85, 76, 67, 0.1);
+}
+
+.mohni-price-card h3 {
+    margin: 0 0 28px;
+    padding-bottom: 20px;
+    color: var(--mohni-charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    font-weight: 400;
+    border-bottom: 1px solid #ded5c9;
+}
+
+.mohni-price-card li {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 11px 0;
+    color: #5b5853;
+    border-bottom: 1px solid rgba(222, 213, 201, 0.7);
+}
+
+.mohni-price-card li:last-child {
+    border-bottom: 0;
+}
+
+.mohni-price-card li strong {
+    flex: 0 0 auto;
+    color: var(--mohni-charcoal);
+    font-weight: 600;
+}
+
+.mohni-pricing__note {
+    max-width: 820px;
+    margin: 28px 0 0;
+    color: #777168;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.mohni-process {
+    background: var(--mohni-white);
+}
+
+.mohni-process__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 10vw;
+}
+
+.mohni-process__grid > div > p:not(.mohni-eyebrow) {
+    margin-top: 28px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.mohni-process__steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #ddd5ca;
+}
+
+.mohni-process__steps li {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 25px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd5ca;
+}
+
+.mohni-process__steps h3 {
+    margin: 0 0 10px;
+}
+
+.mohni-laser-cta {
+    float: left;
+    width: 100%;
+    padding: 105px 20px;
+    text-align: center;
+    background: #ded6ca;
+}
+
+.mohni-laser-cta h2 {
+    max-width: 780px;
+    margin: 0 auto 20px;
+    color: var(--mohni-charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 4.5vw, 62px);
+    line-height: 1.08;
+    font-weight: 400;
+}
+
+.mohni-laser-cta > .container > p:not(.mohni-eyebrow) {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+@media (max-width: 991px) {
+    .mh-navigation > ul > li.mohni-nav-book > a {
+        margin: 0;
+        color: var(--mohni-charcoal);
+        background: var(--mohni-white);
+    }
+
+    .mohni-section {
+        padding: 80px 0;
+    }
+
+    .mohni-hero,
+    .mohni-hero__container,
+    .mohni-hero-slider .owl-stage-outer,
+    .mohni-hero-slider .owl-stage,
+    .mohni-hero-slider .owl-item {
+        min-height: 650px;
+    }
+
+    .mohni-hero__content,
+    .mohni-service-hero__content {
+        width: 65%;
+    }
+
+    .mohni-hero__facts li {
+        padding: 22px 16px;
+        font-size: 11px;
+    }
+
+    .mohni-service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mohni-service-card {
+        grid-column: span 1;
+    }
+
+    .mohni-service-card--featured {
+        grid-column: span 2;
+    }
+
+    .mohni-values__grid,
+    .mohni-pricing__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mohni-testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mohni-testimonial-grid blockquote {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .mohni-section {
+        padding: 68px 0;
+    }
+
+    .mohni-display {
+        font-size: 42px;
+    }
+
+    .mohni-hero,
+    .mohni-hero-slider .owl-stage-outer,
+    .mohni-hero-slider .owl-stage,
+    .mohni-hero-slider .owl-item {
+        min-height: 700px;
+    }
+
+    .mohni-hero__image,
+    .mohni-service-hero > img {
+        object-position: 68% center;
+    }
+
+    .mohni-hero__veil,
+    .mohni-service-hero__veil {
+        background: linear-gradient(90deg, rgba(249, 246, 240, 0.97) 0%, rgba(249, 246, 240, 0.87) 62%, rgba(249, 246, 240, 0.45) 100%);
+    }
+
+    .mohni-hero__container {
+        min-height: 565px;
+        align-items: flex-start;
+    }
+
+    .mohni-hero__content {
+        width: 88%;
+        padding-top: 80px;
+    }
+
+    .mohni-hero__content h1,
+    .mohni-service-hero__content h1 {
+        font-size: 48px;
+    }
+
+    .mohni-hero__lead {
+        font-size: 16px;
+    }
+
+    .mohni-hero__details {
+        position: absolute;
+    }
+
+    .mohni-hero__facts {
+        grid-template-columns: 1fr;
+        padding: 12px 0;
+    }
+
+    .mohni-hero__facts li,
+    .mohni-hero__facts li:last-child {
+        padding: 8px 20px;
+        border: 0;
+    }
+
+    .mohni-intro__grid,
+    .mohni-laser-intro__grid,
+    .mohni-laser-feature__grid,
+    .mohni-process__grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .mohni-heading-row {
+        display: block;
+        margin-bottom: 38px;
+    }
+
+    .mohni-heading-row > p,
+    .mohni-pricing__offer {
+        margin-top: 25px;
+    }
+
+    .mohni-service-grid,
+    .mohni-values__grid,
+    .mohni-laser-benefits,
+    .mohni-pricing__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mohni-testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mohni-service-card--featured {
+        grid-column: span 1;
+    }
+
+    .mohni-service-card {
+        grid-column: span 1;
+        min-height: 0;
+        border-radius: 24px;
+    }
+
+    .mohni-service-card em {
+        max-height: 30px;
+        margin-top: 18px;
+        opacity: 1;
+    }
+
+    .mohni-service-card img {
+        height: 280px;
+        border-radius: 17px;
+    }
+
+    .mohni-laser-feature__image,
+    .mohni-laser-feature__image img {
+        min-height: 430px;
+        height: 430px;
+    }
+
+    .mohni-values__grid article,
+    .mohni-values__grid article:last-child,
+    .mohni-laser-benefits article,
+    .mohni-laser-benefits article:last-child {
+        min-height: 0;
+        border-right: 1px solid rgba(85, 76, 67, 0.18);
+        border-bottom: 1px solid rgba(85, 76, 67, 0.18);
+    }
+
+    .mohni-service-hero,
+    .mohni-service-hero__container {
+        min-height: 610px;
+    }
+
+    .mohni-service-hero__content {
+        width: 92%;
+    }
+
+    .mohni-inline-actions,
+    .mohni-hero__actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mohni-price-card {
+        padding: 32px 25px;
+    }
+}
+
+@media (max-width: 420px) {
+    .mohni-hero__content h1,
+    .mohni-service-hero__content h1 {
+        font-size: 41px;
+    }
+
+    .mohni-hero__content {
+        width: 96%;
+    }
+
+    .mohni-hero__lead {
+        max-width: 90%;
+    }
+
+    .mohni-service-card__content {
+        padding: 23px 12px 0;
+    }
+}
+
+@media print {
+    a[href]::after,
+    abbr[title]::after {
+        content: none !important;
+    }
+
+    .mohni-hero-slider .mh-slidernav,
+    .mohni-testimonial-grid .mh-sliderdots {
+        display: none !important;
+    }
+}

@@ -1,324 +1,108 @@
 @extends('layout.app')
 
-@section('title', app_name() . ' in Winnipeg, Manitoba')
+@section('title', 'Laser Hair Removal & Spa Services in Winnipeg | ' . app_name())
 @section('website_meta')
-<meta name="description" content="Mohni Nails Spa">
-<meta name="keywords" content="Nails Spa">
-<meta name="author" content="<?php echo app_name(); ?>">
+<meta name="description" content="Luxury laser hair removal, skin, body and beauty treatments in St. Boniface, Winnipeg.">
+<meta name="keywords" content="laser hair removal Winnipeg, spa Winnipeg, facials, nails, massage">
+<meta name="author" content="{{ app_name() }}">
 @endsection
+
 @section('content')
 @include('includes.slider')
-<section id="mh-paradisecenter" class="mh-paradisecenter mh-sectionspace mh-haslayout">
+
+<section class="mohni-intro mohni-section">
     <div class="container">
-        @include('pages.about-content')
-        <!-- <div class="row">
-            <div class="col-xs-12 col-sm-12 col-sm-offset-0 col-md-8 col-md-offset-2">
-                <div class="mh-sectionhead mb-50">
-                    <div class="mh-sectiontitle">
-                        <h2><span>Welcome to</span>
-                            {{ app_name() }}
-                        </h2>
-                    </div>
-                    <div class="mh-headcontent">
-                        <div class="mh-description">
-                            <p>Mohni Spa & Nails has been in operation for numerous years. We offer full range of beauty, nail and spa services for women and men alike. Our Services include, but are not limited to Eyebrows, Tinting, Spa packages, and Facial packages including hydra facial and micro-derma facials, and Nail Care of various categories.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="mohni-intro__grid">
+            <div>
+                <p class="mohni-eyebrow">Quiet luxury. Thoughtful care.</p>
+                <h2 class="mohni-display">Modern treatments,<br>made personal.</h2>
             </div>
-            <div class="mh-paradisecenter-area mh-haslayout mh-headcontent">
-                <div class="col-xs-12 col-sm-6 col-md-7">
-                    <div class="mh-paradisecenterimgbox">
-                        <figure class="mh-paradiseimage">
-                            <img src="images/about.png" class="img-responsive">
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 mh-description">
-                    <div class="mh-sectiontitle">
-                        <h2><span>Our Values &amp; Mission</span>
-                        </h2>
-                    </div>
-                    <div class="mb-20">Our commitment at Mohni Spa and Nails is to provide each and every client with an exceptional experience, each and every time they visit us. We provide an Oasis away from the hustle and bustle of everyday life by creating an ambiance of true relaxation, calm, and serenity. We are able to provide this type of service by upholding the values of professionalism, sanitation, and world-class customer service.</div>
-                    <p>Our goal is to provide each and every client with the best service in the industry. We pride ourselves in our extraordinary customer service and use of high quality products and sterile equipment.</p>
-                </div>
+            <div class="mohni-intro__copy">
+                <p>Welcome to Mohni Spa &amp; Nails in the heart of St. Boniface. Our approach pairs advanced aesthetics with a warm, unhurried experience—so every visit feels considered from consultation to aftercare.</p>
+                <a href="/about" class="mohni-text-link">Our story <span aria-hidden="true">&rarr;</span></a>
             </div>
-            <div class="col-xs-12 col-sm-12 mt-20 text-center">
-                <a href="/about" class="mh-btn">Know More</a>
-            </div>
-        </div> -->
+        </div>
     </div>
 </section>
-<section id="mh-whychooseus" class="mh-whychooseus mh-sectionspace mh-bg mh-haslayout">
+
+<section id="mh-services" class="mohni-services mohni-section" aria-labelledby="services-title">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-sm-offset-0 col-md-8 col-md-offset-2">
-                <div class="mh-sectionhead mb-30">
-                    <div class="mh-sectiontitle">
-                        <h2><span>{{ app_name() }}</span>
-                            Why Choose Us
-                        </h2>
-                    </div>
-                </div>
+        <div class="mohni-heading-row">
+            <div>
+                <p class="mohni-eyebrow">Explore our care</p>
+                <h2 id="services-title" class="mohni-display">Services for skin,<br>body &amp; beauty.</h2>
             </div>
-            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-                <figure class="mh-whychooseus-img" style="margin-left: -12px">
-                    <img src="images/whyus.jpeg" alt="" style="max-width: 100%">
-                </figure>
-            </div>
-            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
-                <ul class="list-unstyled mh-paradiselist">
-                    <li class="mh-paradisecenterbox">
-                        <span class="mh-paradiseiconbox">
-                            <i class="ti-credit-card"></i>
-                        </span>
-                        <div class="mh-paradisecontent">
-                            <h3 class="mh-headingtree">Reasonable Costs</h3>
-                            <div class="mh-description">
-                                <p>We offer best services in locality at very reasonable costs.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="mh-paradisecenterbox">
-                        <span class="mh-paradiseiconbox">
-                            <i class="ti-user"></i>
-                        </span>
-                        <div class="mh-paradisecontent">
-                            <h3 class="mh-headingtree">Qualified Staff</h3>
-                            <div class="mh-description">
-                                <p>Our staff is highly knowledgable and equipped to provide you service.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="mh-paradisecenterbox">
-                        <span class="mh-paradiseiconbox">
-                            <i class="ti-face-smile"></i>
-                        </span>
-                        <div class="mh-paradisecontent">
-                            <h3 class="mh-headingtree">Relaxation Centric</h3>
-                            <div class="mh-description">
-                                <p>Located in quiet neighbourhood, you will experience a nice and calm environment.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="mh-paradisecenterbox mb-20">
-                        <span class="mh-paradiseiconbox">
-                            <i class="ti-heart-broken"></i>
-                        </span>
-                        <div class="mh-paradisecontent">
-                            <h3 class="mh-headingtree">Variety of services</h3>
-                            <div class="mh-description">
-                                <p>We offer many services according to your needs and provide expected results.</p>
-                            </div>
-                        </div>
-                    </li>
+            <p>From our signature laser program to restorative facials and finishing touches, find the treatment that meets you where you are.</p>
+        </div>
+
+        @php
+            $services = [
+                ['title' => 'Laser Hair Removal', 'label' => 'Our specialty', 'image' => '/images/hero/laser-luxury-hero.webp', 'url' => '/services/laser-hair-removal', 'featured' => true],
+                ['title' => 'Facials & HydraFacial', 'label' => 'Skin', 'image' => '/images/services/facial-service.JPG', 'url' => '/services/facials'],
+                ['title' => 'Microneedling', 'label' => 'Skin', 'image' => '/images/services/th-micro-needling.jpeg', 'url' => '/services/micro-needling'],
+                ['title' => 'Dermaplaning', 'label' => 'Skin', 'image' => '/images/services/th-dermaplaning.jpeg', 'url' => '/services/dermaplaning'],
+                ['title' => 'Body Treatments', 'label' => 'Body', 'image' => '/images/services/body-glow.jpeg', 'url' => '/services/body-treatments'],
+                ['title' => 'Massage', 'label' => 'Body', 'image' => '/images/services/hot_stone_massage.jpeg', 'url' => '/services/massage'],
+                ['title' => 'Waxing & Sugaring', 'label' => 'Hair removal', 'image' => '/images/services/waxing.JPG', 'url' => '/services/waxing'],
+                ['title' => 'Brows & Tinting', 'label' => 'Beauty', 'image' => '/images/services/threading_img.jpg', 'url' => '/services/threading'],
+                ['title' => 'Manicure & Pedicure', 'label' => 'Nails', 'image' => '/images/services/mani-pedi.JPG', 'url' => '/services/manicure-pedicure'],
+            ];
+        @endphp
+
+        <div class="mohni-service-grid">
+            @foreach ($services as $service)
+                <a href="{{ $service['url'] }}" class="mohni-service-card {{ !empty($service['featured']) ? 'mohni-service-card--featured' : '' }}">
+                    <img src="{{ $service['image'] }}" alt="{{ $service['title'] }} at Mohni Spa & Nails" loading="lazy">
+                    <span class="mohni-service-card__shade" aria-hidden="true"></span>
+                    <span class="mohni-service-card__content">
+                        <small>{{ $service['label'] }}</small>
+                        <strong>{{ $service['title'] }}</strong>
+                        <em>Discover <span aria-hidden="true">&rarr;</span></em>
+                    </span>
+                </a>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<section class="mohni-laser-feature mohni-section" aria-labelledby="laser-focus-title">
+    <div class="container">
+        <div class="mohni-laser-feature__grid">
+            <figure class="mohni-laser-feature__image">
+                <img src="/images/hero/laser-focus-treatment.webp" alt="Soprano ICE Platinum laser hair removal treatment" loading="lazy">
+            </figure>
+            <div class="mohni-laser-feature__content">
+                <p class="mohni-eyebrow">Our laser focus</p>
+                <h2 id="laser-focus-title" class="mohni-display">Comfort-led technology. Confidence-led results.</h2>
+                <p>Our Soprano ICE Platinum system combines gradual heating with continuous cooling for a treatment designed around comfort and suitable for a broad range of skin tones.</p>
+                <ul class="mohni-checklist list-unstyled">
+                    <li>Personal consultation before treatment</li>
+                    <li>In-motion technology and cooling comfort</li>
+                    <li>Clear area-by-area pricing</li>
                 </ul>
+                <div class="mohni-inline-actions">
+                    <a href="/services/laser-hair-removal#laser-pricing" class="mh-btn">View laser pricing</a>
+                    <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mohni-text-link">Book now <span aria-hidden="true">&rarr;</span></a>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section id="mh-services" class="mh-services v2 mh-sectionspace mh-haslayout">
+
+<section class="mohni-values mohni-section" aria-labelledby="values-title">
     <div class="container">
-        <div class="row">
-            <div class=" col-xs-12 col-sm-12 col-sm-offset-0 col-md-8 col-md-offset-2">
-                <div class="mh-sectionhead mb-50">
-                    <div class="mh-sectiontitle">
-                        <h2 class="text-capitalize"><span>Our</span>
-                            services
-                        </h2>
-                    </div>
-                </div>
-            </div>
-            <div id="mh-servicesslider" class="mh-servicesslider owl-carousel owl-theme mh-haslayout">
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="/images/services/laser.JPG"  alt="laser hair removal">
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Laser Hair Removal</h3>
-                            <div class="mh-description">
-                                <p>We offer a technologically advanced treatment using <strong>Soprano ICE Platinum</strong>.</p>
-                            </div>
-                            <a href="/services/laser-hair-removal" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/th-micro-needling.jpeg" alt="microneedling" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Microneedling</h3>
-                            <div class="mh-description">
-                                <p>Microneedling works by encouraging your skin to make more collagen.</p>
-                            </div>
-                            <a href="/services/micro-needling" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/th-laser-removal.png" alt="images description" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Hydra Facial</h3>
-                            <div class="mh-description">
-                                <p>Hydrafacial improves overall skin texture, tone, and appearance.</p>
-                                <br />
-                            </div>
-                            <a href="/services/facials" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/th-dermaplaning.jpeg" alt="images description" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Dermaplaning</h3>
-                            <div class="mh-description">
-                                <p>Dermaplaning aims to make your skin's surface smooth, youthful, and radiant.</p>
-                            </div>
-                            <a href="/services/dermaplaning" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/facial-service.JPG" alt="Facial" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Facials</h3>
-                            <div class="mh-description">
-                                <p>All our facial services includes including cleansing, exfoliation &amp; extractions.</p>
-                            </div>
-                            <a href="/services/facials" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/body-glow.jpeg" alt="Body treatments" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Body treatments</h3>
-                            <div class="mh-description">
-                                <p>We use authentic healing therapy &amp; powerful ingredients to nurture, restore your body &amp; senses.</p>
-                            </div>
-                            <a href="/services/body-treatments" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/hot_stone_massage.jpeg" alt="Massage" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Massage</h3>
-                            <div class="mh-description">
-                                <p>Massage therapy will overall enhance senses of emotional and physical well-being.</p>
-                            </div>
-                            <a href="/services/massage" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/makeup_grid1.jpeg" alt="Makeup" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Makeup</h3>
-                            <div class="mh-description">
-                                <p>Let your true beauty shine for all the world to see.</p>
-                                <br />
-                            </div>
-                            <a href="/services/makeup" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/threading_img.jpg" alt="threading" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Threading</h3>
-                            <div class="mh-description">
-                                <p>Ideal for any skin type, this ancient form of hair removal.</p>
-                                <br />
-                            </div>
-                            <a href="/services/threading" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/tinying_img.jpg" alt="tinting" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Tinting</h3>
-                            <div class="mh-description">
-                                <p>Tinting is a process to boost the natural colour of your brows.</p>
-                                <br />
-                            </div>
-                            <a href="/services/tinting" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/waxing.JPG" alt="Waxing" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Waxing</h3>
-                            <div class="mh-description">
-                                <p>Waxing is one of the most effective way to get your skin smooth and soft.</p>
-                            </div>
-                            <a href="/services/waxing" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/sugaring.PNG" alt="Sugaring" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Sugaring</h3>
-                            <div class="mh-description">
-                                <p>Sugaring, an ancient method, is another way to remove unwanted hair.</p>
-                            </div>
-                            <a href="/services/sugaring" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
-                            <img src="images/services/mani-pedi.JPG" alt="mani-pedi" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Manicure/Pedicure</h3>
-                            <div class="mh-description">
-                                <p>Our treatments will leave you feeling relaxed and rejuvenated during your time with us.</p>
-                            </div>
-                            <a href="/services/manicure-pedicure" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="mohni-values__heading">
+            <p class="mohni-eyebrow">The Mohni experience</p>
+            <h2 id="values-title" class="mohni-display">Care you can feel.</h2>
+        </div>
+        <div class="mohni-values__grid">
+            <article><span>01</span><h3>Personal attention</h3><p>Recommendations shaped around your comfort, goals and skin.</p></article>
+            <article><span>02</span><h3>Advanced technology</h3><p>Thoughtfully selected treatments and professional equipment.</p></article>
+            <article><span>03</span><h3>Calm surroundings</h3><p>A clean, welcoming studio created for unhurried self-care.</p></article>
+            <article><span>04</span><h3>Transparent pricing</h3><p>Clear treatment options so you can choose with confidence.</p></article>
         </div>
     </div>
 </section>
+
 @include('pages.testimonials')
 @endsection

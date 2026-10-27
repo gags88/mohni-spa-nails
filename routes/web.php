@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/preview', 'App\Http\Controllers\ModernPreviewController@show')
+    ->name('modern-preview.login');
+Route::post('/preview', 'App\Http\Controllers\ModernPreviewController@authenticate')
+    ->middleware('throttle:10,1')
+    ->name('modern-preview.authenticate');
+Route::post('/preview/logout', 'App\Http\Controllers\ModernPreviewController@logout')
+    ->name('modern-preview.logout');
+
 Route::get('/', 'App\Http\Controllers\HomepageController@index')->name('home.show');
 // Route::get('/', function () {
 //     return view('index');

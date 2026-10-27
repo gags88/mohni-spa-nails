@@ -68,7 +68,7 @@ MB R2H 0T7</a></li>
                                         <!-- <li><a href="/services/nail-recovery">Nail Recovery</a></li> -->
                                     </ul>
                                 </li>
-                                <li><a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services">Book our services</a></li>
+                                <li class="mohni-nav-book"><a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services">Book now</a></li>
                                 <li><a href="/contact">Contact</a></li>
                             </ul>
                         </div>
