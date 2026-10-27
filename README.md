@@ -100,6 +100,8 @@ The `.env` file, SQLite database, dependencies, runtime caches, and backup archi
 
 Pushes to `main` deploy the redesigned site to the password-protected `/modern` preview on Hostinger through [the GitHub Actions workflow](.github/workflows/deploy.yml). The existing website root is left untouched. The workflow runs the test suite first, synchronizes a separate application copy, installs optimized Composer dependencies, runs migrations, refreshes Laravel caches, links the preview beneath `public_html/modern`, and verifies that unauthenticated visitors reach the preview login screen.
 
+The runtime sync excludes unused legacy banners and frontend build sources, and keeps partial transfers so an interrupted first deployment can resume efficiently.
+
 Preview authentication is enforced by Laravel for every web route when `MODERN_PREVIEW_ENABLED=true`. A successful password entry is valid for 120 minutes, uses an isolated `/modern` session cookie, disables browser caching, and sends `noindex` headers. The deployed password is represented in source only by a one-way bcrypt hash.
 
 The GitHub repository requires a `HOSTINGER_SSH_KEY` Actions secret containing an unencrypted private key authorized for the Hostinger account. Production configuration remains in the server-side `.env` and is never copied from GitHub.

@@ -16,7 +16,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
 
     steps:
       - name: Checkout code
@@ -89,6 +89,8 @@ jobs:
       - name: Sync modern preview application to Hostinger
         run: |
           rsync -avz --delete \
+            --partial \
+            --partial-dir='.rsync-partial' \
             -e "ssh -i $HOSTINGER_KEY -p 65002 -o BatchMode=yes -o UserKnownHostsFile=$HOSTINGER_KNOWN_HOSTS" \
             --exclude='.env' \
             --exclude='.git/' \
@@ -102,6 +104,18 @@ jobs:
             --exclude='storage/logs/' \
             --exclude='public/image/' \
             --exclude='public/storage' \
+            --exclude='public/images/banner1.png' \
+            --exclude='public/images/banner2.png' \
+            --exclude='resources/css/' \
+            --exclude='resources/fonts/' \
+            --exclude='resources/images/' \
+            --exclude='resources/js/' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='webpack.mix.js' \
+            --exclude='phpunit.xml' \
+            --exclude='README.md' \
+            --exclude='*.zip' \
             --exclude='website-pdf/' \
             --exclude='website-screenshots/' \
             ./ u464987102@147.93.23.145:/home/u464987102/domains/mohnispanails.com/mohnispanails-modern/
