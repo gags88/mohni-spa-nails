@@ -51,7 +51,7 @@
     <div class="container">
         <div class="mohni-heading-row mohni-heading-row--testimonials">
             <div>
-                <p class="mohni-eyebrow">Client stories</p>
+                <p class="mohni-eyebrow">Client Reviews</p>
                 <h2 id="testimonials-title" class="mohni-display">Kind words,<br>beautifully shared.</h2>
             </div>
             <p>Real experiences from clients who trust Mohni for laser, skin, nail and restorative spa care.</p>

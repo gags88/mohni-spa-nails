@@ -76,11 +76,7 @@
             </div>
         </div>
         @include('pages.services.partials.treatment-menu', [
-            'menuKey' => 'nails',
-            'menuIdSuffix' => 'recovery',
-            'menuTitle' => 'Gel and nail recovery services',
-            'menuIntro' => 'Removal, overlays and careful maintenance designed to support a polished, healthy-looking finish.',
-            'only' => ['Liquid Gel Full Set', 'Liquid Gel Fill', 'Fresh Gel Overlay', 'Gel Overlay Fill', 'Gel Removal', 'Shellac Removal', 'Shellac Removal and Treatment', 'Acrylic Removal'],
+            'menuKey' => 'nail-recovery',
         ])
     </div>
 </section>

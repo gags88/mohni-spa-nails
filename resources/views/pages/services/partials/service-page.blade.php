@@ -27,12 +27,6 @@
         </div>
     </section>
 
-    @if ($pricing)
-        <div class="container mohni-service-pricing">
-            @include('pages.services.partials.treatment-menu', $pricing)
-        </div>
-    @endif
-
     @if (!empty($content['sections']))
         <section class="mohni-service-guides" aria-label="Treatment information">
             <div class="container">
@@ -56,6 +50,12 @@
                 </div>
             </div>
         </section>
+    @endif
+
+    @if ($pricing)
+        <div class="container mohni-service-pricing">
+            @include('pages.services.partials.treatment-menu', $pricing)
+        </div>
     @endif
 
     @if (!$pricing)

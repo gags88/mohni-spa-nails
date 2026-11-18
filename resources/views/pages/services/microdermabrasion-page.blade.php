@@ -28,11 +28,7 @@
 <section class="mh-paradisecenter mh-sectionspace mh-haslayout mb-20 service">
     <div class="container">
         @include('pages.services.partials.treatment-menu', [
-            'menuKey' => 'facials',
-            'menuIdSuffix' => 'microdermabrasion',
-            'menuTitle' => 'Microdermabrasion pricing',
-            'menuIntro' => 'A diamond-tip exfoliation facial designed to reveal a smoother, brighter-looking surface.',
-            'only' => ['Diamond Microdermabrasion Facial'],
+            'menuKey' => 'microdermabrasion',
         ])
 
         @include('pages.services.microdermabrasion')

@@ -13,14 +13,7 @@ return [
                 ['name' => 'Relaxation Facial', 'duration' => '60 min', 'price' => '$99'],
                 ['name' => 'Clarifying (Acne) Facial', 'duration' => '60 min', 'price' => '$120'],
                 ['name' => 'Anti-Aging Facial', 'duration' => '60 min', 'price' => '$120'],
-                ['name' => 'Dermaplaning', 'duration' => '40 min', 'price' => '$85'],
-                ['name' => 'Dermaplaning Facial', 'duration' => '1 hr 15 min', 'price' => '$125'],
-                ['name' => 'Diamond Microdermabrasion Facial', 'duration' => '1 hr 15 min', 'price' => '$130'],
                 ['name' => 'Back Facial', 'duration' => '60 min', 'price' => '$99'],
-                ['name' => 'Signature HydraFacial', 'duration' => '45 min', 'price' => '$130'],
-                ['name' => 'Deluxe HydraFacial', 'duration' => '60 min', 'price' => '$140'],
-                ['name' => 'Platinum HydraFacial', 'duration' => '1 hr 15 min', 'price' => '$150'],
-                ['name' => 'Microneedling', 'duration' => '1 hr 15 min', 'price' => '$335'],
                 ['name' => 'Face Bleach', 'duration' => '20 min', 'price' => '$25'],
                 ['name' => 'Face and Neck Bleach', 'duration' => '25 min', 'price' => '$30'],
             ],
@@ -35,15 +28,79 @@ return [
             'items' => [
                 ['name' => 'Body Glow', 'duration' => '45 min', 'price' => '$125'],
                 ['name' => 'Body Wrap', 'duration' => '1 hr 30 min', 'price' => '$165'],
+            ],
+        ]],
+    ],
+    'dermaplaning' => [
+        'title' => 'Dermaplaning pricing',
+        'intro' => 'Choose focused exfoliation or combine dermaplaning with a complete facial.',
+        'groups' => [[
+            'title' => 'Dermaplaning',
+            'wide' => true,
+            'items' => [
+                ['name' => 'Dermaplaning', 'duration' => '40 min', 'price' => '$85'],
+                ['name' => 'Dermaplaning Facial', 'duration' => '1 hr 15 min', 'price' => '$125'],
+            ],
+        ]],
+    ],
+    'hydra-facial' => [
+        'title' => 'HydraFacial treatments',
+        'intro' => 'Select the level of cleansing, exfoliation and hydration your skin needs.',
+        'groups' => [[
+            'title' => 'HydraFacial',
+            'wide' => true,
+            'items' => [
+                ['name' => 'Signature HydraFacial', 'duration' => '45 min', 'price' => '$130'],
+                ['name' => 'Deluxe HydraFacial', 'duration' => '60 min', 'price' => '$140'],
+                ['name' => 'Platinum HydraFacial', 'duration' => '1 hr 15 min', 'price' => '$150'],
+            ],
+        ]],
+    ],
+    'micro-needling' => [
+        'title' => 'Microneedling pricing',
+        'intro' => 'A focused treatment with time for preparation and aftercare guidance.',
+        'groups' => [[
+            'title' => 'Microneedling',
+            'wide' => true,
+            'items' => [
+                ['name' => 'Microneedling', 'duration' => '1 hr 15 min', 'price' => '$335'],
+            ],
+        ]],
+    ],
+    'microdermabrasion' => [
+        'title' => 'Microdermabrasion pricing',
+        'intro' => 'A diamond-tip exfoliation facial designed to reveal a smoother surface.',
+        'groups' => [[
+            'title' => 'Microdermabrasion',
+            'wide' => true,
+            'items' => [
+                ['name' => 'Diamond Microdermabrasion Facial', 'duration' => '1 hr 15 min', 'price' => '$130'],
+            ],
+        ]],
+    ],
+    'massage' => [
+        'title' => 'Massage and restorative care',
+        'intro' => 'Choose a treatment length that gives you space to unwind and reset.',
+        'groups' => [[
+            'title' => 'Massage',
+            'wide' => true,
+            'items' => [
                 ['name' => 'Relaxation Massage by Esthetician', 'duration' => '30 min', 'price' => '$50'],
                 ['name' => 'Relaxation Massage by Esthetician', 'duration' => '60 min', 'price' => '$70'],
                 ['name' => 'Hot Stone Massage', 'duration' => '30 min', 'price' => '$60'],
                 ['name' => 'Hot Stone Massage', 'duration' => '60 min', 'price' => '$80'],
-                ['name' => 'Japanese Head Spa', 'duration' => '45 min', 'price' => '$99'],
-                ['name' => 'Japanese Head Spa', 'duration' => '60 min', 'price' => '$125'],
-                ['name' => 'Ear Candling', 'duration' => '25 min', 'price' => '$55'],
                 ['name' => 'Foot Massage', 'duration' => '30 min', 'price' => '$50'],
                 ['name' => 'Foot Massage', 'duration' => '60 min', 'price' => '$70'],
+            ],
+        ]],
+    ],
+    'makeup' => [
+        'title' => 'Makeup application',
+        'intro' => 'Professional application tailored to your features, style and occasion.',
+        'groups' => [[
+            'title' => 'Makeup',
+            'wide' => true,
+            'items' => [
                 ['name' => 'Makeup Application', 'duration' => '45 min', 'price' => '$85+'],
             ],
         ]],
@@ -181,5 +238,23 @@ return [
                 ],
             ],
         ],
+    ],
+    'nail-recovery' => [
+        'title' => 'Gel and nail recovery services',
+        'intro' => 'Removal, overlays and maintenance for a polished finish.',
+        'groups' => [[
+            'title' => 'Nail recovery',
+            'wide' => true,
+            'items' => [
+                ['name' => 'Liquid Gel Full Set', 'duration' => '1 hr 15 min', 'price' => '$90'],
+                ['name' => 'Liquid Gel Fill', 'duration' => '60 min', 'price' => '$60'],
+                ['name' => 'Fresh Gel Overlay', 'duration' => '60 min', 'price' => '$60'],
+                ['name' => 'Gel Overlay Fill', 'duration' => '1 hr 15 min', 'price' => '$65'],
+                ['name' => 'Gel Removal', 'duration' => '30 min', 'price' => '$28'],
+                ['name' => 'Shellac Removal', 'duration' => '15 min', 'price' => '$12'],
+                ['name' => 'Shellac Removal and Treatment', 'duration' => '25 min', 'price' => '$28'],
+                ['name' => 'Acrylic Removal', 'duration' => '30 min', 'price' => '$30'],
+            ],
+        ]],
     ],
 ];

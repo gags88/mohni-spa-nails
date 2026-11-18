@@ -54,11 +54,7 @@
             </div>
         </div>
         @include('pages.services.partials.treatment-menu', [
-            'menuKey' => 'facials',
-            'menuIdSuffix' => 'microneedling',
-            'menuTitle' => 'Microneedling pricing',
-            'menuIntro' => 'A considered collagen-induction treatment with time for preparation and aftercare guidance.',
-            'only' => ['Microneedling'],
+            'menuKey' => 'micro-needling',
         ])
         <div class="row mt-20 text-left mh-postdetails">
             <div class="col-sm-12">

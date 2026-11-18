@@ -78,9 +78,6 @@ Route::group(['prefix' => '/services'], function () {
     Route::get("/waxing", function () {
         return view('pages.services.service', ['serviceKey' => 'waxing']);
     });
-    Route::get("/sugaring", function () {
-        return view('pages.services.service', ['serviceKey' => 'sugaring']);
-    });
 });
 Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => '/admin'], function()
 {   

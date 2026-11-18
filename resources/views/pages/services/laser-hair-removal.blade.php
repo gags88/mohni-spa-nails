@@ -17,7 +17,6 @@
             <h1 id="laser-title">Laser hair removal,<br>beautifully considered.</h1>
             <p>Advanced Soprano ICE Platinum technology with a calm, personal approach to every consultation and treatment.</p>
             <div class="mohni-inline-actions">
-                <a href="{{ config('services.booking.url') }}" class="mh-btn">Book a consultation</a>
                 <a href="#laser-pricing" class="mohni-text-link">View pricing <span aria-hidden="true">&darr;</span></a>
             </div>
         </div>
@@ -70,41 +69,85 @@
     $laserPricing = [
         'Women' => [
             'Face & Neck' => [
-                ['Upper Lip', '$69+'], ['Upper Lip + Chin', '$115+'], ['Neck', '$75+'],
-                ['Sideburns', '$75+'], ['Uni-brow', '$50+'], ['Full Face', '$150+'],
+                ['Upper Lip + Chin', '$85'],
+                ['Upper Lip or Chin', '$50'],
+                ['Half Face (Upper Lip, Chin, Sideburns + Neck)', '$120'],
+                ['Full Face (Upper Lip, Chin, Sideburns, Neck + Forehead)', '$135'],
+                ['Nape (Back of Neck)', '$75'],
             ],
-            'Body' => [
-                ['Fingers + Toes', '$50+'], ['Underarms', '$99+'], ['Half Arms', '$150+'],
-                ['Full Arms', '$199+'], ['Areolas', '$75+'], ['Stomach', '$125+'],
-                ['Upper Back', '$125+'], ['Lower Back', '$125+'], ['Full Back', '$199+'],
+            'Upper & Middle Body' => [
+                ['Full Back with Neck', '$165'],
+                ['Half Back', '$110'],
+                ['Abdomen', '$110'],
+                ['Areolas', '$75'],
+                ['Half Arms', '$99'],
+                ['Full Arms', '$135'],
+                ['Underarms', '$99'],
+                ['Hands or Feet', '$30'],
             ],
             'Lower Body' => [
-                ['Bikini Line', '$125+'], ['Buttocks', '$125+'], ['Full Brazilian', '$175+'],
-                ['Upper Legs', '$225+'], ['Lower Legs', '$175+'], ['Full Legs', '$299+'],
+                ['Bikini Line', '$110'],
+                ['Brazilian', '$150'],
+                ['Half Legs', '$125'],
+                ['Full Legs', '$199'],
             ],
         ],
         'Men' => [
             'Face & Neck' => [
-                ['Cheeks', '$80+'], ['Neck', '$75+'], ['Sideburns', '$75+'],
-                ['Ears', '$50+'], ['Uni-brow', '$50+'], ['Full Face', '$150+'],
+                ['Ears', '$50'],
+                ['Neck (Front or Back)', '$80'],
+                ['Face (Cheeks, Beard Line, Neck + Midbrow)', '$125'],
             ],
-            'Body' => [
-                ['Fingers + Toes', '$50+'], ['Underarms', '$99+'], ['Half Arms', '$150+'],
-                ['Shoulders', '$99+'], ['Full Arms', '$199+'], ['Stomach', '$125+'],
-                ['Chest', '$150+'], ['Upper Back', '$125+'], ['Lower Back', '$125+'],
-                ['Full Back', '$199+'], ['Full Chest + Full Back', '$299+'],
+            'Upper & Middle Body' => [
+                ['Chest', '$125'],
+                ['Abdomen', '$125'],
+                ['Chest + Abdomen', '$199'],
+                ['Full Back', '$175'],
+                ['Half Back', '$125'],
+                ['Half Arms', '$110'],
+                ['Full Arms', '$150'],
+                ['Underarms', '$110'],
+                ['Hands + Feet', '$30'],
             ],
             'Lower Body' => [
-                ['Upper Legs', '$225+'], ['Lower Legs', '$175+'], ['Full Legs', '$299+'],
+                ['Half Legs', '$150'],
+                ['Full Legs', '$225'],
             ],
         ],
         'Promotions' => [
-            'Packages' => [
-                ['Package of 6 sessions', '25% off'],
+            'Session Package' => [
+                ['Purchase 5 Sessions, Get 1 Free (Single Area)', 'From $550'],
+            ],
+            'Women — Body Laser' => [
+                ['Choose Any 3 Full Areas', '$399*'],
+                ['Choose Any 5 Full Areas', '$549*'],
+                ['Each Additional Area (No Maximum)', '$50'],
+            ],
+            'Women — Combination Offers' => [
+                ['Brazilian + Underarms', '$199*'],
+                ['Half Legs + Brazilian + Underarms', '$299*'],
+                ['Bikini + Underarms', '$185'],
             ],
         ],
     ];
 @endphp
+
+<section class="mohni-process mohni-section" aria-labelledby="process-title">
+    <div class="container">
+        <div class="mohni-process__grid">
+            <div>
+                <p class="mohni-eyebrow">Your treatment journey</p>
+                <h2 id="process-title" class="mohni-display">Know what to expect.</h2>
+                <p>Most treatment plans involve a series of appointments spaced around the hair-growth cycle. We will guide you through the details at every step.</p>
+            </div>
+            <ol class="mohni-process__steps">
+                <li><span>01</span><div><h3>Consult</h3><p>We review your goals, health history, skin and hair profile, then create your plan.</p></div></li>
+                <li><span>02</span><div><h3>Prepare</h3><p>Avoid waxing, shave the area about 24 hours before, and arrive with clean, product-free skin.</p></div></li>
+                <li><span>03</span><div><h3>Treat &amp; care</h3><p>We keep you comfortable during treatment and explain the aftercare for your skin.</p></div></li>
+            </ol>
+        </div>
+    </div>
+</section>
 
 <section id="laser-pricing" class="mohni-pricing mohni-section" aria-labelledby="pricing-title">
     <div class="container">
@@ -142,24 +185,7 @@
                 </details>
             @endforeach
         </div>
-        <p class="mohni-pricing__note">Prices shown are starting prices per session and may change without notice. Promotions cannot be combined with other offers. Your consultation will confirm treatment areas, timing and exact pricing.</p>
-    </div>
-</section>
-
-<section class="mohni-process mohni-section" aria-labelledby="process-title">
-    <div class="container">
-        <div class="mohni-process__grid">
-            <div>
-                <p class="mohni-eyebrow">Your treatment journey</p>
-                <h2 id="process-title" class="mohni-display">Know what to expect.</h2>
-                <p>Most treatment plans involve a series of appointments spaced around the hair-growth cycle. We will guide you through the details at every step.</p>
-            </div>
-            <ol class="mohni-process__steps">
-                <li><span>01</span><div><h3>Consult</h3><p>We review your goals, health history, skin and hair profile, then create your plan.</p></div></li>
-                <li><span>02</span><div><h3>Prepare</h3><p>Avoid waxing, shave the area about 24 hours before, and arrive with clean, product-free skin.</p></div></li>
-                <li><span>03</span><div><h3>Treat &amp; care</h3><p>We keep you comfortable during treatment and explain the aftercare for your skin.</p></div></li>
-            </ol>
-        </div>
+        <p class="mohni-pricing__note">Prices are per session unless a package states otherwise and may change without notice. Promotional packages cannot be combined with other offers. Your consultation will confirm treatment areas, timing and exact pricing.</p>
     </div>
 </section>
 

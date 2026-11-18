@@ -62,7 +62,6 @@ MB R2H 0T7</a></li>
                                         <li><a href="/services/threading">Threading</a></li>
                                         <li><a href="/services/tinting">Tinting</a></li>
                                         <li><a href="/services/waxing">Waxing</a></li>
-                                        <li><a href="/services/sugaring">Sugaring</a></li>
                                         <li><a href="/services/manicure-pedicure">Manicure/Pedicure</a></li>
                                         <li><a href="/services/microdermabrasion">Microdermabrasion</a></li>
                                         <li><a href="/services/nail-recovery">Nail Recovery</a></li>

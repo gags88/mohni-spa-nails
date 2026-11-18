@@ -43,9 +43,10 @@
                 ['title' => 'Dermaplaning', 'label' => 'Skin', 'image' => '/images/services/editorial/dermaplaning-v2.webp', 'url' => '/services/dermaplaning'],
                 ['title' => 'Body Treatments', 'label' => 'Body', 'image' => '/images/services/body-treatment-wraps.jpeg', 'url' => '/services/body-treatments'],
                 ['title' => 'Massage', 'label' => 'Body', 'image' => '/images/services/editorial/massage-v2.webp', 'url' => '/services/massage'],
-                ['title' => 'Waxing & Sugaring', 'label' => 'Hair removal', 'image' => '/images/services/waxing.JPG', 'url' => '/services/waxing'],
+                ['title' => 'Waxing', 'label' => 'Hair removal', 'image' => '/images/services/waxing.JPG', 'url' => '/services/waxing'],
                 ['title' => 'Brows & Tinting', 'label' => 'Beauty', 'image' => '/images/services/editorial/threading-v2.webp', 'url' => '/services/threading'],
                 ['title' => 'Manicure & Pedicure', 'label' => 'Nails', 'image' => '/images/services/mani-pedi.JPG', 'url' => '/services/manicure-pedicure'],
+                ['title' => 'Kids Manicure & Pedicure', 'label' => 'Kids under 10', 'image' => '/images/services/nail-kids.jpg', 'url' => '/services/manicure-pedicure#treatment-menu-nails'],
             ];
         @endphp
 
@@ -61,30 +62,6 @@
                     </span>
                 </a>
             @endforeach
-        </div>
-    </div>
-</section>
-
-<section class="mohni-laser-feature mohni-section" aria-labelledby="laser-focus-title">
-    <div class="container">
-        <div class="mohni-laser-feature__grid">
-            <figure class="mohni-laser-feature__image">
-                <img src="/images/hero/laser-focus-treatment.webp" alt="Soprano ICE Platinum laser hair removal treatment" loading="lazy">
-            </figure>
-            <div class="mohni-laser-feature__content">
-                <p class="mohni-eyebrow">Our laser focus</p>
-                <h2 id="laser-focus-title" class="mohni-display">Comfort-led technology. Confidence-led results.</h2>
-                <p>Our Soprano ICE Platinum system combines gradual heating with continuous cooling for a treatment designed around comfort and suitable for a broad range of skin tones.</p>
-                <ul class="mohni-checklist list-unstyled">
-                    <li>Personal consultation before treatment</li>
-                    <li>In-motion technology and cooling comfort</li>
-                    <li>Clear area-by-area pricing</li>
-                </ul>
-                <div class="mohni-inline-actions">
-                    <a href="/services/laser-hair-removal#laser-pricing" class="mh-btn">View laser pricing</a>
-                    <a href="{{ config('services.booking.url') }}" class="mohni-text-link">Book now <span aria-hidden="true">&rarr;</span></a>
-                </div>
-            </div>
         </div>
     </div>
 </section>

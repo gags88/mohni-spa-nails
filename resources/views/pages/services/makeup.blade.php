@@ -62,11 +62,7 @@
             </div>
         </div>
         @include('pages.services.partials.treatment-menu', [
-            'menuKey' => 'body-treatments',
-            'menuIdSuffix' => 'makeup',
-            'menuTitle' => 'Makeup application',
-            'menuIntro' => 'Professional application tailored to your features, style and occasion.',
-            'only' => ['Makeup Application'],
+            'menuKey' => 'makeup',
         ])
     </div>
 </section>

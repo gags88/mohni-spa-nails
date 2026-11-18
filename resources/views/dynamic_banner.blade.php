@@ -291,20 +291,6 @@
                 <div class="item">
                     <div class="mh-servicebox">
                         <figure class="mh-serviceimg">
-                            <img src="images/services/sugaring.PNG" alt="Sugaring" >
-                        </figure>
-                        <div class="mh-servicecontent">
-                            <h3 class="mh-headingtree">Sugaring</h3>
-                            <div class="mh-description">
-                                <p>Sugaring, an ancient method, is another way to remove unwanted hair.</p>
-                            </div>
-                            <a href="/services/sugaring" class="mh-btn">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="mh-servicebox">
-                        <figure class="mh-serviceimg">
                             <img src="images/services/mani-pedi.JPG" alt="mani-pedi" >
                         </figure>
                         <div class="mh-servicecontent">

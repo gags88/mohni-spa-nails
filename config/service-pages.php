@@ -15,7 +15,7 @@ return [
         'intro' => 'A precise exfoliation treatment designed to reveal a smoother, brighter-looking surface.',
         'image' => '/images/services/editorial/dermaplaning-v2.webp',
         'alt' => 'Dermaplaning facial treatment',
-        'price_anchor' => 'treatment-menu-facials-dermaplaning',
+        'price_anchor' => 'treatment-menu-dermaplaning',
     ],
     'facials' => [
         'eyebrow' => 'Personalized skincare',
@@ -31,7 +31,7 @@ return [
         'intro' => 'A multi-step cleansing, exfoliation and hydration experience tailored to the level of care your skin needs.',
         'image' => '/images/services/editorial/hydrafacial-v2.webp',
         'alt' => 'HydraFacial treatment',
-        'price_anchor' => 'treatment-menu-facials-hydrafacial',
+        'price_anchor' => 'treatment-menu-hydra-facial',
     ],
     'makeup' => [
         'eyebrow' => 'Finishing touches',
@@ -39,7 +39,7 @@ return [
         'intro' => 'Professional application tailored to your features, personal style and occasion.',
         'image' => '/images/services/editorial/makeup-v2.webp',
         'alt' => 'Professional makeup application',
-        'price_anchor' => 'treatment-menu-body-treatments-makeup',
+        'price_anchor' => 'treatment-menu-makeup',
     ],
     'nails' => [
         'eyebrow' => 'Hands and feet',
@@ -55,7 +55,7 @@ return [
         'intro' => 'Comfort-led treatments that create space to unwind, release tension and return to your day feeling restored.',
         'image' => '/images/services/editorial/massage-v2.webp',
         'alt' => 'Relaxation massage treatment',
-        'price_anchor' => 'treatment-menu-body-treatments-massage',
+        'price_anchor' => 'treatment-menu-massage',
     ],
     'micro-needling' => [
         'eyebrow' => 'Advanced skincare',
@@ -63,7 +63,7 @@ return [
         'intro' => 'A considered collagen-induction treatment supported by careful preparation and aftercare guidance.',
         'image' => '/images/services/editorial/microneedling-v2.webp',
         'alt' => 'Microneedling skincare treatment',
-        'price_anchor' => 'treatment-menu-facials-microneedling',
+        'price_anchor' => 'treatment-menu-micro-needling',
     ],
     'microdermabrasion' => [
         'eyebrow' => 'Diamond exfoliation',
@@ -71,7 +71,7 @@ return [
         'intro' => 'A resurfacing facial designed to refine texture and reveal a fresh, luminous-looking complexion.',
         'image' => '/images/services/editorial/microdermabrasion-v2.webp',
         'alt' => 'Diamond microdermabrasion facial',
-        'price_anchor' => 'treatment-menu-facials-microdermabrasion',
+        'price_anchor' => 'treatment-menu-microdermabrasion',
     ],
     'nail-recovery' => [
         'eyebrow' => 'Restorative nail care',
@@ -79,14 +79,7 @@ return [
         'intro' => 'Removal, overlays and thoughtful maintenance to support a polished, healthy-looking finish.',
         'image' => '/images/services/nail-recovery.jpg',
         'alt' => 'Nail recovery and gel services',
-        'price_anchor' => 'treatment-menu-nails-recovery',
-    ],
-    'sugaring' => [
-        'eyebrow' => 'Gentle hair removal',
-        'title' => 'Sugaring',
-        'intro' => 'A traditional sugar-based technique offering a gentle approach to smooth, cared-for skin.',
-        'image' => '/images/services/sugaring_img.jpg',
-        'alt' => 'Sugaring hair removal treatment',
+        'price_anchor' => 'treatment-menu-nail-recovery',
     ],
     'threading' => [
         'eyebrow' => 'Precise shaping',

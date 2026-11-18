@@ -47,11 +47,7 @@
             </div>
         </div>
         @include('pages.services.partials.treatment-menu', [
-            'menuKey' => 'body-treatments',
-            'menuIdSuffix' => 'massage',
-            'menuTitle' => 'Massage and restorative care',
-            'menuIntro' => 'Select a treatment length that gives you space to unwind and reset.',
-            'only' => ['Relaxation Massage by Esthetician', 'Hot Stone Massage', 'Ear Candling', 'Foot Massage'],
+            'menuKey' => 'massage',
         ])
         <div class="row mh-headcontent">
             <div class="col-sm-4">

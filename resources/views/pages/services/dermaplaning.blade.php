@@ -62,11 +62,7 @@
             </div>
         </div>
         @include('pages.services.partials.treatment-menu', [
-            'menuKey' => 'facials',
-            'menuIdSuffix' => 'dermaplaning',
-            'menuTitle' => 'Dermaplaning pricing',
-            'menuIntro' => 'Choose a focused exfoliation treatment or pair dermaplaning with a complete facial.',
-            'only' => ['Dermaplaning', 'Dermaplaning Facial'],
+            'menuKey' => 'dermaplaning',
         ])
     </div>
 </section>

@@ -24,7 +24,10 @@ class ExampleTest extends TestCase
             ->assertSee('/images/hero/laser-luxury-hero-v2.webp', false)
             ->assertSee('/images/services/editorial/facial-treatment-v3.webp', false)
             ->assertSee('/images/hero/manicure-luxury-hero-v2.webp', false)
-            ->assertSee('/images/hero/laser-focus-treatment.webp', false);
+            ->assertSee('Kids Manicure &amp; Pedicure', false)
+            ->assertSee('Client Reviews')
+            ->assertDontSee('Our laser focus')
+            ->assertDontSee('Su'.'garing');
 
         foreach ([
             'Navneet Garcha',
@@ -47,11 +50,13 @@ class ExampleTest extends TestCase
 
     public function testLaserPageDisplaysPricing()
     {
-        $this->get('/services/laser-hair-removal')
+        $response = $this->get('/services/laser-hair-removal')
             ->assertStatus(200)
             ->assertSee('Laser pricing')
-            ->assertSee('Package of 6')
+            ->assertSee('Purchase 5 Sessions, Get 1 Free')
             ->assertSee('Full Legs')
+            ->assertSee('$199')
+            ->assertSee('$225')
             ->assertSee('Women')
             ->assertSee('Men')
             ->assertSee('Promotions')
@@ -59,6 +64,11 @@ class ExampleTest extends TestCase
             ->assertSee('data-video-id="MBk0Q670LXE"', false)
             ->assertSee('/js/laser-video.js?v=1.1', false)
             ->assertSee('Play video');
+
+        $content = $response->getContent();
+        $this->assertLessThan(strpos($content, 'id="laser-pricing"'), strpos($content, 'mohni-process mohni-section'));
+        $this->assertLessThan(strpos($content, 'mohni-laser-cta'), strpos($content, 'id="laser-pricing"'));
+        $this->assertSame(0, preg_match('/<details\b[^>]*\sopen(?:\s|=|>)/i', $content));
     }
 
     public function testBookingUrlIsSharedAcrossPages()
@@ -88,25 +98,27 @@ class ExampleTest extends TestCase
     public function testServicePagesDisplayCurrentTreatmentMenus()
     {
         $pages = [
-            '/services/facials' => ['facials', 'Platinum HydraFacial', '$150'],
-            '/services/body-treatments' => ['body-treatments', 'Japanese Head Spa', '$125'],
-            '/services/waxing' => ['waxing', 'Brazilian (Women Only)', '$65'],
-            '/services/threading' => ['threading', 'Full Face (Including Eyebrows)', '$30'],
-            '/services/tinting' => ['tinting', 'Eyelash Lift and Tint', '$85'],
-            '/services/manicure-pedicure' => ['nails', 'Kids Nail Art', 'Complimentary'],
+            '/services/facials' => ['facials', 'Anti-Aging Facial', '$120', 8],
+            '/services/body-treatments' => ['body-treatments', 'Body Wrap', '$165', 2],
+            '/services/waxing' => ['waxing', 'Brazilian (Women Only)', '$65', 21],
+            '/services/threading' => ['threading', 'Full Face (Including Eyebrows)', '$30', 8],
+            '/services/tinting' => ['tinting', 'Eyelash Lift and Tint', '$85', 7],
+            '/services/manicure-pedicure' => ['nails', 'Kids Nail Art', 'Complimentary', 40],
         ];
 
-        foreach ($pages as $path => [$menuKey, $service, $price]) {
+        foreach ($pages as $path => [$menuKey, $service, $price, $expectedItemCount]) {
             $response = $this->get($path)
                 ->assertOk()
                 ->assertSee('Treatment menu')
                 ->assertSee($service)
                 ->assertSee($price);
 
-            $expectedItemCount = collect(config('service-pricing.'.$menuKey.'.groups'))
+            $configuredItemCount = collect(config('service-pricing.'.$menuKey.'.groups'))
                 ->sum(function ($group) {
                     return count($group['items']);
                 });
+
+            $this->assertSame($expectedItemCount, $configuredItemCount, 'Unexpected configured treatment count for '.$path);
 
             $this->assertSame(
                 $expectedItemCount,
@@ -130,7 +142,6 @@ class ExampleTest extends TestCase
             '/services/micro-needling',
             '/services/microdermabrasion',
             '/services/nail-recovery',
-            '/services/sugaring',
             '/services/threading',
             '/services/tinting',
             '/services/waxing',
@@ -139,12 +150,12 @@ class ExampleTest extends TestCase
         foreach ($pages as $path) {
             $this->get($path)
                 ->assertOk()
-                ->assertSee('href="/css/interior-palette.css?v=3.3"', false)
+                ->assertSee('href="/css/interior-palette.css?v=3.6"', false)
                 ->assertSee('Book');
         }
     }
 
-    public function testNonLaserServicePagesUseEditorialHeroesBeforePricing()
+    public function testNonLaserServicePagesKeepInformationBeforePricing()
     {
         $pages = [
             '/services/body-treatments',
@@ -157,7 +168,6 @@ class ExampleTest extends TestCase
             '/services/micro-needling',
             '/services/microdermabrasion',
             '/services/nail-recovery',
-            '/services/sugaring',
             '/services/threading',
             '/services/tinting',
             '/services/waxing',
@@ -172,9 +182,19 @@ class ExampleTest extends TestCase
             if (str_contains($content, 'mohni-treatment-menu')) {
                 $this->assertLessThan(
                     strpos($content, 'mohni-treatment-menu'),
-                    strpos($content, 'mohni-editorial-service'),
-                    'Pricing should follow the editorial introduction on '.$path
+                    strpos($content, 'mohni-service-overview'),
+                    'Pricing should follow the treatment overview on '.$path
                 );
+
+                if (str_contains($content, 'mohni-service-guides')) {
+                    $this->assertLessThan(
+                        strpos($content, 'mohni-treatment-menu'),
+                        strpos($content, 'mohni-service-guides'),
+                        'Pricing should follow the treatment guidance on '.$path
+                    );
+                }
+
+                $this->assertSame(0, preg_match('/<details\b[^>]*\sopen(?:\s|=|>)/i', $content));
             }
         }
     }
@@ -197,5 +217,51 @@ class ExampleTest extends TestCase
                 ->assertSee($heading)
                 ->assertSee($price);
         }
+    }
+
+    public function testFocusedServiceMenusDoNotIncludeUnrelatedPrices()
+    {
+        $menus = [
+            'body-treatments' => ['Body Glow', 'Makeup Application'],
+            'dermaplaning' => ['Dermaplaning Facial', 'Signature HydraFacial'],
+            'facials' => ['Customized Facial', 'Microneedling'],
+            'hydra-facial' => ['Platinum HydraFacial', 'Dermaplaning Facial'],
+            'makeup' => ['Makeup Application', 'Hot Stone Massage'],
+            'massage' => ['Relaxation Massage by Esthetician', 'Makeup Application'],
+            'micro-needling' => ['Microneedling', 'Anti-Aging Facial'],
+            'microdermabrasion' => ['Diamond Microdermabrasion Facial', 'Signature HydraFacial'],
+        ];
+
+        foreach ($menus as $menuKey => [$expected, $unrelated]) {
+            $names = collect(config('service-pricing.'.$menuKey.'.groups'))
+                ->flatMap(function ($group) {
+                    return collect($group['items'])->pluck('name');
+                })
+                ->all();
+
+            $this->assertContains($expected, $names, 'Expected treatment missing from '.$menuKey);
+            $this->assertNotContains($unrelated, $names, 'Unrelated treatment leaked into '.$menuKey);
+        }
+
+        $bodyNames = collect(config('service-pricing.body-treatments.groups'))->flatMap(function ($group) {
+            return collect($group['items'])->pluck('name');
+        })->all();
+        $this->assertSame(['Body Glow', 'Body Wrap'], $bodyNames);
+
+        $massageNames = collect(config('service-pricing.massage.groups'))->flatMap(function ($group) {
+            return collect($group['items'])->pluck('name');
+        })->unique()->values()->all();
+        $this->assertSame(
+            ['Relaxation Massage by Esthetician', 'Hot Stone Massage', 'Foot Massage'],
+            $massageNames
+        );
+    }
+
+    public function testRemovedServiceIsUnavailable()
+    {
+        $removedService = 'Su'.'garing';
+
+        $this->get('/services/'.strtolower($removedService))->assertNotFound();
+        $this->get('/')->assertDontSee($removedService);
     }
 }

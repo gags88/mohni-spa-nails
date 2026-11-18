@@ -1705,10 +1705,12 @@ body {
 .mohni-treatment-menu__groups {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
     gap: 18px;
 }
 
 .mohni-treatment-menu__group {
+    align-self: start;
     overflow: hidden;
     background: var(--mohni-white);
     border: 1px solid rgba(149, 120, 68, 0.2);
@@ -1733,6 +1735,16 @@ body {
 
 .mohni-treatment-menu__group-header::-webkit-details-marker {
     display: none;
+}
+
+.mohni-treatment-menu__group-header:focus {
+    outline: none;
+}
+
+.mohni-treatment-menu__group-header:focus-visible {
+    outline: 2px solid rgba(149, 120, 68, 0.72);
+    outline-offset: -3px;
+    border-radius: 21px;
 }
 
 .mohni-treatment-menu__group-title {
@@ -1805,8 +1817,8 @@ body {
 
 .mohni-treatment-menu__price {
     flex: 0 0 auto;
-    color: var(--mohni-champagne-dark);
-    font: 400 17px/1.2 "Playfair Display", Georgia, serif;
+    color: var(--mohni-charcoal);
+    font: 600 14px/1.45 Inter, Arial, sans-serif;
     white-space: nowrap;
 }
 
@@ -2044,8 +2056,11 @@ body {
 }
 
 .mohni-service-highlights li {
-    position: relative;
-    padding: 15px 8px 15px 28px;
+    display: grid;
+    grid-template-columns: 7px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 16px;
+    padding: 15px 8px;
     color: var(--mohni-charcoal);
     border-bottom: 1px solid rgba(149, 120, 68, 0.16);
     font-size: 13px;
@@ -2054,11 +2069,9 @@ body {
 }
 
 .mohni-service-highlights li::before {
-    position: absolute;
-    top: 19px;
-    left: 4px;
     width: 7px;
     height: 7px;
+    margin: 0;
     background: var(--mohni-champagne);
     border-radius: 50%;
     content: "";
@@ -2137,16 +2150,16 @@ body {
 }
 
 .mohni-service-guide li {
-    position: relative;
-    padding-left: 21px;
+    display: grid;
+    grid-template-columns: 7px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 13px;
 }
 
 .mohni-service-guide li::before {
-    position: absolute;
-    top: 10px;
-    left: 0;
     width: 7px;
     height: 1px;
+    margin: 0;
     background: var(--mohni-champagne-dark);
     content: "";
 }

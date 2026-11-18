@@ -28,11 +28,7 @@
 <section class="mh-paradisecenter mh-sectionspace mh-haslayout mb-20 service">
     <div class="container">
         @include('pages.services.partials.treatment-menu', [
-            'menuKey' => 'facials',
-            'menuIdSuffix' => 'hydrafacial',
-            'menuTitle' => 'HydraFacial treatments',
-            'menuIntro' => 'Cleansing, exfoliation and hydration in a treatment selected for the level of care your skin needs.',
-            'only' => ['Signature HydraFacial', 'Deluxe HydraFacial', 'Platinum HydraFacial'],
+            'menuKey' => 'hydra-facial',
         ])
 
         @include('pages.services.hydra-facial')
