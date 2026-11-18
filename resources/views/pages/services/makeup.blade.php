@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'makeup'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -24,7 +25,7 @@
         </div>
     </div>
 </div>
-<section id="mh-paradisecenter" class="mh-paradisecenter mh-sectionspace mh-haslayout">
+<section id="mh-paradisecenter" class="mh-paradisecenter mh-sectionspace mh-haslayout service">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
@@ -60,6 +61,13 @@
                 </ul>
             </div>
         </div>
+        @include('pages.services.partials.treatment-menu', [
+            'menuKey' => 'body-treatments',
+            'menuIdSuffix' => 'makeup',
+            'menuTitle' => 'Makeup application',
+            'menuIntro' => 'Professional application tailored to your features, style and occasion.',
+            'only' => ['Makeup Application'],
+        ])
     </div>
 </section>
 @endsection

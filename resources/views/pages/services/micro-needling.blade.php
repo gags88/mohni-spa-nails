@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'micro-needling'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -52,6 +53,13 @@
                 </div>
             </div>
         </div>
+        @include('pages.services.partials.treatment-menu', [
+            'menuKey' => 'facials',
+            'menuIdSuffix' => 'microneedling',
+            'menuTitle' => 'Microneedling pricing',
+            'menuIntro' => 'A considered collagen-induction treatment with time for preparation and aftercare guidance.',
+            'only' => ['Microneedling'],
+        ])
         <div class="row mt-20 text-left mh-postdetails">
             <div class="col-sm-12">
                 <hr />
@@ -89,34 +97,6 @@
                     </ul>
                 </div>
                 <h4>It is recommended to wait 4-6 weeks between microneedling treatments.</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <hr />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
-            </div>
-        </div>
-        <div class="mh-pricinglist-areas hide">
-            <div class="col-sm-6 col-sm-offset-3">
-                <hr />
-                <h2 class="font-arizonia text-center f-24">Price List</h2>
-                <ul class="mh-pricelist">
-                    <li class="sub-item-service">
-                        <span class="name">Per Treatment</span>
-                        {{--<span class="border"></span>--}}
-                        <span class="price">{{--$335.00+--}}</span>
-                    </li>
-                    <li class="sub-item-service">
-                        <span class="name">Package of 3 treatments</span>
-                        {{--<span class="border"></span>--}}
-                        <span class="price font-arizonia f-24">{{--<b>20% off</b>--}}</span>
-                    </li>
-                </ul>
             </div>
         </div>
         {{--<div class="col-sm-12 video-container mt-20">

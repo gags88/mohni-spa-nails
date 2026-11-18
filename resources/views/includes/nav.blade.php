@@ -53,7 +53,7 @@ MB R2H 0T7</a></li>
                                     <ul class="list-unstyled sub-menu">
                                         <li><a href="/services/laser-hair-removal">Laser Hair Removal</a></li>
                                         <li><a href="/services/micro-needling">Microneedling</a></li>
-                                        <li><a href="/services/facials">Hydra Facial</a></li>
+                                        <li><a href="/services/hydra-facial">Hydra Facial</a></li>
                                         <li><a href="/services/dermaplaning">Dermaplaning</a></li>
                                         <li><a href="/services/facials">Facials</a></li>
                                         <li><a href="/services/body-treatments">Body Treatments</a></li>
@@ -64,11 +64,11 @@ MB R2H 0T7</a></li>
                                         <li><a href="/services/waxing">Waxing</a></li>
                                         <li><a href="/services/sugaring">Sugaring</a></li>
                                         <li><a href="/services/manicure-pedicure">Manicure/Pedicure</a></li>
-                                        <!-- <li><a href="/services/microdermabrasion">Microdermabrasion</a></li> -->
-                                        <!-- <li><a href="/services/nail-recovery">Nail Recovery</a></li> -->
+                                        <li><a href="/services/microdermabrasion">Microdermabrasion</a></li>
+                                        <li><a href="/services/nail-recovery">Nail Recovery</a></li>
                                     </ul>
                                 </li>
-                                <li class="mohni-nav-book"><a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services">Book now</a></li>
+                                <li class="mohni-nav-book"><a href="{{ config('services.booking.url') }}">Book now</a></li>
                                 <li><a href="/contact">Contact</a></li>
                             </ul>
                         </div>

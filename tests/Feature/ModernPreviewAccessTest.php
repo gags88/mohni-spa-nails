@@ -91,7 +91,7 @@ class ModernPreviewAccessTest extends TestCase
         ])->get('/')
             ->assertOk()
             ->assertSee('href="/modern/about"', false)
-            ->assertSee('src="/modern/images/hero/laser-luxury-hero.webp"', false)
+            ->assertSee('src="/modern/images/hero/laser-luxury-hero-v2.webp"', false)
             ->assertDontSee('href="/modern/modern/', false);
     }
 }

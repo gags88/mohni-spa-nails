@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'massage'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -45,6 +46,13 @@
                 <hr />
             </div>
         </div>
+        @include('pages.services.partials.treatment-menu', [
+            'menuKey' => 'body-treatments',
+            'menuIdSuffix' => 'massage',
+            'menuTitle' => 'Massage and restorative care',
+            'menuIntro' => 'Select a treatment length that gives you space to unwind and reset.',
+            'only' => ['Relaxation Massage by Esthetician', 'Hot Stone Massage', 'Ear Candling', 'Foot Massage'],
+        ])
         <div class="row mh-headcontent">
             <div class="col-sm-4">
                 <h2 class="center">

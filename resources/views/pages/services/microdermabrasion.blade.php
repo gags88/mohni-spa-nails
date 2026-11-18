@@ -35,7 +35,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12 text-center">
-            <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
+            <a href="{{ config('services.booking.url') }}" class="mh-btn">Book now</a>
         </div>
     </div>
 </div>

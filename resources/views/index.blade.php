@@ -37,14 +37,14 @@
 
         @php
             $services = [
-                ['title' => 'Laser Hair Removal', 'label' => 'Our specialty', 'image' => '/images/hero/laser-luxury-hero.webp', 'url' => '/services/laser-hair-removal', 'featured' => true],
-                ['title' => 'Facials & HydraFacial', 'label' => 'Skin', 'image' => '/images/services/facial-service.JPG', 'url' => '/services/facials'],
-                ['title' => 'Microneedling', 'label' => 'Skin', 'image' => '/images/services/th-micro-needling.jpeg', 'url' => '/services/micro-needling'],
-                ['title' => 'Dermaplaning', 'label' => 'Skin', 'image' => '/images/services/th-dermaplaning.jpeg', 'url' => '/services/dermaplaning'],
-                ['title' => 'Body Treatments', 'label' => 'Body', 'image' => '/images/services/body-glow.jpeg', 'url' => '/services/body-treatments'],
-                ['title' => 'Massage', 'label' => 'Body', 'image' => '/images/services/hot_stone_massage.jpeg', 'url' => '/services/massage'],
+                ['title' => 'Laser Hair Removal', 'label' => 'Our specialty', 'image' => '/images/hero/laser-luxury-hero-v2.webp', 'url' => '/services/laser-hair-removal', 'featured' => true],
+                ['title' => 'Facials & HydraFacial', 'label' => 'Skin', 'image' => '/images/services/editorial/facial-treatment-v3.webp', 'url' => '/services/facials'],
+                ['title' => 'Microneedling', 'label' => 'Skin', 'image' => '/images/services/editorial/microneedling-v2.webp', 'url' => '/services/micro-needling'],
+                ['title' => 'Dermaplaning', 'label' => 'Skin', 'image' => '/images/services/editorial/dermaplaning-v2.webp', 'url' => '/services/dermaplaning'],
+                ['title' => 'Body Treatments', 'label' => 'Body', 'image' => '/images/services/body-treatment-wraps.jpeg', 'url' => '/services/body-treatments'],
+                ['title' => 'Massage', 'label' => 'Body', 'image' => '/images/services/editorial/massage-v2.webp', 'url' => '/services/massage'],
                 ['title' => 'Waxing & Sugaring', 'label' => 'Hair removal', 'image' => '/images/services/waxing.JPG', 'url' => '/services/waxing'],
-                ['title' => 'Brows & Tinting', 'label' => 'Beauty', 'image' => '/images/services/threading_img.jpg', 'url' => '/services/threading'],
+                ['title' => 'Brows & Tinting', 'label' => 'Beauty', 'image' => '/images/services/editorial/threading-v2.webp', 'url' => '/services/threading'],
                 ['title' => 'Manicure & Pedicure', 'label' => 'Nails', 'image' => '/images/services/mani-pedi.JPG', 'url' => '/services/manicure-pedicure'],
             ];
         @endphp
@@ -82,7 +82,7 @@
                 </ul>
                 <div class="mohni-inline-actions">
                     <a href="/services/laser-hair-removal#laser-pricing" class="mh-btn">View laser pricing</a>
-                    <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mohni-text-link">Book now <span aria-hidden="true">&rarr;</span></a>
+                    <a href="{{ config('services.booking.url') }}" class="mohni-text-link">Book now <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </div>
         </div>

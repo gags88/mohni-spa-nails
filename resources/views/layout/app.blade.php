@@ -10,10 +10,10 @@
     <title>@yield('title', app_name())</title>
     @yield('website_meta')
     <!-- Google Web fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,800,700,600' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="/css/app.css?v=1.0138" rel="stylesheet">
-    <link href="/css/interior-palette.css?v=2.4" rel="stylesheet">
+    <link href="/css/interior-palette.css?v=3.3" rel="stylesheet">
 </head>
 
 <body class="mh-home mh-homeone">
@@ -33,6 +33,7 @@
         </div> -->
     </div>
     <script type="text/javascript" src="/js/app.js?v=0.005"></script>
+    @yield('page_scripts')
 </body>
 
 </html>

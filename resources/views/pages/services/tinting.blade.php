@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'tinting'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -45,48 +46,11 @@
                 <div class="col-sm-6 text-center">
                     <div class="text-center">
                         Tinting is a process to boost the natural colour of your brows and lashes by using vegetable-based semi permanent dye.
-                        <hr />
-                        <h2 class="font-arizonia f-24">Services</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 text-center">
-                            <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
-                        </div>
-                    </div>
-                    <div class="row hide">
-                        <div class="col-sm-12">
-                            <div class="mh-description mh-postdetails text-left">
-                                <ul class="txt-holder list-unstyled mt-10 mh-pricelist">
-                                    <li class="sub-item-service">
-                                        <span class="name">Eyebrow Tinting</span>
-                                        {{--<span class="border"></span>--}}
-                                        <span class="price">{{--$18.00+<sup>*</sup>--}}</span>
-                                    </li>
-                                    <li class="sub-item-service">
-                                        <span class="name">Eyelash Tinting</span>
-                                        {{--<span class="border"></span>--}}
-                                        <span class="price">{{--$25.00+<sup>*</sup>--}}</span>
-                                    </li>
-                                    <li class="sub-item-service">
-                                        <span class="name">Eyebrow &amp; Eyelash Tinting</span>
-                                        {{--<span class="border"></span>--}}
-                                        <span class="price">{{--$35.00+<sup>*</sup>--}}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            {{--<div class="text-left">
-                                <small><sup>*</sup><i>Prices subject to change without notice.</i></small>
-                            </div>--}}
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        @include('pages.services.partials.treatment-menu', ['menuKey' => 'tinting'])
     </div>
 </section>
 @endsection

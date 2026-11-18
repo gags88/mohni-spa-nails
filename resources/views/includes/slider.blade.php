@@ -1,7 +1,7 @@
 <div class="mohni-hero-stage">
     <div id="mh-homeslider3" class="mohni-hero-slider owl-carousel owl-theme" aria-label="Featured spa services">
         <section class="mohni-hero" aria-labelledby="mohni-hero-laser-title">
-            <img class="mohni-hero__image" src="/images/hero/laser-luxury-hero.webp" alt="A comfortable laser hair removal treatment in a calm spa setting">
+            <img class="mohni-hero__image" src="/images/hero/laser-luxury-hero-v2.webp" alt="A professional laser hair removal treatment in a calm spa setting">
             <div class="mohni-hero__veil" aria-hidden="true"></div>
             <div class="container mohni-hero__container">
                 <div class="mohni-hero__content">
@@ -9,7 +9,7 @@
                     <h1 id="mohni-hero-laser-title">Feel at home<br>in your skin.</h1>
                     <p class="mohni-hero__lead">Advanced Soprano ICE Platinum laser hair removal, delivered with warmth, privacy and care.</p>
                     <div class="mohni-hero__actions">
-                        <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book a consultation</a>
+                        <a href="{{ config('services.booking.url') }}" class="mh-btn">Book a consultation</a>
                         <a href="/services/laser-hair-removal" class="mohni-text-link">Explore laser <span aria-hidden="true">&rarr;</span></a>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
         </section>
 
         <section class="mohni-hero" aria-labelledby="mohni-hero-facial-title">
-            <img class="mohni-hero__image" src="/images/hero/facial-luxury-hero.webp" alt="A restorative facial treatment in a serene spa room">
+            <img class="mohni-hero__image" src="/images/services/editorial/facial-treatment-v3.webp" alt="A restorative facial treatment with natural, attentive care">
             <div class="mohni-hero__veil" aria-hidden="true"></div>
             <div class="container mohni-hero__container">
                 <div class="mohni-hero__content">
@@ -26,14 +26,14 @@
                     <p class="mohni-hero__lead">Thoughtful facial care designed to cleanse, replenish and bring back your natural glow.</p>
                     <div class="mohni-hero__actions">
                         <a href="/services/facials" class="mh-btn">Explore facials</a>
-                        <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mohni-text-link">Book a treatment <span aria-hidden="true">&rarr;</span></a>
+                        <a href="{{ config('services.booking.url') }}" class="mohni-text-link">Book a treatment <span aria-hidden="true">&rarr;</span></a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="mohni-hero" aria-labelledby="mohni-hero-nails-title">
-            <img class="mohni-hero__image" src="/images/hero/manicure-luxury-hero.webp" alt="An elegant neutral manicure treatment at Mohni Spa & Nails">
+            <img class="mohni-hero__image" src="/images/hero/manicure-luxury-hero-v2.webp" alt="A carefully performed natural manicure at Mohni Spa & Nails">
             <div class="mohni-hero__veil" aria-hidden="true"></div>
             <div class="container mohni-hero__container">
                 <div class="mohni-hero__content">
@@ -42,7 +42,7 @@
                     <p class="mohni-hero__lead">Meticulous nail care, restorative touches and a little time set aside entirely for you.</p>
                     <div class="mohni-hero__actions">
                         <a href="/services/manicure-pedicure" class="mh-btn">Explore nail care</a>
-                        <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mohni-text-link">Book a treatment <span aria-hidden="true">&rarr;</span></a>
+                        <a href="{{ config('services.booking.url') }}" class="mohni-text-link">Book a treatment <span aria-hidden="true">&rarr;</span></a>
                     </div>
                 </div>
             </div>

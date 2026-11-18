@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'waxing'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -48,111 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <hr />
-                <div class="mt-20 mb-10 text-center">
-                    <h2 class="font-arizonia f-24">Services</h2>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <hr />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
-                    </div>
-                </div>
-                <div class="inline-pricelist hide">
-                    <ul class="txt-holder list-unstyled mh-pricelist col-sm-6">
-                        <li class="sub-item-service">
-                            <span class="name">Eyebrow Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$15.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Lip Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$10.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Eyebrow & lip</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$25.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Chin Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$10.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Facial Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$30.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Bikini Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$25.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Brazilian Wax(Female)</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$45.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Stomach Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$30.00+<sup>*</sup>--}}</span>
-                        </li>
-                    </ul>
-                    <ul class="txt-holder list-unstyled mh-pricelist col-sm-6">
-                        <li class="sub-item-service">
-                            <span class="name">Full Legs Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$45.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Lower Legs Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$28.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Upper Legs Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$30.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full Arms Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$30.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Half Arms Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$20.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Under Arms Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$15.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Chest/Back Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$45.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full Body Wax</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$160.00+<sup>*</sup>--}}</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            {{--<div class="col-sm-12"><small><sup>*</sup><i>Prices subject to change without notice.</i></small></div>--}}
-        </div>
+        @include('pages.services.partials.treatment-menu', ['menuKey' => 'waxing'])
     </div>
 </section>
 @endsection

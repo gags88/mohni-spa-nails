@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'nail-recovery'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -37,17 +38,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <hr />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
-            </div>
-        </div>
-        <div class="row mh-headcontent text-left hide">
+        <div class="row mh-headcontent text-left">
             <div class="col-sm-7"><img src="/images/services/nail-recovery.jpg" class="mh-border" /></div>
             <div class="col-sm-5 mh-description mh-postdetails">
                 <div class="mb-20">
@@ -84,6 +75,13 @@
                 </div>
             </div>
         </div>
+        @include('pages.services.partials.treatment-menu', [
+            'menuKey' => 'nails',
+            'menuIdSuffix' => 'recovery',
+            'menuTitle' => 'Gel and nail recovery services',
+            'menuIntro' => 'Removal, overlays and careful maintenance designed to support a polished, healthy-looking finish.',
+            'only' => ['Liquid Gel Full Set', 'Liquid Gel Fill', 'Fresh Gel Overlay', 'Gel Overlay Fill', 'Gel Removal', 'Shellac Removal', 'Shellac Removal and Treatment', 'Acrylic Removal'],
+        ])
     </div>
 </section>
 @endsection

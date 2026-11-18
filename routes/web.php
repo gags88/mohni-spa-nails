@@ -37,49 +37,49 @@ Route::get('/pa', function () {
 });
 Route::group(['prefix' => '/services'], function () {
     Route::get("/body-treatments", function () {
-        return view('pages.services.body-treatments');
+        return view('pages.services.service', ['serviceKey' => 'body-treatments']);
     });
     Route::get("/dermaplaning", function () {
-        return view('pages.services.dermaplaning');
+        return view('pages.services.service', ['serviceKey' => 'dermaplaning']);
     });
     Route::get("/facials", function () {
-        return view('pages.services.facials');
+        return view('pages.services.service', ['serviceKey' => 'facials']);
     });
     Route::get("/hydra-facial", function () {
-        return view('pages.services.hydra-facial');
+        return view('pages.services.service', ['serviceKey' => 'hydra-facial']);
     });
     Route::get("/laser-hair-removal", function () {
         return view('pages.services.laser-hair-removal');
     });
     Route::get("/manicure-pedicure", function () {
-        return view('pages.services.manicure-pedicure');
+        return view('pages.services.service', ['serviceKey' => 'nails']);
     });
     Route::get("/makeup", function () {
-        return view('pages.services.makeup');
+        return view('pages.services.service', ['serviceKey' => 'makeup']);
     });
     Route::get("/massage", function () {
-        return view('pages.services.massage');
+        return view('pages.services.service', ['serviceKey' => 'massage']);
     });
     Route::get("/microdermabrasion", function () {
-        return view('pages.services.microdermabrasion');
+        return view('pages.services.service', ['serviceKey' => 'microdermabrasion']);
     });
     Route::get("/micro-needling", function () {
-        return view('pages.services.micro-needling');
+        return view('pages.services.service', ['serviceKey' => 'micro-needling']);
     });
     Route::get("/nail-recovery", function () {
-        return view('pages.services.nail-recovery');
+        return view('pages.services.service', ['serviceKey' => 'nail-recovery']);
     });
     Route::get("/threading", function () {
-        return view('pages.services.threading');
+        return view('pages.services.service', ['serviceKey' => 'threading']);
     });
     Route::get("/tinting", function () {
-        return view('pages.services.tinting');
+        return view('pages.services.service', ['serviceKey' => 'tinting']);
     });
     Route::get("/waxing", function () {
-        return view('pages.services.waxing');
+        return view('pages.services.service', ['serviceKey' => 'waxing']);
     });
     Route::get("/sugaring", function () {
-        return view('pages.services.sugaring');
+        return view('pages.services.service', ['serviceKey' => 'sugaring']);
     });
 });
 Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => '/admin'], function()

@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'dermaplaning'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -59,36 +60,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <hr />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
-                </div>
-            </div>
-            <div class="mh-pricinglist-areas hide">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <hr />
-                    <h2 class="font-arizonia text-center f-24 no-underline">Price List</h2>
-                    <ul class="mh-pricelist">
-                        <li class="sub-item-service">
-                            <span class="name">Dermaplanning</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$75.00+--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Dermaplanning Facial</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--<b>$125.00+</b>--}}</span>
-                        </li>
-                    </ul>
-                    <small><sup>*</sup><i>Prices subject to change without notice.</i></small>
-                </div>
-            </div>
         </div>
+        @include('pages.services.partials.treatment-menu', [
+            'menuKey' => 'facials',
+            'menuIdSuffix' => 'dermaplaning',
+            'menuTitle' => 'Dermaplaning pricing',
+            'menuIntro' => 'Choose a focused exfoliation treatment or pair dermaplaning with a complete facial.',
+            'only' => ['Dermaplaning', 'Dermaplaning Facial'],
+        ])
     </div>
 </section>
 @endsection

@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'facials'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -48,6 +49,7 @@
                             </div>
                         </div>
                     </div>
+                    @include('pages.services.partials.treatment-menu', ['menuKey' => 'facials'])
                     <div class="mh-headcontent text-left mt-20">
                         <div class="col-xs-12 mh-description mh-postdetails">
                             <h2>
@@ -83,81 +85,6 @@
                     </div>
                     @include('pages.services.microdermabrasion')
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <hr />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
-            </div>
-        </div>
-        <div class="text-left mb-20 hide">
-            <hr />
-            <div class="col-sm-10 col-sm-offset-1">
-                <div class="mb-10 text-center">
-                    <h2 class="font-arizonia f-24">Price List</h2>
-                </div>
-                <div class="row mh-pricelist">
-                    <ul class="col-sm-12" style="margin-bottom:0">
-                        <li class="sub-item-service">
-                            <span class="name">Basic Facial</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$50.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Customized Facial</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$65.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Back Facial</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$90.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Relaxation Facial</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$70.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Clarifying(Acne) Facial</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$80.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Anti Aging Facial(w/Collagen Treatment)</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$85.00+<sup>*</sup>--}}</span>
-                        </li>
-                    </ul>
-                    <ul class="col-sm-12">
-                        <li class="sub-item-service">
-                            <span class="name">Microdermabrasion</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$120.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Hydrafacial</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$125.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Dermaplanning Facial</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$125.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Microneedling</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$335.00+<sup>*</sup>--}}</span>
-                        </li>
-                    </ul>
-                </div>
-                {{--<small><sup>*</sup><i>Prices subject to change without notice.</i></small>--}}
             </div>
         </div>
     </div>

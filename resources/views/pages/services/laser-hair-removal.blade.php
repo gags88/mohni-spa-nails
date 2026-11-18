@@ -9,7 +9,7 @@
 
 @section('content')
 <section class="mohni-service-hero" aria-labelledby="laser-title">
-    <img src="/images/hero/laser-luxury-hero.webp" alt="Comfortable laser hair removal treatment at Mohni Spa & Nails">
+    <img src="/images/hero/laser-luxury-hero-v2.webp" alt="Professional laser hair removal treatment at Mohni Spa & Nails">
     <div class="mohni-service-hero__veil" aria-hidden="true"></div>
     <div class="container mohni-service-hero__container">
         <div class="mohni-service-hero__content">
@@ -17,7 +17,7 @@
             <h1 id="laser-title">Laser hair removal,<br>beautifully considered.</h1>
             <p>Advanced Soprano ICE Platinum technology with a calm, personal approach to every consultation and treatment.</p>
             <div class="mohni-inline-actions">
-                <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book a consultation</a>
+                <a href="{{ config('services.booking.url') }}" class="mh-btn">Book a consultation</a>
                 <a href="#laser-pricing" class="mohni-text-link">View pricing <span aria-hidden="true">&darr;</span></a>
             </div>
         </div>
@@ -44,52 +44,105 @@
     </div>
 </section>
 
+<section class="mohni-laser-video mohni-section" aria-labelledby="laser-video-title">
+    <div class="container">
+        <div class="mohni-laser-video__heading">
+            <p class="mohni-eyebrow">See the technology in motion</p>
+            <h2 id="laser-video-title" class="mohni-display">A closer look at laser hair removal.</h2>
+            <p>Learn more about the treatment experience before your personal consultation.</p>
+        </div>
+
+        <div class="mohni-laser-video__frame is-covered is-ready" data-laser-video data-video-id="MBk0Q670LXE">
+            <div id="laser-video-player"></div>
+            <div class="mohni-laser-video__end" aria-hidden="false">
+                <p class="mohni-eyebrow">Mohni Nail and Spa</p>
+                <h3 data-laser-video-status>See the treatment in motion.</h3>
+                <button type="button" class="mh-btn" data-laser-video-action>Play video</button>
+            </div>
+            <noscript>
+                <iframe src="https://www.youtube-nocookie.com/embed/MBk0Q670LXE?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Laser hair removal treatment video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </noscript>
+        </div>
+    </div>
+</section>
+
 @php
     $laserPricing = [
-        'Face & Neck' => [
-            ['Upper Lip', '$69+'], ['Upper Lip + Chin', '$115+'], ['Cheeks', '$80+'],
-            ['Neck', '$75+'], ['Sideburns', '$75+'], ['Ears', '$50+'],
-            ['Uni-brow', '$50+'], ['Full Face', '$150+'],
+        'Women' => [
+            'Face & Neck' => [
+                ['Upper Lip', '$69+'], ['Upper Lip + Chin', '$115+'], ['Neck', '$75+'],
+                ['Sideburns', '$75+'], ['Uni-brow', '$50+'], ['Full Face', '$150+'],
+            ],
+            'Body' => [
+                ['Fingers + Toes', '$50+'], ['Underarms', '$99+'], ['Half Arms', '$150+'],
+                ['Full Arms', '$199+'], ['Areolas', '$75+'], ['Stomach', '$125+'],
+                ['Upper Back', '$125+'], ['Lower Back', '$125+'], ['Full Back', '$199+'],
+            ],
+            'Lower Body' => [
+                ['Bikini Line', '$125+'], ['Buttocks', '$125+'], ['Full Brazilian', '$175+'],
+                ['Upper Legs', '$225+'], ['Lower Legs', '$175+'], ['Full Legs', '$299+'],
+            ],
         ],
-        'Upper Body' => [
-            ['Fingers + Toes', '$50+'], ['Underarms', '$99+'], ['Half Arms', '$150+'],
-            ['Shoulders', '$99+'], ['Full Arms', '$199+'], ['Areolas', '$75+'],
-            ['Stomach', '$125+'], ['Chest', '$150+'],
+        'Men' => [
+            'Face & Neck' => [
+                ['Cheeks', '$80+'], ['Neck', '$75+'], ['Sideburns', '$75+'],
+                ['Ears', '$50+'], ['Uni-brow', '$50+'], ['Full Face', '$150+'],
+            ],
+            'Body' => [
+                ['Fingers + Toes', '$50+'], ['Underarms', '$99+'], ['Half Arms', '$150+'],
+                ['Shoulders', '$99+'], ['Full Arms', '$199+'], ['Stomach', '$125+'],
+                ['Chest', '$150+'], ['Upper Back', '$125+'], ['Lower Back', '$125+'],
+                ['Full Back', '$199+'], ['Full Chest + Full Back', '$299+'],
+            ],
+            'Lower Body' => [
+                ['Upper Legs', '$225+'], ['Lower Legs', '$175+'], ['Full Legs', '$299+'],
+            ],
         ],
-        'Back & Lower Body' => [
-            ['Upper Back', '$125+'], ['Lower Back', '$125+'], ['Full Back', '$199+'],
-            ['Full Chest + Full Back', '$299+'], ['Bikini Line', '$125+'], ['Buttocks', '$125+'],
-            ['Full Brazilian', '$175+'], ['Upper Legs', '$225+'], ['Lower Legs', '$175+'],
-            ['Full Legs', '$299+'],
+        'Promotions' => [
+            'Packages' => [
+                ['Package of 6 sessions', '25% off'],
+            ],
         ],
     ];
 @endphp
 
 <section id="laser-pricing" class="mohni-pricing mohni-section" aria-labelledby="pricing-title">
     <div class="container">
-        <div class="mohni-heading-row">
+        <div class="mohni-heading-row mohni-heading-row--pricing">
             <div>
                 <p class="mohni-eyebrow">Simple &amp; transparent</p>
                 <h2 id="pricing-title" class="mohni-display">Laser pricing.</h2>
-            </div>
-            <div class="mohni-pricing__offer">
-                <strong>Package of 6</strong>
-                <span>Receive 25% off</span>
+                <p class="mohni-pricing__intro">Explore pricing for women, men and current package promotions.</p>
             </div>
         </div>
-        <div class="mohni-pricing__grid">
-            @foreach ($laserPricing as $group => $items)
-                <section class="mohni-price-card" aria-labelledby="price-{{ Str::slug($group) }}">
-                    <h3 id="price-{{ Str::slug($group) }}">{{ $group }}</h3>
-                    <ul class="list-unstyled">
-                        @foreach ($items as [$name, $price])
-                            <li><span>{{ $name }}</span><strong>{{ $price }}</strong></li>
+
+        <div class="mohni-laser-accordion">
+            @foreach ($laserPricing as $audience => $sections)
+                <details class="mohni-laser-accordion__item" name="laser-pricing">
+                    <summary>
+                        <span>
+                            <small>Laser hair removal</small>
+                            <strong>{{ $audience }}</strong>
+                        </span>
+                        <i aria-hidden="true"></i>
+                    </summary>
+
+                    <div class="mohni-laser-accordion__body">
+                        @foreach ($sections as $section => $items)
+                            <section class="mohni-laser-price-group" aria-labelledby="laser-{{ Str::slug($audience) }}-{{ Str::slug($section) }}">
+                                <h3 id="laser-{{ Str::slug($audience) }}-{{ Str::slug($section) }}">{{ $section }}</h3>
+                                <ul class="list-unstyled">
+                                    @foreach ($items as [$name, $price])
+                                        <li><span>{{ $name }}</span><strong>{{ $price }}</strong></li>
+                                    @endforeach
+                                </ul>
+                            </section>
                         @endforeach
-                    </ul>
-                </section>
+                    </div>
+                </details>
             @endforeach
         </div>
-        <p class="mohni-pricing__note">Prices shown are starting prices per session and may change without notice. Your consultation will confirm treatment areas, timing and exact pricing.</p>
+        <p class="mohni-pricing__note">Prices shown are starting prices per session and may change without notice. Promotions cannot be combined with other offers. Your consultation will confirm treatment areas, timing and exact pricing.</p>
     </div>
 </section>
 
@@ -115,7 +168,11 @@
         <p class="mohni-eyebrow">Ready when you are</p>
         <h2>Begin with a complimentary consultation.</h2>
         <p>Ask questions, explore the right areas and leave with a plan designed for you.</p>
-        <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book your consultation</a>
+        <a href="{{ config('services.booking.url') }}" class="mh-btn">Book your consultation</a>
     </div>
 </section>
+@endsection
+
+@section('page_scripts')
+<script src="/js/laser-video.js?v=1.1" defer></script>
 @endsection

@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'body-treatments'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -24,7 +25,7 @@
         </div>
     </div>
 </div>
-<section id="mh-paradisecenter" class="mh-paradisecenter mh-sectionspace mh-haslayout">
+<section id="mh-paradisecenter" class="mh-paradisecenter mh-sectionspace mh-haslayout service">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
@@ -37,6 +38,7 @@
                     <div class="mh-description mb-40 text-center">
                         Using a combination of authentic healing therapy and powerful ingredients. We nurture and restore your body and your senses.
                     </div>
+                    @include('pages.services.partials.treatment-menu', ['menuKey' => 'body-treatments'])
                     <div class="mh-headcontent text-left">
                         <div class="col-xs-12 col-sm-5 hidden-xs">
                             <img src="/images/services/body-glow.jpeg" class="mh-border img-responsive">
@@ -65,9 +67,6 @@
                                 </ul>
                                 <hr />
                             </div>
-                            <p><b>Duration:</b> 1 hour</p>
-                            <p><b>Price:</b> $80.00+<sup>*</sup></p>
-                            <small><sup>*</sup><i>Prices subject to change without notice.</i></small>
                             <hr />
                         </div>
                     </div>
@@ -90,10 +89,6 @@
                                 </ul>
                                 <hr />
                             </div>
-                            <p><b>Duration:</b> 1.5 hours</p>
-                            {{-- <p><b>Price:</b> $150.00+<sup>*</sup></p>
-                            <small><sup>*</sup><i>Prices subject to change without notice.</i></small>
-                            <hr /> --}}
                         </div>
                         <div class="col-xs-12 col-sm-5 hidden-xs">
                             <img src="/images/services/body-treatment-wraps.jpeg" class="mh-border img-responsive">

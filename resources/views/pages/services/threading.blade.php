@@ -7,6 +7,7 @@
 <meta name="author" content="<?php echo app_name(); ?>">
 @endsection
 @section('content')
+@include('pages.services.partials.editorial-hero', ['serviceKey' => 'threading'])
 <div id="mh-innerbanner" class="mh-innerbanner mh-haslayout">
     <div class="container">
         <div class="row">
@@ -42,49 +43,10 @@
             <div class="col-sm-5">
                 <div class="mb-20">
                     Ideal for any skin type, this ancient form of hair removal uses 100% cotton thread twisted and rolled over the hair to remove it from the root.
-                    <hr />
-                    <h2 class="font-arizonia f-24 text-center">Services</h2>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 text-center">
-                            <a href="https://book.squareup.com/appointments/shyx8cf9hexrvs/location/LDNGWM2MCEDEJ/services" class="mh-btn">Book now</a>
-                        </div>
-                    </div>
-                    <ul class="txt-holder list-unstyled mt-10 mh-pricelist col-sm-12 hide">
-                        <li class="sub-item-service">
-                            <span class="name">Eyebrows</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$9.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Eyebrows & Lip</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$12.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Chin</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$7.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Forehead</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$5.00+<sup>*</sup>--}}</span>
-                        </li>
-                        <li class="sub-item-service">
-                            <span class="name">Full face</span>
-                            {{--<span class="border"></span>--}}
-                            <span class="price">{{--$28.00+<sup>*</sup>--}}</span>
-                        </li>
-                    </ul>
                 </div>
-                {{--<small><sup>*</sup><i>Prices subject to change without notice.</i></small>--}}
             </div>
         </div>
+        @include('pages.services.partials.treatment-menu', ['menuKey' => 'threading'])
     </div>
 </section>
 @endsection
