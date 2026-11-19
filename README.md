@@ -83,6 +83,56 @@ php artisan optimize:clear
 npm run production
 ```
 
+## Square service price sync
+
+The website price lists are the source for the guarded Square Catalog sync. Add a
+Square access token with `ITEMS_READ` and `ITEMS_WRITE` permissions to your local
+`.env` file. The token is ignored by Git and must never be committed.
+
+```dotenv
+SQUARE_ACCESS_TOKEN=your_private_token
+SQUARE_ENVIRONMENT=production
+SQUARE_LOCATION_ID=LDNGWM2MCEDEJ
+SQUARE_CURRENCY=CAD
+SQUARE_DEFAULT_SERVICE_DURATION_MINUTES=30
+```
+
+Validate the local price manifest, then run a read-only comparison:
+
+```bash
+php scripts/sync_square_services.php --validate
+php scripts/sync_square_services.php --list-locations
+php scripts/sync_square_services.php
+```
+
+After reviewing the report, apply uniquely matched changes:
+
+```bash
+php scripts/sync_square_services.php --apply
+```
+
+Missing or ambiguous services are skipped. If the report lists missing Square
+categories, the script can create them during the apply step:
+
+```bash
+php scripts/sync_square_services.php --apply --create-categories
+```
+
+To build an empty Sandbox catalog from the website menus, use the Sandbox token
+and Sandbox location ID, then run:
+
+```bash
+php scripts/sync_square_services.php --apply --create-categories --seed-sandbox
+```
+
+`--seed-sandbox` is hard-blocked in production. Services without a duration on
+the website (including laser areas and complimentary add-ons) use the configured
+default duration in Sandbox. Existing or ambiguous matches are never duplicated.
+
+Labels such as `$85+` and `From $550` are not changed by default because Square
+does not retain that website label in a fixed catalog price. Add
+`--include-starting-prices` only when the numeric base price should be used.
+
 ## Project structure
 
 - `app/Http/Controllers` — public and admin request handling
