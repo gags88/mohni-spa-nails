@@ -24,7 +24,7 @@
         <section class="mohni-booking-app__body">
             <div class="mohni-availability-layout">
                 <aside class="mohni-availability-summary">
-                    <a class="mohni-booking-back" href="{{ route('booking.index', [], false) }}">Change treatment</a>
+                    <a class="mohni-booking-back" href="{{ route('booking.index', [], false) }}" data-booking-loading-link data-loading-text="Opening services…">&larr; Back to services</a>
                     <p class="mohni-eyebrow">Your treatment</p>
                     <h2>{{ $service['name'] }}</h2>
                     <dl>
@@ -60,7 +60,7 @@
                             <p>Try the next week or call us at <a href="tel:+12042194071">204-219-4071</a>.</p>
                         </div>
                     @else
-                        <form method="GET" action="{{ route('booking.details', [], false) }}" data-booking-time-form>
+                        <form method="GET" action="{{ route('booking.details', [], false) }}" data-booking-time-form data-booking-loading-form>
                             <input type="hidden" name="service_variation_id" value="{{ $service['id'] }}">
                             <input type="hidden" name="start_at" data-booking-start-at>
                             <input type="hidden" name="team_member_id" data-booking-team-member-id>
@@ -85,7 +85,7 @@
                                     <small>Selected appointment</small>
                                     <strong data-booking-time-selection-label></strong>
                                 </div>
-                                <button type="submit" class="mh-btn">Continue</button>
+                                <button type="submit" class="mh-btn" data-loading-text="Loading your details…">Continue</button>
                             </div>
                         </form>
                     @endif

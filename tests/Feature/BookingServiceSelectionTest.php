@@ -147,6 +147,8 @@ class BookingServiceSelectionTest extends TestCase
             ->assertSee('Choose a time')
             ->assertSee('Express Facial')
             ->assertSee('data-start-at="2026-11-20T16:00:00Z"', false)
+            ->assertSee('data-booking-loading-form', false)
+            ->assertSee('Back to services')
             ->assertSee('Mohni Specialist');
 
         Http::assertSent(function ($request) {
@@ -224,7 +226,11 @@ class BookingServiceSelectionTest extends TestCase
             ->assertOk()
             ->assertSee('Tell us about you')
             ->assertSee('Express Facial')
-            ->assertSee('Mohni Specialist');
+            ->assertSee('Mohni Specialist')
+            ->assertSee('Back to date &amp; time', false)
+            ->assertSee('rows="6"', false)
+            ->assertSee('data-loading-text="Preparing review…"', false)
+            ->assertSee('/js/booking-form.js?v=1.0', false);
 
         $this->post('/book/review', array_merge($selection, [
             'customer_name' => 'Preview Customer',
@@ -236,8 +242,17 @@ class BookingServiceSelectionTest extends TestCase
             ->assertSee('Review your appointment')
             ->assertSee('Preview Customer')
             ->assertSee('Nothing has been submitted')
+            ->assertSee('Opening details…')
+            ->assertDontSee('history.back()', false)
             ->assertSee('Confirm booking')
             ->assertSee('disabled', false);
+
+        $this->get('/book/details?'.http_build_query($selection))
+            ->assertOk()
+            ->assertSee('value="Preview Customer"', false)
+            ->assertSee('value="preview@example.com"', false)
+            ->assertSee('value="204-555-0100"', false)
+            ->assertSee('>Preview only</textarea>', false);
 
         Http::assertNotSent(function ($request) {
             return rtrim(parse_url($request->url(), PHP_URL_PATH), '/') === '/v2/bookings';

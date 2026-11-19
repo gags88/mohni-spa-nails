@@ -23,16 +23,6 @@
         selection.hidden = false;
     });
 
-    form.addEventListener('submit', function () {
-        var button = form.querySelector('button[type="submit"]');
-        if (!button) {
-            return;
-        }
-
-        button.disabled = true;
-        button.textContent = 'Loading live times…';
-    });
-
     categoryButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             var group = document.getElementById(button.getAttribute('data-booking-category-target'));

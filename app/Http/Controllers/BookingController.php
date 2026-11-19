@@ -144,7 +144,9 @@ class BookingController extends Controller
             return response()->view('pages.booking.unavailable', [], 503);
         }
 
-        return view('pages.booking.details', compact('service', 'appointment'));
+        $customer = $this->draftCustomer($request, $validated);
+
+        return view('pages.booking.details', compact('service', 'appointment', 'customer'));
     }
 
     public function review(Request $request, SquareServiceCatalog $catalog, SquareClient $square)
@@ -171,15 +173,26 @@ class BookingController extends Controller
             return response()->view('pages.booking.unavailable', [], 503);
         }
 
+        $customer = [
+            'name' => $validated['customer_name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'notes' => $validated['notes'] ?? null,
+        ];
+
+        $request->session()->put('booking.preview_draft', [
+            'selection' => [
+                'service_variation_id' => $validated['service_variation_id'],
+                'start_at' => $validated['start_at'],
+                'team_member_id' => $validated['team_member_id'] ?? null,
+            ],
+            'customer' => $customer,
+        ]);
+
         return view('pages.booking.review', [
             'service' => $service,
             'appointment' => $appointment,
-            'customer' => [
-                'name' => $validated['customer_name'],
-                'email' => $validated['email'],
-                'phone' => $validated['phone'],
-                'notes' => $validated['notes'] ?? null,
-            ],
+            'customer' => $customer,
         ]);
     }
 
@@ -194,11 +207,26 @@ class BookingController extends Controller
 
         return [
             'start_at' => $selection['start_at'],
+            'date_key' => $startsAt->format('Y-m-d'),
             'date_label' => $startsAt->format('l, F j, Y'),
             'time_label' => $startsAt->format('g:i A'),
             'team_member_id' => $teamMemberId,
             'team_member_name' => $teamMemberName,
         ];
+    }
+
+    protected function draftCustomer(Request $request, array $selection): array
+    {
+        $draft = $request->session()->get('booking.preview_draft', []);
+        $draftSelection = $draft['selection'] ?? [];
+
+        foreach (['service_variation_id', 'start_at', 'team_member_id'] as $field) {
+            if (($draftSelection[$field] ?? null) !== ($selection[$field] ?? null)) {
+                return [];
+            }
+        }
+
+        return is_array($draft['customer'] ?? null) ? $draft['customer'] : [];
     }
 
     protected function matchRequestedService(

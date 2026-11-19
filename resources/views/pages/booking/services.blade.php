@@ -48,7 +48,7 @@
                     <p>Please call us at <a href="tel:+12042194071">204-219-4071</a> and we will be happy to help.</p>
                 </div>
             @else
-                <form class="mohni-booking-form" data-booking-services-form method="GET" action="{{ route('booking.availability', [], false) }}">
+                <form class="mohni-booking-form" data-booking-services-form data-booking-loading-form method="GET" action="{{ route('booking.availability', [], false) }}">
                     <div class="mohni-booking-groups">
                         @foreach ($serviceGroups as $category => $services)
                             <section id="booking-category-{{ Str::slug($category) }}" class="mohni-booking-group mohni-booking-group--static" data-booking-group aria-labelledby="booking-category-title-{{ Str::slug($category) }}">
@@ -89,7 +89,7 @@
                             <small>Your treatment</small>
                             <strong data-booking-selection-name>{{ $preselectedService['name'] ?? '' }}</strong>
                         </div>
-                        <button type="submit" class="mh-btn">See available times</button>
+                        <button type="submit" class="mh-btn" data-loading-text="Loading live times…">See available times</button>
                     </div>
                 </form>
                 <p class="mohni-booking-no-results" data-booking-no-results hidden>No services match your search.</p>

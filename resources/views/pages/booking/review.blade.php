@@ -40,7 +40,12 @@
                 </div>
 
                 <div class="mohni-booking-review-actions">
-                    <button type="button" class="mohni-booking-secondary" onclick="history.back()">Edit details</button>
+                    <a
+                        class="mohni-booking-secondary"
+                        href="{{ route('booking.details', ['service_variation_id' => $service['id'], 'start_at' => $appointment['start_at'], 'team_member_id' => $appointment['team_member_id']], false) }}"
+                        data-booking-loading-link
+                        data-loading-text="Opening details…"
+                    >&larr; Edit details</a>
                     <button type="button" class="mh-btn" disabled>Confirm booking</button>
                 </div>
             </div>
