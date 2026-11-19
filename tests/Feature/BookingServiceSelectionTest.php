@@ -146,7 +146,7 @@ class BookingServiceSelectionTest extends TestCase
             ->assertOk()
             ->assertSee('Choose a time')
             ->assertSee('Express Facial')
-            ->assertSee('10:00 AM')
+            ->assertSee('data-start-at="2026-11-20T16:00:00Z"', false)
             ->assertSee('Mohni Specialist');
 
         Http::assertSent(function ($request) {
