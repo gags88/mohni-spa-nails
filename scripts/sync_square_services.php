@@ -8,7 +8,7 @@ use GuzzleHttp\Exception\RequestException;
 
 const EXIT_CONFIGURATION = 2;
 const EXIT_REVIEW_REQUIRED = 3;
-const SQUARE_API_VERSION_DEFAULT = '2026-09-16';
+const SQUARE_API_VERSION_DEFAULT = '2026-11-18';
 
 $root = dirname(__DIR__);
 require $root.'/vendor/autoload.php';

@@ -15,6 +15,1353 @@
     --mohni-copy: #595b57;
 }
 
+/* Custom appointment flow */
+.mohni-booking {
+    min-height: 70vh;
+    background: radial-gradient(circle at 8% 18%, rgba(194, 166, 111, 0.09), transparent 25%), #fbf8f3;
+}
+
+.mohni-booking__intro {
+    padding: 64px 0 38px;
+    background: linear-gradient(145deg, #f2e9dc 0%, #fbf8f3 58%, #eef0eb 100%);
+    border-bottom: 1px solid rgba(149, 120, 68, 0.18);
+}
+
+.mohni-booking-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.mohni-booking-heading > div:first-child {
+    max-width: 760px;
+}
+
+.mohni-booking__intro .mohni-display {
+    margin: 10px 0 18px;
+    color: var(--mohni-charcoal);
+    font: 400 clamp(40px, 5vw, 66px)/1.06 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-heading p:not(.mohni-eyebrow) {
+    margin: 0;
+    color: #68645e;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.mohni-booking-live {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 11px 15px;
+    color: var(--mohni-sage-dark);
+    background: rgba(255, 253, 248, 0.72);
+    border: 1px solid rgba(79, 94, 84, 0.2);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.mohni-booking-live i {
+    width: 9px;
+    height: 9px;
+    background: #5f8068;
+    border: 2px solid #dce8df;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(95, 128, 104, 0.12);
+}
+
+.mohni-booking-steps {
+    display: flex;
+    gap: 18px;
+    margin: 34px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mohni-booking-steps li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #8a847b;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-steps span {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border: 1px solid #d8cbb9;
+    border-radius: 50%;
+}
+
+.mohni-booking-steps .is-current {
+    color: var(--mohni-charcoal);
+}
+
+.mohni-booking-steps .is-current span {
+    color: var(--mohni-white);
+    background: var(--mohni-sage-dark);
+    border-color: var(--mohni-sage-dark);
+}
+
+.mohni-booking__services {
+    padding: 46px 0 100px;
+}
+
+.mohni-booking__toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 28px;
+}
+
+.mohni-booking__toolbar h2 {
+    margin: 6px 0 0;
+    color: var(--mohni-charcoal);
+    font: 400 38px/1.1 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-search input {
+    width: min(360px, 80vw);
+    height: 48px;
+    padding: 0 18px;
+    color: var(--mohni-charcoal);
+    background: var(--mohni-white);
+    border: 1px solid #dcd2c4;
+    border-radius: 999px;
+    font-size: 16px;
+}
+
+.mohni-booking-search input:focus {
+    border-color: var(--mohni-sage-dark);
+    box-shadow: 0 0 0 4px rgba(79, 94, 84, 0.1);
+    outline: 0;
+}
+
+.mohni-booking-category-nav {
+    display: flex;
+    gap: 10px;
+    margin: 0 0 28px;
+    padding: 0 0 8px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.mohni-booking-category-nav button {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 9px;
+    min-height: 44px;
+    padding: 0 17px;
+    color: var(--mohni-charcoal);
+    background: var(--mohni-white);
+    border: 1px solid #ddd2c3;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.mohni-booking-category-nav button:hover,
+.mohni-booking-category-nav button:focus,
+.mohni-booking-category-nav button.is-active {
+    color: var(--mohni-white);
+    background: var(--mohni-sage-dark);
+    border-color: var(--mohni-sage-dark);
+    outline: 0;
+    transform: translateY(-1px);
+}
+
+.mohni-booking-category-nav span {
+    display: inline-grid;
+    min-width: 24px;
+    height: 24px;
+    place-items: center;
+    padding: 0 5px;
+    color: inherit;
+    background: rgba(194, 166, 111, 0.18);
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.mohni-booking-groups {
+    display: grid;
+    gap: 14px;
+}
+
+.mohni-booking-group {
+    scroll-margin-top: 118px;
+    overflow: hidden;
+    background: var(--mohni-white);
+    border: 1px solid rgba(149, 120, 68, 0.24);
+    border-radius: 18px;
+    box-shadow: 0 14px 38px rgba(41, 36, 31, 0.05);
+}
+
+.mohni-booking-group > summary {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 22px;
+    padding: 24px 28px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.mohni-booking-group > summary::-webkit-details-marker {
+    display: none;
+}
+
+.mohni-booking-group > summary small,
+.mohni-booking-group > summary strong {
+    display: block;
+}
+
+.mohni-booking-group > summary small {
+    margin-bottom: 5px;
+    color: var(--mohni-champagne-dark);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-group > summary strong {
+    color: var(--mohni-charcoal);
+    font: 400 25px/1.2 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-group__count {
+    color: #817b72;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-group > summary i {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(149, 120, 68, 0.45);
+    border-radius: 50%;
+}
+
+.mohni-booking-group > summary i::before,
+.mohni-booking-group > summary i::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 11px;
+    height: 1px;
+    content: "";
+    background: var(--mohni-champagne-dark);
+    transform: translate(-50%, -50%);
+}
+
+.mohni-booking-group > summary i::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.mohni-booking-group[open] > summary i::after {
+    transform: translate(-50%, -50%);
+}
+
+.mohni-booking-group[open] > summary {
+    border-bottom: 1px solid #e7ded2;
+}
+
+.mohni-booking-group__body {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 30px;
+    padding: 8px 28px 24px;
+}
+
+.mohni-booking-service {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 14px;
+    min-height: 78px;
+    margin: 0;
+    padding: 14px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #ece5dc;
+    border-radius: 10px;
+    transition: background 160ms ease, padding 160ms ease;
+}
+
+.mohni-booking-service:hover,
+.mohni-booking-service:focus-within {
+    padding-right: 12px;
+    padding-left: 12px;
+    background: #f7f3ed;
+}
+
+.mohni-booking-service input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mohni-booking-service__marker {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #b8aa96;
+    border-radius: 50%;
+}
+
+.mohni-booking-service input:checked + .mohni-booking-service__marker {
+    background: var(--mohni-sage-dark);
+    border: 5px solid #dfe4df;
+    outline: 1px solid var(--mohni-sage-dark);
+}
+
+.mohni-booking-service__copy strong,
+.mohni-booking-service__copy small {
+    display: block;
+}
+
+.mohni-booking-service__copy strong {
+    color: var(--mohni-charcoal);
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.mohni-booking-service__copy small {
+    margin-top: 4px;
+    color: #817b72;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-service__price {
+    color: var(--mohni-charcoal);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.mohni-booking-selection {
+    position: sticky;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 26px;
+    padding: 20px 24px;
+    color: var(--mohni-white);
+    background: var(--mohni-espresso);
+    border: 1px solid rgba(216, 197, 164, 0.24);
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(32, 36, 33, 0.22);
+}
+
+.mohni-booking-selection[hidden] {
+    display: none;
+}
+
+.mohni-booking-selection small,
+.mohni-booking-selection strong {
+    display: block;
+}
+
+.mohni-booking-selection small {
+    margin-bottom: 5px;
+    color: #d8c5a4;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-selection strong {
+    color: var(--mohni-white);
+    font-size: 17px;
+}
+
+.mohni-booking-selection .mh-btn {
+    flex: 0 0 auto;
+}
+
+.mohni-booking-back {
+    display: inline-flex;
+    margin-bottom: 22px;
+    color: var(--mohni-sage-dark);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-service-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 32px;
+    padding: 24px 28px;
+    background: var(--mohni-espresso);
+    border-radius: 18px;
+}
+
+.mohni-booking-service-card small,
+.mohni-booking-service-card strong {
+    display: block;
+}
+
+.mohni-booking-service-card small {
+    margin-bottom: 6px;
+    color: #d8c5a4;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-service-card strong {
+    color: var(--mohni-white);
+    font: 400 24px/1.25 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-service-card span {
+    color: #eee8df;
+    white-space: nowrap;
+}
+
+.mohni-booking-week-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.mohni-booking-week-nav h2 {
+    margin: 0;
+    color: var(--mohni-charcoal);
+    font: 400 32px/1.2 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-week-nav__links {
+    display: flex;
+    gap: 10px;
+}
+
+.mohni-booking-week-nav__links a,
+.mohni-booking-week-nav__links span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 17px;
+    border: 1px solid #d8cbb9;
+    border-radius: 999px;
+    color: var(--mohni-charcoal);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-week-nav__links span {
+    opacity: 0.4;
+}
+
+.mohni-booking-days {
+    display: grid;
+    gap: 14px;
+}
+
+.mohni-booking-day {
+    padding: 24px 28px;
+    background: var(--mohni-white);
+    border: 1px solid rgba(149, 120, 68, 0.24);
+    border-radius: 18px;
+}
+
+.mohni-booking-day h3 {
+    margin: 0 0 18px;
+    color: var(--mohni-charcoal);
+    font: 400 22px/1.2 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-times {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mohni-booking-time {
+    min-width: 148px;
+    padding: 14px 16px;
+    color: var(--mohni-charcoal);
+    text-align: left;
+    background: #f7f3ed;
+    border: 1px solid #ded3c4;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.mohni-booking-time:hover,
+.mohni-booking-time:focus {
+    border-color: var(--mohni-sage-dark);
+    box-shadow: 0 8px 20px rgba(41, 36, 31, 0.08);
+    outline: 0;
+    transform: translateY(-2px);
+}
+
+.mohni-booking-time.is-selected,
+.mohni-booking-time[aria-pressed="true"] {
+    color: var(--mohni-white);
+    background: var(--mohni-sage-dark);
+    border-color: var(--mohni-sage-dark);
+}
+
+.mohni-booking-time strong,
+.mohni-booking-time small {
+    display: block;
+}
+
+.mohni-booking-time small {
+    margin-top: 3px;
+    color: #817b72;
+    font-size: 13px;
+}
+
+.mohni-booking-time.is-selected small,
+.mohni-booking-time[aria-pressed="true"] small {
+    color: #e8eee9;
+}
+
+.mohni-booking-time-selection > span {
+    color: #d8c5a4;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-empty,
+.mohni-booking-no-results {
+    padding: 38px;
+    text-align: center;
+    background: var(--mohni-white);
+    border: 1px solid #e3d9ca;
+    border-radius: 18px;
+}
+
+/* Compact booking workspace: intentionally isolated from legacy hero rules. */
+.mohni-booking-hero {
+    width: 100%;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 42px 0 30px !important;
+    background: linear-gradient(145deg, #f2e9dc 0%, #fbf8f3 58%, #eef0eb 100%);
+    border-bottom: 1px solid rgba(149, 120, 68, 0.18);
+}
+
+.mohni-booking-hero .mohni-display {
+    margin: 8px 0 10px;
+    color: var(--mohni-charcoal);
+    font: 400 clamp(36px, 4vw, 54px)/1.08 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-hero .mohni-booking-heading p:not(.mohni-eyebrow) {
+    margin: 0;
+    color: #68645e;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.mohni-booking-hero .mohni-booking-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+    margin: 26px 0 0 !important;
+}
+
+.mohni-booking-hero .mohni-booking-steps li {
+    position: relative;
+    min-height: 44px;
+    padding: 0 10px;
+    background: rgba(255, 253, 248, 0.54);
+    border: 1px solid rgba(149, 120, 68, 0.16);
+    border-radius: 12px;
+}
+
+.mohni-booking-steps .is-complete {
+    color: var(--mohni-sage-dark);
+}
+
+.mohni-booking-steps .is-complete span {
+    color: var(--mohni-white);
+    background: var(--mohni-champagne-dark);
+    border-color: var(--mohni-champagne-dark);
+}
+
+.mohni-booking-preview-badge {
+    flex: 0 0 auto;
+    margin-bottom: 8px;
+    padding: 11px 16px;
+    color: #735a31;
+    background: #f3e5c9;
+    border: 1px solid #d8bd88;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.mohni-booking-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.7fr);
+    align-items: start;
+    gap: 28px;
+}
+
+.mohni-booking-details,
+.mohni-booking-review-card,
+.mohni-booking-summary {
+    padding: 30px;
+    background: var(--mohni-white);
+    border: 1px solid rgba(149, 120, 68, 0.24);
+    border-radius: 20px;
+    box-shadow: 0 18px 48px rgba(41, 36, 31, 0.06);
+}
+
+.mohni-booking-summary {
+    position: sticky;
+    top: 120px;
+    color: #ede6dd;
+    background: var(--mohni-espresso);
+}
+
+.mohni-booking-form-heading h2,
+.mohni-booking-summary h2 {
+    margin: 6px 0 24px;
+    color: var(--mohni-charcoal);
+    font: 400 30px/1.18 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-summary .mohni-eyebrow {
+    color: #d8c5a4;
+}
+
+.mohni-booking-summary h2 {
+    color: var(--mohni-white);
+}
+
+.mohni-booking-summary dl,
+.mohni-booking-review-list {
+    margin: 0;
+}
+
+.mohni-booking-summary dl > div,
+.mohni-booking-review-list > div {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    padding: 13px 0;
+    border-top: 1px solid rgba(216, 197, 164, 0.2);
+}
+
+.mohni-booking-summary dt,
+.mohni-booking-review-list dt {
+    color: #b9afa3;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.mohni-booking-summary dd,
+.mohni-booking-review-list dd {
+    margin: 0;
+    color: var(--mohni-white);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.mohni-booking-review-list dd {
+    color: var(--mohni-charcoal);
+}
+
+.mohni-booking-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.mohni-booking-field {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+}
+
+.mohni-booking-field--wide {
+    grid-column: 1 / -1;
+}
+
+.mohni-booking-field > span {
+    color: var(--mohni-charcoal);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.mohni-booking-field em {
+    color: #817b72;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.mohni-booking-field input,
+.mohni-booking-field textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: var(--mohni-charcoal);
+    background: #fbf8f3;
+    border: 1px solid #ded3c4;
+    border-radius: 10px;
+    font: 400 16px/1.4 Inter, sans-serif;
+}
+
+.mohni-booking-field input:focus,
+.mohni-booking-field textarea:focus {
+    border-color: var(--mohni-sage-dark);
+    box-shadow: 0 0 0 4px rgba(79, 94, 84, 0.1);
+    outline: 0;
+}
+
+.mohni-booking-field small {
+    color: #9b433d;
+    font-size: 13px;
+}
+
+.mohni-booking-primary {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.mohni-booking-preview-notice {
+    margin: 26px 0;
+    padding: 18px 20px;
+    color: #5e4b2d;
+    background: #f8eedc;
+    border: 1px solid #e1cda8;
+    border-radius: 12px;
+}
+
+.mohni-booking-preview-notice strong,
+.mohni-booking-preview-notice p {
+    color: inherit;
+}
+
+.mohni-booking-preview-notice p {
+    margin: 5px 0 0;
+    line-height: 1.55;
+}
+
+.mohni-booking-review-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.mohni-booking-review-actions .mh-btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.mohni-booking-secondary {
+    min-height: 48px;
+    padding: 0 22px;
+    color: var(--mohni-charcoal);
+    background: transparent;
+    border: 1px solid #cfc2b0;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+    .mohni-booking__intro {
+        padding: 54px 0 38px;
+    }
+
+    .mohni-booking-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .mohni-booking-live {
+        margin: 0;
+    }
+
+    .mohni-booking-steps {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        text-align: left;
+    }
+
+    .mohni-booking__toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .mohni-booking-search input {
+        width: 100%;
+    }
+
+    .mohni-booking-category-nav {
+        margin-right: -15px;
+        margin-left: -15px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .mohni-booking-group > summary {
+        grid-template-columns: 1fr auto;
+        padding: 20px;
+    }
+
+    .mohni-booking-group__count {
+        display: none;
+    }
+
+    .mohni-booking-group__body {
+        grid-template-columns: 1fr;
+        padding: 6px 20px 20px;
+    }
+
+    .mohni-booking-selection {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .mohni-booking-selection,
+    .mohni-booking-service-card,
+    .mohni-booking-week-nav {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .mohni-booking-selection .mh-btn {
+        width: 100%;
+    }
+
+    .mohni-booking-service-card span {
+        white-space: normal;
+    }
+
+    .mohni-booking-week-nav__links {
+        justify-content: space-between;
+    }
+
+    .mohni-booking-time {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 0;
+    }
+
+    .mohni-booking-hero {
+        padding: 32px 0 24px !important;
+    }
+
+    .mohni-booking-hero .mohni-booking-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mohni-booking-layout,
+    .mohni-booking-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .mohni-booking-field--wide {
+        grid-column: auto;
+    }
+
+    .mohni-booking-summary {
+        position: static;
+    }
+
+    .mohni-booking-review-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+/* Final availability header sizing override; kept last to beat legacy typography. */
+.mohni-booking-app--availability .mohni-booking-app__header {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 24px 30px 20px !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-display {
+    margin: 4px 0 7px !important;
+    font-size: clamp(30px, 3vw, 42px) !important;
+    line-height: 1.08 !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps {
+    gap: 20px;
+    margin-top: 18px !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps li {
+    min-height: 34px !important;
+    padding: 3px 0 8px !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-bottom: 2px solid rgba(82, 104, 92, 0.18) !important;
+    border-radius: 0 !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps li.is-current {
+    border-bottom-color: #52685c !important;
+}
+
+/* Service-page entry points into the custom booking flow. */
+.mohni-treatment-menu__book,
+.mohni-laser-price-group__actions a {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 5px;
+    min-height: 28px;
+    padding: 4px 0 3px;
+    color: #52685c;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    font: 600 10px/1 Inter, Arial, sans-serif;
+    letter-spacing: 0.12em;
+    opacity: 0.62;
+    text-transform: uppercase;
+    transition: color 160ms ease, border-color 160ms ease, opacity 160ms ease;
+}
+
+.mohni-treatment-menu__book::after,
+.mohni-laser-price-group__actions a::after {
+    content: "\2192";
+    font-size: 13px;
+    letter-spacing: 0;
+}
+
+.mohni-treatment-menu__book:hover,
+.mohni-treatment-menu__book:focus,
+.mohni-laser-price-group__actions a:hover,
+.mohni-laser-price-group__actions a:focus {
+    color: #35443d;
+    background: transparent;
+    border-bottom-color: currentColor;
+    opacity: 1;
+    outline: 0;
+}
+
+.mohni-laser-price-group__actions {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 12px;
+}
+
+@media (max-width: 520px) {
+    .mohni-treatment-menu__item {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+    }
+
+    .mohni-treatment-menu__details {
+        flex: 1 1 calc(100% - 70px);
+    }
+
+    .mohni-treatment-menu__book {
+        margin-left: auto;
+        min-height: 36px;
+        opacity: 0.82;
+    }
+
+    .mohni-laser-price-group li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .mohni-laser-price-group__actions {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .mohni-laser-price-group__actions a {
+        min-height: 36px;
+        opacity: 0.82;
+    }
+}
+
+/* Booking treatment directory: open editorial sections, never accordions. */
+.mohni-booking-app .mohni-booking-groups {
+    gap: 0;
+    counter-reset: booking-category;
+    border-top: 1px solid rgba(82, 104, 92, 0.28);
+}
+
+.mohni-booking-app .mohni-booking-group--static {
+    counter-increment: booking-category;
+    scroll-margin-top: 28px;
+    overflow: visible;
+    padding: 28px 0 30px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(82, 104, 92, 0.22);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.mohni-booking-app .mohni-booking-group--static:nth-child(even) {
+    background: linear-gradient(90deg, rgba(236, 224, 217, 0.24), rgba(255, 253, 248, 0) 72%);
+}
+
+.mohni-booking-app .mohni-booking-group__header {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 18px;
+    padding: 0 12px 20px 4px;
+}
+
+.mohni-booking-app .mohni-booking-group__header::before {
+    align-self: center;
+    content: counter(booking-category, decimal-leading-zero);
+    color: #ad7e72;
+    font: 400 17px/1 "Playfair Display", Georgia, serif;
+    text-align: center;
+}
+
+.mohni-booking-app .mohni-booking-group__header small,
+.mohni-booking-app .mohni-booking-group__header strong {
+    display: block;
+}
+
+.mohni-booking-app .mohni-booking-group__header small {
+    margin-bottom: 5px;
+    color: #8d7350;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.mohni-booking-app .mohni-booking-group__header strong {
+    color: #29332e;
+    font: 500 clamp(22px, 2vw, 28px)/1.2 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-app .mohni-booking-group--static .mohni-booking-group__body {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 42px;
+    padding: 0 12px 0 78px;
+}
+
+.mohni-booking-app .mohni-booking-group--static .mohni-booking-service {
+    min-height: 68px;
+    padding: 11px 2px;
+    border-bottom-color: rgba(82, 104, 92, 0.16);
+    border-radius: 0;
+}
+
+.mohni-booking-app .mohni-booking-group--static .mohni-booking-service:hover,
+.mohni-booking-app .mohni-booking-group--static .mohni-booking-service:focus-within {
+    padding-right: 10px;
+    padding-left: 10px;
+    background: rgba(225, 233, 226, 0.48);
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .mohni-booking-app .mohni-booking-group--static {
+        padding: 22px 0 24px;
+    }
+
+    .mohni-booking-app .mohni-booking-group__header {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 10px;
+        padding: 0 4px 16px 0;
+    }
+
+    .mohni-booking-app .mohni-booking-group__count {
+        display: none;
+    }
+
+    .mohni-booking-app .mohni-booking-group--static .mohni-booking-group__body {
+        grid-template-columns: 1fr;
+        padding: 0 4px 0 48px;
+    }
+}
+
+/* Availability concierge: compact schedule with a calm service sidebar. */
+.mohni-booking-app--availability .mohni-booking-app__header {
+    padding: 24px 30px 20px !important;
+}
+
+.mohni-booking-app--availability .mohni-display {
+    font-size: clamp(30px, 3vw, 42px);
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps {
+    gap: 20px;
+    margin-top: 18px !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps li {
+    min-height: 34px !important;
+    padding: 3px 0 8px !important;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid rgba(82, 104, 92, 0.18);
+    border-radius: 0;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps li.is-current {
+    border-bottom-color: #52685c;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__body {
+    padding: 26px 30px 34px;
+}
+
+.mohni-availability-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    align-items: start;
+    gap: 34px;
+}
+
+.mohni-availability-summary {
+    position: sticky;
+    top: 24px;
+    padding: 24px;
+    background: linear-gradient(155deg, #e8d8d1, #f7f1eb 55%, #dfe8e1);
+    border: 1px solid rgba(82, 104, 92, 0.2);
+    border-radius: 18px;
+}
+
+.mohni-availability-summary .mohni-booking-back {
+    margin-bottom: 42px;
+    padding: 8px 12px;
+    background: rgba(255, 253, 248, 0.66);
+    border: 1px solid rgba(82, 104, 92, 0.24);
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.mohni-availability-summary h2 {
+    margin: 8px 0 22px;
+    color: #29332e;
+    font: 500 29px/1.15 "Playfair Display", Georgia, serif;
+}
+
+.mohni-availability-summary dl {
+    margin: 0;
+}
+
+.mohni-availability-summary dl > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(82, 104, 92, 0.16);
+}
+
+.mohni-availability-summary dt,
+.mohni-availability-summary dd {
+    margin: 0;
+    color: #526159;
+    font-size: 14px;
+}
+
+.mohni-availability-summary dd {
+    color: #29332e;
+    font-weight: 700;
+}
+
+.mohni-availability-summary__note {
+    margin: 24px 0 0;
+    color: #68645e;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.mohni-availability-calendar {
+    min-width: 0;
+}
+
+.mohni-availability-calendar .mohni-booking-week-nav {
+    align-items: flex-end;
+    margin: 0 0 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(82, 104, 92, 0.2);
+}
+
+.mohni-availability-calendar .mohni-booking-week-nav h2 {
+    font-size: 28px;
+}
+
+.mohni-availability-calendar .mohni-booking-week-nav__links a,
+.mohni-availability-calendar .mohni-booking-week-nav__links span {
+    min-height: 38px;
+    padding: 0 14px;
+    font-size: 12px;
+}
+
+.mohni-availability-calendar .mohni-booking-days {
+    gap: 0;
+}
+
+.mohni-availability-calendar .mohni-booking-day {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 24px;
+    padding: 22px 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(82, 104, 92, 0.17);
+    border-radius: 0;
+}
+
+.mohni-availability-calendar .mohni-booking-day h3 {
+    margin: 6px 0 0;
+    font-size: 19px;
+    line-height: 1.35;
+}
+
+.mohni-availability-calendar .mohni-booking-times {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(105px, 1fr));
+    gap: 9px;
+}
+
+.mohni-availability-calendar .mohni-booking-time {
+    min-width: 0;
+    min-height: 62px;
+    padding: 10px 12px;
+    background: #f7f2ec;
+    border-color: #ddd0c3;
+    border-radius: 10px;
+}
+
+.mohni-availability-calendar .mohni-booking-time strong {
+    color: #29332e;
+    font-size: 15px;
+}
+
+.mohni-availability-calendar .mohni-booking-time small {
+    overflow: hidden;
+    color: #817b72;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mohni-availability-calendar .mohni-booking-time.is-selected,
+.mohni-availability-calendar .mohni-booking-time[aria-pressed="true"] {
+    background: #52685c;
+    border-color: #52685c;
+    box-shadow: 0 10px 22px rgba(53, 68, 61, 0.2);
+}
+
+.mohni-availability-calendar .mohni-booking-time.is-selected strong,
+.mohni-availability-calendar .mohni-booking-time.is-selected small,
+.mohni-availability-calendar .mohni-booking-time[aria-pressed="true"] strong,
+.mohni-availability-calendar .mohni-booking-time[aria-pressed="true"] small {
+    color: #fff;
+}
+
+.mohni-availability-calendar .mohni-booking-selection {
+    position: static;
+    margin-top: 24px;
+    padding: 16px 18px;
+    background: #35443d;
+}
+
+.mohni-availability-calendar .mohni-booking-selection .mh-btn {
+    min-height: 44px;
+    padding: 0 26px;
+}
+
+@media (max-width: 1000px) {
+    .mohni-availability-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .mohni-availability-summary {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px 30px;
+    }
+
+    .mohni-availability-summary .mohni-booking-back,
+    .mohni-availability-summary__note {
+        grid-column: 1 / -1;
+    }
+
+    .mohni-availability-summary .mohni-booking-back {
+        justify-self: start;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps {
+        display: flex !important;
+        overflow-x: auto;
+    }
+
+    .mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps li {
+        flex: 0 0 auto;
+        min-width: 132px;
+    }
+
+    .mohni-availability-summary {
+        display: block;
+    }
+
+    .mohni-availability-calendar .mohni-booking-day {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .mohni-availability-calendar .mohni-booking-day h3 {
+        margin: 0;
+    }
+
+    .mohni-availability-calendar .mohni-booking-times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mohni-availability-calendar .mohni-booking-selection {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
 body {
     color: var(--mohni-copy);
     background: var(--mohni-white);
@@ -2460,4 +3807,487 @@ body {
     .mohni-testimonial-grid .mh-sliderdots {
         display: none !important;
     }
+}
+
+/* Isolated concierge-style booking application. */
+body.mohni-booking-page {
+    min-height: 100vh;
+    color: var(--mohni-copy);
+    background:
+        radial-gradient(circle at 12% 8%, rgba(194, 166, 111, 0.12), transparent 28%),
+        linear-gradient(145deg, #f8f3eb 0%, #fffdf8 56%, #edf1ec 100%);
+}
+
+.mohni-booking-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 74px;
+    padding: 14px max(24px, calc((100vw - 1240px) / 2));
+    background: rgba(255, 253, 248, 0.92);
+    border-bottom: 1px solid rgba(149, 120, 68, 0.2);
+    backdrop-filter: blur(14px);
+}
+
+.mohni-booking-nav__brand {
+    color: var(--mohni-charcoal);
+    font: 500 clamp(22px, 2.4vw, 31px)/1.1 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-nav__meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #7b756d;
+    font-size: 13px;
+}
+
+.mohni-booking-nav__meta a {
+    padding: 9px 15px;
+    color: var(--mohni-charcoal);
+    border: 1px solid #d8cbb9;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.mohni-booking-app {
+    width: 100%;
+    min-height: calc(100vh - 74px);
+    padding: 30px 20px 70px;
+}
+
+.mohni-booking-app__frame {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    overflow: visible;
+    background: rgba(255, 253, 248, 0.9);
+    border: 1px solid rgba(149, 120, 68, 0.24);
+    border-radius: 26px;
+    box-shadow: 0 28px 80px rgba(41, 36, 31, 0.1);
+}
+
+.mohni-booking-app__header {
+    width: 100%;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 28px 34px 24px !important;
+    background: linear-gradient(120deg, #f2e9dc 0%, #fdfaf5 62%, #eef2ed 100%);
+    border-bottom: 1px solid rgba(149, 120, 68, 0.18);
+    border-radius: 26px 26px 0 0;
+}
+
+.mohni-booking-app__header .mohni-booking-heading {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 30px !important;
+    width: 100%;
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+.mohni-booking-app__header .mohni-booking-heading > div:first-child {
+    max-width: 760px;
+}
+
+.mohni-booking-app__header .mohni-display {
+    margin: 5px 0 8px !important;
+    color: var(--mohni-charcoal);
+    font: 400 clamp(32px, 3.5vw, 48px)/1.08 "Playfair Display", Georgia, serif;
+}
+
+.mohni-booking-app__header .mohni-booking-heading p:not(.mohni-eyebrow) {
+    margin: 0;
+    color: #68645e;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.mohni-booking-app__header .mohni-booking-steps {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    height: auto !important;
+    margin: 22px 0 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+
+.mohni-booking-app__header .mohni-booking-steps li {
+    display: flex !important;
+    align-items: center;
+    width: auto !important;
+    min-height: 42px !important;
+    height: auto !important;
+    padding: 6px 10px !important;
+    float: none !important;
+    list-style: none !important;
+    background: rgba(255, 253, 248, 0.62);
+    border: 1px solid rgba(149, 120, 68, 0.18);
+    border-radius: 12px;
+}
+
+.mohni-booking-app__body {
+    width: 100%;
+    padding: 30px 34px 36px;
+}
+
+.mohni-booking-app__body.mohni-booking-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.4fr) minmax(310px, 0.7fr) !important;
+    align-items: start !important;
+    gap: 26px !important;
+}
+
+.mohni-booking-app__body .mohni-booking-details,
+.mohni-booking-app__body .mohni-booking-review-card,
+.mohni-booking-app__body .mohni-booking-summary {
+    width: auto !important;
+    min-width: 0;
+    margin: 0 !important;
+    float: none !important;
+}
+
+.mohni-booking-app__body .mohni-booking-summary {
+    position: sticky;
+    top: 24px;
+}
+
+.mohni-booking-app__body .mohni-booking__toolbar {
+    margin-bottom: 20px;
+}
+
+.mohni-booking-app__body .mohni-booking-category-nav {
+    margin-bottom: 20px;
+}
+
+.mohni-booking-app__body .mohni-booking-group > summary {
+    padding: 19px 22px;
+}
+
+.mohni-booking-app__body .mohni-booking-selection {
+    z-index: 3;
+}
+
+@media (max-width: 850px) {
+    .mohni-booking-nav__meta > span {
+        display: none;
+    }
+
+    .mohni-booking-app {
+        padding: 18px 12px 48px;
+    }
+
+    .mohni-booking-app__header,
+    .mohni-booking-app__body {
+        padding: 24px 20px !important;
+    }
+
+    .mohni-booking-app__header .mohni-booking-heading {
+        align-items: flex-start !important;
+        flex-direction: column;
+        gap: 14px !important;
+    }
+
+    .mohni-booking-app__header .mohni-booking-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mohni-booking-app__body.mohni-booking-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .mohni-booking-app__body .mohni-booking-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 520px) {
+    .mohni-booking-nav {
+        min-height: 64px;
+        padding: 12px 16px;
+    }
+
+    .mohni-booking-nav__brand {
+        font-size: 20px;
+    }
+
+    .mohni-booking-app__header .mohni-booking-steps {
+        display: flex !important;
+        gap: 7px;
+        overflow-x: auto;
+    }
+
+    .mohni-booking-app__header .mohni-booking-steps li {
+        flex: 0 0 auto;
+        font-size: 11px;
+    }
+}
+
+/* Softer booking palette: eucalyptus, oyster, champagne and muted rose. */
+body.mohni-booking-page {
+    background:
+        radial-gradient(circle at 8% 10%, rgba(185, 130, 120, 0.14), transparent 28%),
+        radial-gradient(circle at 92% 4%, rgba(105, 129, 114, 0.16), transparent 30%),
+        #f5f0e9;
+}
+
+.mohni-booking-nav {
+    background: rgba(251, 248, 243, 0.94);
+    border-bottom-color: rgba(91, 111, 99, 0.2);
+}
+
+.mohni-booking-app__frame {
+    background: #fcfaf6;
+    border-color: rgba(93, 108, 98, 0.2);
+    box-shadow: 0 28px 80px rgba(53, 68, 61, 0.12);
+}
+
+.mohni-booking-app__header {
+    background:
+        linear-gradient(105deg, rgba(239, 224, 217, 0.88), rgba(249, 246, 239, 0.96) 52%, rgba(221, 231, 223, 0.9));
+}
+
+.mohni-booking-app__header .mohni-booking-steps li {
+    background: rgba(255, 253, 249, 0.7);
+    border-color: rgba(92, 109, 98, 0.2);
+}
+
+.mohni-booking-app .mohni-booking-steps .is-current span,
+.mohni-booking-app .mh-btn,
+.mohni-booking-app .mohni-booking-category-nav button.is-active {
+    color: #fff !important;
+    background: #52685c !important;
+    border-color: #52685c !important;
+    background-image: none !important;
+}
+
+.mohni-booking-app .mh-btn {
+    min-height: 48px;
+    height: auto;
+    border-radius: 999px;
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.2;
+}
+
+.mohni-booking-app .mohni-booking-steps .is-complete span {
+    background: #a98159;
+    border-color: #a98159;
+}
+
+.mohni-booking-live i {
+    background: #698172;
+    border-color: #e1ebe4;
+}
+
+.mohni-booking-service-card,
+.mohni-booking-selection,
+.mohni-booking-summary {
+    background: #35443d;
+}
+
+.mohni-booking-time.is-selected,
+.mohni-booking-time[aria-pressed="true"] {
+    background: #52685c;
+    border-color: #52685c;
+}
+
+.mohni-booking-service:hover,
+.mohni-booking-service:focus-within,
+.mohni-booking-time {
+    background: #f5eee9;
+}
+
+.mohni-booking-field input,
+.mohni-booking-field textarea {
+    background: #faf6f1;
+    border-color: #d9cabe;
+}
+
+/* Editorial price folio: flat chapters instead of stacked cards. */
+.mohni-treatment-menu__groups,
+.mohni-laser-accordion {
+    counter-reset: mohni-menu-section;
+    display: block;
+    overflow: hidden;
+    background: rgba(255, 253, 248, 0.66);
+    border-top: 1px solid rgba(79, 94, 84, 0.3);
+    border-bottom: 1px solid rgba(79, 94, 84, 0.3);
+}
+
+.mohni-treatment-menu__group,
+.mohni-laser-accordion__item {
+    counter-increment: mohni-menu-section;
+    overflow: hidden;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(79, 94, 84, 0.18);
+    border-radius: 0;
+    box-shadow: none;
+    transition: background 180ms ease;
+}
+
+.mohni-treatment-menu__group:last-child,
+.mohni-laser-accordion__item:last-child {
+    border-bottom: 0;
+}
+
+.mohni-treatment-menu__group--wide {
+    grid-column: auto;
+}
+
+.mohni-treatment-menu__group-header,
+.mohni-laser-accordion__item > summary {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    min-height: 86px;
+    padding: 17px 22px 17px 8px;
+}
+
+.mohni-treatment-menu__group-header::before,
+.mohni-laser-accordion__item > summary::before {
+    content: counter(mohni-menu-section, decimal-leading-zero);
+    color: #ad7e72;
+    font: 400 18px/1 "Playfair Display", Georgia, serif;
+    text-align: center;
+}
+
+.mohni-laser-accordion__item > summary > span {
+    min-width: 0;
+}
+
+.mohni-treatment-menu__group-title,
+.mohni-laser-accordion__item > summary strong {
+    color: #29332e;
+    font: 500 clamp(22px, 2.4vw, 30px)/1.18 "Playfair Display", Georgia, serif;
+}
+
+.mohni-treatment-menu__group-meta {
+    display: grid;
+    grid-template-columns: auto 36px;
+    gap: 16px;
+}
+
+.mohni-treatment-menu__group-meta i,
+.mohni-laser-accordion__item > summary i {
+    width: 36px;
+    height: 36px;
+    border-color: rgba(82, 104, 92, 0.42);
+    background: rgba(255, 253, 248, 0.7);
+}
+
+.mohni-treatment-menu__group-meta i::before,
+.mohni-treatment-menu__group-meta i::after,
+.mohni-laser-accordion__item > summary i::before,
+.mohni-laser-accordion__item > summary i::after {
+    background: #52685c;
+}
+
+.mohni-treatment-menu__group[open],
+.mohni-laser-accordion__item[open] {
+    background:
+        linear-gradient(100deg, rgba(233, 219, 212, 0.54), rgba(249, 246, 239, 0.76) 46%, rgba(221, 232, 224, 0.58));
+}
+
+.mohni-treatment-menu__group[open] .mohni-treatment-menu__group-header,
+.mohni-laser-accordion__item[open] > summary {
+    border-bottom: 0;
+}
+
+.mohni-treatment-menu__group-body {
+    padding: 0 22px 26px 80px;
+}
+
+.mohni-treatment-menu__items,
+.mohni-treatment-menu__group--wide .mohni-treatment-menu__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 42px;
+}
+
+.mohni-treatment-menu__item {
+    padding: 14px 0;
+    border-bottom-color: rgba(79, 94, 84, 0.16);
+}
+
+.mohni-treatment-menu__name,
+.mohni-treatment-menu__price {
+    font-size: 15px;
+}
+
+.mohni-treatment-menu__price,
+.mohni-laser-price-group li strong {
+    color: #52685c;
+}
+
+.mohni-laser-accordion__body {
+    padding: 4px 32px 34px 80px;
+}
+
+.mohni-pricing {
+    background:
+        radial-gradient(circle at 92% 10%, rgba(173, 126, 114, 0.12), transparent 28rem),
+        #f1ece5;
+}
+
+@media (max-width: 767px) {
+    .mohni-treatment-menu__group-header,
+    .mohni-laser-accordion__item > summary {
+        grid-template-columns: 38px minmax(0, 1fr) auto;
+        gap: 10px;
+        min-height: 72px;
+        padding: 14px 10px 14px 0;
+    }
+
+    .mohni-treatment-menu__group-meta > span,
+    .mohni-laser-accordion__item > summary small {
+        display: none;
+    }
+
+    .mohni-treatment-menu__group-body,
+    .mohni-laser-accordion__body {
+        padding: 0 16px 24px 48px;
+    }
+
+    .mohni-treatment-menu__items,
+    .mohni-treatment-menu__group--wide .mohni-treatment-menu__items,
+    .mohni-laser-accordion__body {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Availability header must remain compact after every legacy rule. */
+.mohni-booking-app--availability .mohni-booking-app__header {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 24px 30px 20px !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-display {
+    margin: 4px 0 7px !important;
+    font-size: clamp(30px, 3vw, 42px) !important;
+    line-height: 1.08 !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps {
+    gap: 20px;
+    margin-top: 18px !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps li {
+    min-height: 34px !important;
+    padding: 3px 0 8px !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-bottom: 2px solid rgba(82, 104, 92, 0.18) !important;
+    border-radius: 0 !important;
+}
+
+.mohni-booking-app--availability .mohni-booking-app__header .mohni-booking-steps li.is-current {
+    border-bottom-color: #52685c !important;
 }

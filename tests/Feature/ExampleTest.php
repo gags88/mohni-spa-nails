@@ -130,6 +130,12 @@ class ExampleTest extends TestCase
                 substr_count($response->getContent(), 'class="mohni-treatment-menu__item"'),
                 'Unexpected treatment count for '.$path
             );
+
+            $this->assertSame(
+                $expectedItemCount,
+                substr_count($response->getContent(), 'class="mohni-treatment-menu__book"'),
+                'Every treatment should link into booking on '.$path
+            );
         }
     }
 
@@ -155,8 +161,9 @@ class ExampleTest extends TestCase
         foreach ($pages as $path) {
             $this->get($path)
                 ->assertOk()
-                ->assertSee('href="/css/interior-palette.css?v=3.6"', false)
-                ->assertSee('Book');
+                ->assertSee('href="/css/interior-palette.css?v=4.6"', false)
+                ->assertSee('Book now')
+                ->assertSee('/book?category=', false);
         }
     }
 

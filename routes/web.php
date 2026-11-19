@@ -29,6 +29,12 @@ Route::get('/about', function () {
     return view('pages.about');
 });
 Route::get('/contact', 'App\Http\Controllers\ContactController@index')->name('contact.show');
+Route::get('/book', 'App\Http\Controllers\BookingController@index')->name('booking.index');
+Route::get('/book/availability', 'App\Http\Controllers\BookingController@availability')->name('booking.availability');
+Route::get('/book/details', 'App\Http\Controllers\BookingController@details')->name('booking.details');
+Route::post('/book/review', 'App\Http\Controllers\BookingController@review')
+    ->middleware('throttle:20,1')
+    ->name('booking.review');
 Route::post('/contact', 'App\Http\Controllers\ContactController@store')
     ->middleware('throttle:5,1')
     ->name('contact.store');

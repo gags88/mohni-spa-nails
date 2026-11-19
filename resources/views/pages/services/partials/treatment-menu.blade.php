@@ -60,6 +60,11 @@
                                     @endif
                                 </div>
                                 <span class="mohni-treatment-menu__price">{{ $item['price'] }}</span>
+                                <a
+                                    class="mohni-treatment-menu__book"
+                                    href="{{ route('booking.index', array_filter(['service' => $item['name'], 'duration' => $item['duration'] ?? null, 'category' => $group['title']]), false) }}"
+                                    aria-label="Book {{ $item['name'] }}"
+                                >Book</a>
                             </li>
                         @endforeach
                     </ul>
@@ -70,6 +75,6 @@
 
     <footer class="mohni-treatment-menu__footer">
         <p>All treatment times are approximate. Please contact us if you need help choosing a service.</p>
-        <a href="{{ config('services.booking.url') }}" class="mh-btn">Book an appointment</a>
+        <a href="{{ route('booking.index', [], false) }}" class="mh-btn">Book an appointment</a>
     </footer>
 </section>

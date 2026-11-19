@@ -17,6 +17,7 @@
             <h1 id="laser-title">Laser hair removal,<br>beautifully considered.</h1>
             <p>Advanced Soprano ICE Platinum technology with a calm, personal approach to every consultation and treatment.</p>
             <div class="mohni-inline-actions">
+                <a href="{{ route('booking.index', ['category' => 'laser'], false) }}" class="mh-btn">Book now</a>
                 <a href="#laser-pricing" class="mohni-text-link">View pricing <span aria-hidden="true">&darr;</span></a>
             </div>
         </div>
@@ -114,7 +115,13 @@
                                 <h3 id="laser-{{ Str::slug($audience) }}-{{ Str::slug($section) }}">{{ $section }}</h3>
                                 <ul class="list-unstyled">
                                     @foreach ($items as [$name, $price])
-                                        <li><span>{{ $name }}</span><strong>{{ $price }}</strong></li>
+                                        <li>
+                                            <span>{{ $name }}</span>
+                                            <span class="mohni-laser-price-group__actions">
+                                                <strong>{{ $price }}</strong>
+                                                <a href="{{ route('booking.index', ['service' => $name, 'category' => 'laser'], false) }}" aria-label="Book {{ $name }}">Book</a>
+                                            </span>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </section>
@@ -143,7 +150,7 @@
         <p class="mohni-eyebrow">Ready when you are</p>
         <h2>Begin with a complimentary consultation.</h2>
         <p>Ask questions, explore the right areas and leave with a plan designed for you.</p>
-        <a href="{{ config('services.booking.url') }}" class="mh-btn">Book your consultation</a>
+        <a href="{{ route('booking.index', ['service' => 'Laser Consultation', 'category' => 'laser'], false) }}" class="mh-btn">Book your consultation</a>
     </div>
 </section>
 @endsection

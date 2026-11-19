@@ -133,6 +133,35 @@ Labels such as `$85+` and `From $550` are not changed by default because Square
 does not retain that website label in a fixed catalog price. Add
 `--include-starting-prices` only when the numeric base price should be used.
 
+## Square appointment integration
+
+The custom appointment system uses the same server-side Square credentials and
+keeps booking and payment features disabled until each integration phase is
+verified. Production booking reads use separate credentials so Sandbox catalog
+and payment testing can remain isolated. Configure the production booking values
+in `.env`, then run the read-only foundation checks:
+
+```dotenv
+SQUARE_BOOKINGS_ENVIRONMENT=production
+SQUARE_BOOKINGS_ACCESS_TOKEN=your_private_production_token
+SQUARE_BOOKINGS_LOCATION_ID=LDNGWM2MCEDEJ
+SQUARE_BOOKINGS_READ_ONLY=true
+```
+
+```bash
+php artisan square:diagnose
+```
+
+The command verifies the configured location, appointment-service catalog,
+business booking profile, and bookable team members. It never creates bookings,
+customers, orders, or payments. Keep these feature flags disabled until the
+customer-facing booking and payment steps are complete:
+
+```dotenv
+SQUARE_BOOKING_ENABLED=false
+SQUARE_PAYMENT_ENABLED=false
+```
+
 ## Project structure
 
 - `app/Http/Controllers` — public and admin request handling

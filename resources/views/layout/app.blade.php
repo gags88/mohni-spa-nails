@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="/css/app.css?v=1.0138" rel="stylesheet">
-    <link href="/css/interior-palette.css?v=3.6" rel="stylesheet">
+    <link href="/css/interior-palette.css?v=4.6" rel="stylesheet">
 </head>
 
 <body class="mh-home mh-homeone">

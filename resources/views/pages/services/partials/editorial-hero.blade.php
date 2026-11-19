@@ -10,11 +10,12 @@
                 <p class="mohni-eyebrow">{{ $service['eyebrow'] }}</p>
                 <h1 id="service-{{ $serviceKey }}-title">{{ $service['title'] }}</h1>
                 <p class="mohni-editorial-service__intro">{{ $service['intro'] }}</p>
-                @if (!empty($service['price_anchor']))
-                    <div class="mohni-inline-actions">
+                <div class="mohni-inline-actions">
+                    <a href="{{ route('booking.index', ['category' => $service['title']], false) }}" class="mh-btn">Book now</a>
+                    @if (!empty($service['price_anchor']))
                         <a href="#{{ $service['price_anchor'] }}" class="mohni-text-link">View pricing <span aria-hidden="true">&darr;</span></a>
-                    </div>
-                @endif
+                    @endif
+                </div>
             </div>
             <figure class="mohni-editorial-service__image">
                 <img src="{{ $service['image'] }}" alt="{{ $service['alt'] }}">
