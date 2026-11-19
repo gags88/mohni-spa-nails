@@ -16,6 +16,7 @@ class BookingServiceSelectionTest extends TestCase
             'services.square.bookings_environment' => 'production',
             'services.square.bookings_access_token' => 'production-read-token',
             'services.square.bookings_location_id' => 'MOHNI_LOCATION',
+            'services.square.bookings_timezone' => 'America/Winnipeg',
             'services.square.api_version' => '2026-11-18',
         ]);
     }
