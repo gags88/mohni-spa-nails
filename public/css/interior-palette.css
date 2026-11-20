@@ -963,17 +963,21 @@
 }
 
 .mohni-booking-page .is-loading {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
     gap: 9px;
     cursor: wait !important;
     opacity: 0.78;
     pointer-events: none;
 }
 
-.mohni-booking-page .is-loading::before {
+.mohni-booking-loader {
+    display: block;
+    box-sizing: border-box;
     width: 14px;
     height: 14px;
     flex: 0 0 auto;
-    content: "";
     border: 2px solid currentColor;
     border-right-color: transparent;
     border-radius: 50%;

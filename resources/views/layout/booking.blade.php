@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="/css/app.css?v=1.0138" rel="stylesheet">
-    <link href="/css/interior-palette.css?v=5.0" rel="stylesheet">
+    <link href="/css/interior-palette.css?v=5.1" rel="stylesheet">
 </head>
 <body class="mohni-booking-page">
     <header class="mohni-booking-nav">
@@ -21,7 +21,7 @@
         </div>
     </header>
     @yield('content')
-    <script src="/js/booking-form.js?v=1.0" defer></script>
+    <script src="/js/booking-form.js?v=1.1" defer></script>
     @yield('page_scripts')
 </body>
 </html>

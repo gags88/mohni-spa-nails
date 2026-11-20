@@ -6,9 +6,18 @@
             return;
         }
 
+        var spinner = document.createElement('span');
+        var label = document.createElement('span');
+
+        spinner.className = 'mohni-booking-loader';
+        spinner.setAttribute('aria-hidden', 'true');
+        label.textContent = element.getAttribute('data-loading-text') || 'Loading…';
+
         element.classList.add('is-loading');
         element.setAttribute('aria-busy', 'true');
-        element.textContent = element.getAttribute('data-loading-text') || 'Loading…';
+        element.textContent = '';
+        element.appendChild(spinner);
+        element.appendChild(label);
 
         if (element.tagName === 'BUTTON') {
             element.disabled = true;

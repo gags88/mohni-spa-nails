@@ -230,7 +230,7 @@ class BookingServiceSelectionTest extends TestCase
             ->assertSee('Back to date &amp; time', false)
             ->assertSee('rows="6"', false)
             ->assertSee('data-loading-text="Preparing review…"', false)
-            ->assertSee('/js/booking-form.js?v=1.0', false);
+            ->assertSee('/js/booking-form.js?v=1.1', false);
 
         $this->post('/book/review', array_merge($selection, [
             'customer_name' => 'Preview Customer',
