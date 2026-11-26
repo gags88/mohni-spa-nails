@@ -1,6 +1,7 @@
 @php
     $content = config('service-content.' . $serviceKey);
     $pricing = $content['pricing'] ?? null;
+    $isMicroneedling = $serviceKey === 'micro-needling';
 @endphp
 
 @include('pages.services.partials.editorial-hero', ['serviceKey' => $serviceKey])
@@ -31,12 +32,14 @@
     </section>
 
     @if (!empty($content['sections']))
-        <section class="mohni-service-guides" aria-label="Treatment information">
+        <section class="mohni-service-guides{{ $isMicroneedling ? ' mohni-service-guides--editorial' : '' }}" aria-label="Treatment information">
             <div class="container">
                 <div class="mohni-service-guides__grid">
                     @foreach ($content['sections'] as $section)
                         <article class="mohni-service-guide">
-                            <span class="mohni-service-guide__number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                            @unless ($isMicroneedling)
+                                <span class="mohni-service-guide__number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                            @endunless
                             <h2>{{ $section['title'] }}</h2>
                             @foreach ($section['body'] ?? [] as $paragraph)
                                 <p>{{ $paragraph }}</p>
@@ -55,16 +58,25 @@
         </section>
     @endif
 
-    @if ($serviceKey === 'micro-needling')
-        <section class="mohni-section" aria-labelledby="microneedling-results-title">
+    @if ($isMicroneedling)
+        <section class="mohni-section mohni-microneedling-results" aria-labelledby="microneedling-results-title">
             <div class="container">
                 <h2 id="microneedling-results-title" class="mohni-display">Before and after</h2>
                 <div class="mohni-microneedling-gallery">
-                    <img src="/images/services/microneedling/before-after-000.jpg" width="576" height="458" alt="Before and after comparison of cheek texture" loading="lazy">
-                    <img src="/images/services/microneedling/before-after-001.jpg" width="676" height="404" alt="Before and after comparison of fine lines near the eye" loading="lazy">
-                    <img src="/images/services/microneedling/before-after-002.jpg" width="1080" height="434" alt="Before and after side profile showing cheek and jawline" loading="lazy">
-                    <img src="/images/services/microneedling/before-after-003.jpg" width="1080" height="519" alt="Before and after comparison of cheek blemishes" loading="lazy">
-                    <img src="/images/services/microneedling/before-after-004.jpg" width="445" height="445" alt="Before and after side view of cheek texture" loading="lazy">
+                    @foreach ([
+                        ['000', 576, 458, 'Cheek texture'],
+                        ['001', 676, 404, 'Fine lines around the eye'],
+                        ['002', 1080, 434, 'Cheek and jawline'],
+                        ['003', 1080, 519, 'Cheek blemishes'],
+                        ['004', 445, 445, 'Cheek texture in profile'],
+                    ] as [$photo, $width, $height, $description])
+                        <figure>
+                            <div class="mohni-microneedling-gallery__frame">
+                                <img src="/images/services/microneedling/before-after-{{ $photo }}.jpg" width="{{ $width }}" height="{{ $height }}" alt="Before and after: {{ $description }}" loading="lazy">
+                            </div>
+                            <figcaption>{{ $description }}</figcaption>
+                        </figure>
+                    @endforeach
                 </div>
             </div>
         </section>

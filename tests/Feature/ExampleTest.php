@@ -106,7 +106,8 @@ class ExampleTest extends TestCase
     public function testServicePagesDisplayCurrentTreatmentMenus()
     {
         $pages = [
-            '/services/facials' => ['facials', 'Anti-Aging Facial', '$120', 8],
+            '/services/facials' => ['facials', 'LED Light Therapy Treatment (optional add-on)', '$25', 9],
+            '/services/hydra-facial' => ['hydra-facial', 'LED Light Therapy Treatment (optional add-on)', '$25', 4],
             '/services/body-treatments' => ['body-treatments', 'Body Wrap', '$165', 2],
             '/services/waxing' => ['waxing', 'Brazilian (Women Only)', '$65', 21],
             '/services/threading' => ['threading', 'Full Face (Including Eyebrows)', '$30', 8],
@@ -161,7 +162,7 @@ class ExampleTest extends TestCase
         foreach ($pages as $path) {
             $this->get($path)
                 ->assertOk()
-                ->assertSee('href="/css/interior-palette.css?v=4.7"', false)
+                ->assertSee('href="/css/interior-palette.css?v=4.9"', false)
                 ->assertSee('Book now')
                 ->assertSee('/book?category=', false);
         }

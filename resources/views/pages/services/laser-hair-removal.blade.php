@@ -53,7 +53,7 @@
     </div>
 </section>
 
-<section class="mohni-section" aria-labelledby="soprano-technology-title">
+<section class="mohni-section mohni-soprano-section" aria-labelledby="soprano-technology-title">
     <div class="container">
         <h2 id="soprano-technology-title" class="mohni-display">Why did Mohni Spa choose the Soprano ICE Platinum technology?</h2>
         <ul class="mohni-soprano-features" role="list">

@@ -1,5 +1,7 @@
 <?php
 
+$ledLightTherapy = ['name' => 'LED Light Therapy Treatment (optional add-on)', 'price' => '$25'];
+
 return [
     'facials' => [
         'title' => 'Facial treatments',
@@ -16,6 +18,7 @@ return [
                 ['name' => 'Back Facial', 'duration' => '60 min', 'price' => '$99'],
                 ['name' => 'Face Bleach', 'duration' => '20 min', 'price' => '$25'],
                 ['name' => 'Face and Neck Bleach', 'duration' => '25 min', 'price' => '$30'],
+                $ledLightTherapy,
             ],
         ]],
     ],
@@ -53,6 +56,7 @@ return [
                 ['name' => 'Signature HydraFacial', 'duration' => '45 min', 'price' => '$130'],
                 ['name' => 'Deluxe HydraFacial', 'duration' => '60 min', 'price' => '$140'],
                 ['name' => 'Platinum HydraFacial', 'duration' => '1 hr 15 min', 'price' => '$150'],
+                $ledLightTherapy,
             ],
         ]],
     ],
@@ -65,7 +69,7 @@ return [
             'items' => [
                 ['name' => 'Full Face', 'price' => '$375'],
                 ['name' => 'Full Face & Neck', 'price' => '$400'],
-                ['name' => 'LED Light Therapy Treatment (optional add-on)', 'price' => '$25'],
+                $ledLightTherapy,
             ],
         ]],
     ],
