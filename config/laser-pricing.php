@@ -41,7 +41,7 @@ return [
             ['Half Arms', '$110'],
             ['Full Arms', '$150'],
             ['Underarms', '$110'],
-            ['Hands + Feet', '$30'],
+            ['Hands or Feet', '$50'],
         ],
         'Lower Body' => [
             ['Half Legs', '$150'],

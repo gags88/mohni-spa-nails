@@ -17,6 +17,9 @@
                     @foreach ($content['overview'] as $paragraph)
                         <p>{{ $paragraph }}</p>
                     @endforeach
+                    @if (!empty($content['highlights_title']))
+                        <h3>{{ $content['highlights_title'] }}</h3>
+                    @endif
                     <ul class="mohni-service-highlights">
                         @foreach ($content['highlights'] as $highlight)
                             <li>{{ $highlight }}</li>
@@ -47,6 +50,21 @@
                             @endif
                         </article>
                     @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if ($serviceKey === 'micro-needling')
+        <section class="mohni-section" aria-labelledby="microneedling-results-title">
+            <div class="container">
+                <h2 id="microneedling-results-title" class="mohni-display">Before and after</h2>
+                <div class="mohni-microneedling-gallery">
+                    <img src="/images/services/microneedling/before-after-000.jpg" width="576" height="458" alt="Before and after comparison of cheek texture" loading="lazy">
+                    <img src="/images/services/microneedling/before-after-001.jpg" width="676" height="404" alt="Before and after comparison of fine lines near the eye" loading="lazy">
+                    <img src="/images/services/microneedling/before-after-002.jpg" width="1080" height="434" alt="Before and after side profile showing cheek and jawline" loading="lazy">
+                    <img src="/images/services/microneedling/before-after-003.jpg" width="1080" height="519" alt="Before and after comparison of cheek blemishes" loading="lazy">
+                    <img src="/images/services/microneedling/before-after-004.jpg" width="445" height="445" alt="Before and after side view of cheek texture" loading="lazy">
                 </div>
             </div>
         </section>

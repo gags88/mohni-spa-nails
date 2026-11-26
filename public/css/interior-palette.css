@@ -1000,84 +1000,6 @@
     }
 }
 
-/* Service-page entry points into the custom booking flow. */
-.mohni-treatment-menu__book,
-.mohni-laser-price-group__actions a {
-    display: inline-flex;
-    align-items: center;
-    flex: 0 0 auto;
-    gap: 5px;
-    min-height: 28px;
-    padding: 4px 0 3px;
-    color: #52685c;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid transparent;
-    border-radius: 0;
-    font: 600 10px/1 Inter, Arial, sans-serif;
-    letter-spacing: 0.12em;
-    opacity: 0.62;
-    text-transform: uppercase;
-    transition: color 160ms ease, border-color 160ms ease, opacity 160ms ease;
-}
-
-.mohni-treatment-menu__book::after,
-.mohni-laser-price-group__actions a::after {
-    content: "\2192";
-    font-size: 13px;
-    letter-spacing: 0;
-}
-
-.mohni-treatment-menu__book:hover,
-.mohni-treatment-menu__book:focus,
-.mohni-laser-price-group__actions a:hover,
-.mohni-laser-price-group__actions a:focus {
-    color: #35443d;
-    background: transparent;
-    border-bottom-color: currentColor;
-    opacity: 1;
-    outline: 0;
-}
-
-.mohni-laser-price-group__actions {
-    display: inline-flex;
-    align-items: center;
-    flex: 0 0 auto;
-    gap: 12px;
-}
-
-@media (max-width: 520px) {
-    .mohni-treatment-menu__item {
-        flex-wrap: wrap;
-        gap: 10px 14px;
-    }
-
-    .mohni-treatment-menu__details {
-        flex: 1 1 calc(100% - 70px);
-    }
-
-    .mohni-treatment-menu__book {
-        margin-left: auto;
-        min-height: 36px;
-        opacity: 0.82;
-    }
-
-    .mohni-laser-price-group li {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .mohni-laser-price-group__actions {
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .mohni-laser-price-group__actions a {
-        min-height: 36px;
-        opacity: 0.82;
-    }
-}
-
 /* Booking treatment directory: open editorial sections, never accordions. */
 .mohni-booking-app .mohni-booking-groups {
     gap: 0;
@@ -3299,10 +3221,6 @@ body {
     line-height: 1.65;
 }
 
-.mohni-treatment-menu__footer .mh-btn {
-    flex: 0 0 auto;
-}
-
 .mohni-service-intro-copy {
     max-width: 720px;
     margin-right: auto;
@@ -3533,6 +3451,49 @@ body {
     background: var(--mohni-champagne);
     border-radius: 50%;
     content: "";
+}
+
+.mohni-soprano-features,
+.mohni-microneedling-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 28px;
+    margin: 24px 0 0;
+}
+
+.mohni-soprano-features {
+    padding: 0;
+    list-style: none;
+}
+
+.mohni-soprano-features li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0 14px;
+    border-bottom: 1px solid rgba(149, 120, 68, 0.22);
+    color: var(--mohni-charcoal);
+    font-weight: 600;
+}
+
+.mohni-soprano-features img {
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
+.mohni-microneedling-gallery img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    .mohni-soprano-features,
+    .mohni-microneedling-gallery {
+        grid-template-columns: 1fr;
+    }
 }
 
 .mohni-service-pricing {

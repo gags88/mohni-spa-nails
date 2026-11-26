@@ -63,7 +63,9 @@ return [
             'title' => 'Microneedling',
             'wide' => true,
             'items' => [
-                ['name' => 'Microneedling', 'duration' => '1 hr 15 min', 'price' => '$335'],
+                ['name' => 'Full Face', 'price' => '$375'],
+                ['name' => 'Full Face & Neck', 'price' => '$400'],
+                ['name' => 'LED Light Therapy Treatment (optional add-on)', 'price' => '$25'],
             ],
         ]],
     ],

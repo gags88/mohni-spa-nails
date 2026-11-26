@@ -66,6 +66,9 @@ class ExampleTest extends TestCase
             ->assertSee('Packages are non-refundable and non-transferable.')
             ->assertSee('Prices are plus GST.')
             ->assertSee('name="laser-pricing"', false)
+            ->assertSee('Why did Mohni Spa choose the Soprano ICE Platinum technology?')
+            ->assertSee('/images/services/laser/pain-free.png', false)
+            ->assertDontSee('aria-label="Book Full Legs"', false)
             ->assertSee('data-video-id="MBk0Q670LXE"', false)
             ->assertSee('/js/laser-video.js?v=1.1', false)
             ->assertSee('Play video');
@@ -131,11 +134,8 @@ class ExampleTest extends TestCase
                 'Unexpected treatment count for '.$path
             );
 
-            $this->assertSame(
-                $expectedItemCount,
-                substr_count($response->getContent(), 'class="mohni-treatment-menu__book"'),
-                'Every treatment should link into booking on '.$path
-            );
+            $response->assertDontSee('class="mohni-treatment-menu__book"', false)
+                ->assertDontSee('Book an appointment');
         }
     }
 
@@ -161,7 +161,7 @@ class ExampleTest extends TestCase
         foreach ($pages as $path) {
             $this->get($path)
                 ->assertOk()
-                ->assertSee('href="/css/interior-palette.css?v=4.6"', false)
+                ->assertSee('href="/css/interior-palette.css?v=4.7"', false)
                 ->assertSee('Book now')
                 ->assertSee('/book?category=', false);
         }
@@ -218,7 +218,7 @@ class ExampleTest extends TestCase
             '/services/hydra-facial' => ['HydraFacial treatments', '$130'],
             '/services/makeup' => ['Makeup application', '$85+'],
             '/services/massage' => ['Massage and restorative care', '$50'],
-            '/services/micro-needling' => ['Microneedling pricing', '$335'],
+            '/services/micro-needling' => ['Microneedling pricing', '$375'],
             '/services/microdermabrasion' => ['Microdermabrasion pricing', '$130'],
             '/services/nail-recovery' => ['Gel and nail recovery services', '$90'],
         ];
@@ -231,6 +231,23 @@ class ExampleTest extends TestCase
         }
     }
 
+    public function testMicroneedlingPageDisplaysUpdatedTreatmentInformation()
+    {
+        $this->get('/services/micro-needling')
+            ->assertOk()
+            ->assertSee('What is microneedling?')
+            ->assertSee('Benefits of microneedling')
+            ->assertSee('What to expect')
+            ->assertSee('Microneedling aftercare')
+            ->assertSee('Before and after')
+            ->assertSee('/images/services/microneedling/before-after-004.jpg', false)
+            ->assertSee('Full Face & Neck')
+            ->assertSee('$400')
+            ->assertSee('LED Light Therapy Treatment (optional add-on)')
+            ->assertSee('$25')
+            ->assertDontSee('$335');
+    }
+
     public function testFocusedServiceMenusDoNotIncludeUnrelatedPrices()
     {
         $menus = [
@@ -240,7 +257,7 @@ class ExampleTest extends TestCase
             'hydra-facial' => ['Platinum HydraFacial', 'Dermaplaning Facial'],
             'makeup' => ['Makeup Application', 'Hot Stone Massage'],
             'massage' => ['Relaxation Massage by Esthetician', 'Makeup Application'],
-            'micro-needling' => ['Microneedling', 'Anti-Aging Facial'],
+            'micro-needling' => ['Full Face & Neck', 'Anti-Aging Facial'],
             'microdermabrasion' => ['Diamond Microdermabrasion Facial', 'Signature HydraFacial'],
         ];
 

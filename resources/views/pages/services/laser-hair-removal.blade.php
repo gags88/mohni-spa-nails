@@ -37,10 +37,40 @@
             </div>
         </div>
         <div class="mohni-laser-benefits">
-            <article><span>01</span><h3>Comfort focused</h3><p>Continuous movement and contact cooling help create a gentler experience.</p></article>
-            <article><span>02</span><h3>Personal plan</h3><p>Timing and treatment areas are tailored during your consultation.</p></article>
-            <article><span>03</span><h3>All-season confidence</h3><p>A practical path away from the constant cycle of shaving and waxing.</p></article>
+            <article><span>01</span>
+                <h3>Comfort focused</h3>
+                <p>Continuous movement and contact cooling help create a gentler experience.</p>
+            </article>
+            <article><span>02</span>
+                <h3>Personal plan</h3>
+                <p>Timing and treatment areas are tailored during your consultation.</p>
+            </article>
+            <article><span>03</span>
+                <h3>All-season confidence</h3>
+                <p>A practical path away from the constant cycle of shaving and waxing.</p>
+            </article>
         </div>
+    </div>
+</section>
+
+<section class="mohni-section" aria-labelledby="soprano-technology-title">
+    <div class="container">
+        <h2 id="soprano-technology-title" class="mohni-display">Why did Mohni Spa choose the Soprano ICE Platinum technology?</h2>
+        <ul class="mohni-soprano-features" role="list">
+            @foreach ([
+                'pain-free' => 'VIRTUALLY PAIN-FREE',
+                'all_skin' => 'ALL SKIN TYPES & HAIR TYPES',
+                'safety_record' => 'PROVEN SAFETY RECORD',
+                'tanned_skin' => 'TANNED SKIN',
+                'speed' => 'SPEED',
+                'any_shape_body' => 'PERFECT FOR ANY AREA OF THE BODY',
+            ] as $icon => $label)
+                <li>
+                    <img src="/images/services/laser/{{ $icon }}.png" width="30" height="30" alt="">
+                    <span>{{ $label }}</span>
+                </li>
+            @endforeach
+        </ul>
     </div>
 </section>
 
@@ -67,8 +97,8 @@
 </section>
 
 @php
-    $laserPricing = config('laser-pricing');
-    $laserPromotionTerms = config('laser-promotion-terms');
+$laserPricing = config('laser-pricing');
+$laserPromotionTerms = config('laser-promotion-terms');
 @endphp
 
 <section class="mohni-process mohni-section" aria-labelledby="process-title">
@@ -80,9 +110,24 @@
                 <p>Most treatment plans involve a series of appointments spaced around the hair-growth cycle. We will guide you through the details at every step.</p>
             </div>
             <ol class="mohni-process__steps">
-                <li><span>01</span><div><h3>Consult</h3><p>We review your goals, health history, skin and hair profile, then create your plan.</p></div></li>
-                <li><span>02</span><div><h3>Prepare</h3><p>Avoid waxing, shave the area about 24 hours before, and arrive with clean, product-free skin.</p></div></li>
-                <li><span>03</span><div><h3>Treat &amp; care</h3><p>We keep you comfortable during treatment and explain the aftercare for your skin.</p></div></li>
+                <li><span>01</span>
+                    <div>
+                        <h3>Consult</h3>
+                        <p>We review your goals, health history, skin and hair profile, then create your plan.</p>
+                    </div>
+                </li>
+                <li><span>02</span>
+                    <div>
+                        <h3>Prepare</h3>
+                        <p>Avoid waxing, shave the area about 24 hours before, and arrive with clean, product-free skin.</p>
+                    </div>
+                </li>
+                <li><span>03</span>
+                    <div>
+                        <h3>Treat &amp; care</h3>
+                        <p>We keep you comfortable during treatment and explain the aftercare for your skin.</p>
+                    </div>
+                </li>
             </ol>
         </div>
     </div>
@@ -100,45 +145,42 @@
 
         <div class="mohni-laser-accordion">
             @foreach ($laserPricing as $audience => $sections)
-                <details class="mohni-laser-accordion__item" name="laser-pricing">
-                    <summary>
-                        <span>
-                            <small>Laser hair removal</small>
-                            <strong>{{ $audience }}</strong>
-                        </span>
-                        <i aria-hidden="true"></i>
-                    </summary>
+            <details class="mohni-laser-accordion__item" name="laser-pricing">
+                <summary>
+                    <span>
+                        <small>Laser hair removal</small>
+                        <strong>{{ $audience }}</strong>
+                    </span>
+                    <i aria-hidden="true"></i>
+                </summary>
 
-                    <div class="mohni-laser-accordion__body">
-                        @foreach ($sections as $section => $items)
-                            <section class="mohni-laser-price-group" aria-labelledby="laser-{{ Str::slug($audience) }}-{{ Str::slug($section) }}">
-                                <h3 id="laser-{{ Str::slug($audience) }}-{{ Str::slug($section) }}">{{ $section }}</h3>
-                                <ul class="list-unstyled">
-                                    @foreach ($items as [$name, $price])
-                                        <li>
-                                            <span>{{ $name }}</span>
-                                            <span class="mohni-laser-price-group__actions">
-                                                <strong>{{ $price }}</strong>
-                                                <a href="{{ route('booking.index', ['service' => $name, 'category' => 'laser'], false) }}" aria-label="Book {{ $name }}">Book</a>
-                                            </span>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </section>
-                        @endforeach
-                        @if ($audience === 'Promotions')
-                            <section class="mohni-laser-promotion-terms" aria-labelledby="laser-promotion-terms">
-                                <p class="mohni-eyebrow">Please note</p>
-                                <h3 id="laser-promotion-terms">Promotion details</h3>
-                                <ul>
-                                    @foreach ($laserPromotionTerms as $term)
-                                        <li>{{ $term }}</li>
-                                    @endforeach
-                                </ul>
-                            </section>
-                        @endif
-                    </div>
-                </details>
+                <div class="mohni-laser-accordion__body">
+                    @foreach ($sections as $section => $items)
+                    <section class="mohni-laser-price-group" aria-labelledby="laser-{{ Str::slug($audience) }}-{{ Str::slug($section) }}">
+                        <h3 id="laser-{{ Str::slug($audience) }}-{{ Str::slug($section) }}">{{ $section }}</h3>
+                        <ul class="list-unstyled">
+                            @foreach ($items as [$name, $price])
+                            <li>
+                                <span>{{ $name }}</span>
+                                <strong>{{ $price }}</strong>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </section>
+                    @endforeach
+                    @if ($audience === 'Promotions')
+                    <section class="mohni-laser-promotion-terms" aria-labelledby="laser-promotion-terms">
+                        <p class="mohni-eyebrow">Please note</p>
+                        <h3 id="laser-promotion-terms">Promotion details</h3>
+                        <ul>
+                            @foreach ($laserPromotionTerms as $term)
+                            <li>{{ $term }}</li>
+                            @endforeach
+                        </ul>
+                    </section>
+                    @endif
+                </div>
+            </details>
             @endforeach
         </div>
         <p class="mohni-pricing__note">Your consultation will confirm treatment areas, timing and exact pricing.</p>
